@@ -20,7 +20,7 @@ public class TaxeRateTrans implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "id")
-    private Long id;
+    private Integer id;
 
     @Column(name = "org_short_name")
     private String orgShortName;
@@ -48,16 +48,16 @@ public class TaxeRateTrans implements Serializable {
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
-    public Long getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public TaxeRateTrans id(Long id) {
+    public TaxeRateTrans id(Integer id) {
         this.setId(id);
         return this;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

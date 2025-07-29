@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface OrderTypeBIRepository extends JpaRepository<OrderTypeBI, Long> {}
+public interface OrderTypeBIRepository extends JpaRepository<OrderTypeBI, Integer> {}

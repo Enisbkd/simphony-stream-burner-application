@@ -3,17 +3,15 @@ package mc.sbm.simphonycloud.domain;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class CheckTransTestSamples {
 
     private static final Random random = new Random();
-    private static final AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
     private static final AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     public static CheckTrans getCheckTransSample1() {
         return new CheckTrans()
-            .id(1L)
+            .id(1)
             .rvcRef(1)
             .checkRef("checkRef1")
             .checkNumber(1)
@@ -32,7 +30,7 @@ public class CheckTransTestSamples {
 
     public static CheckTrans getCheckTransSample2() {
         return new CheckTrans()
-            .id(2L)
+            .id(2)
             .rvcRef(2)
             .checkRef("checkRef2")
             .checkNumber(2)
@@ -51,7 +49,7 @@ public class CheckTransTestSamples {
 
     public static CheckTrans getCheckTransRandomSampleGenerator() {
         return new CheckTrans()
-            .id(longCount.incrementAndGet())
+            .id(intCount.incrementAndGet())
             .rvcRef(intCount.incrementAndGet())
             .checkRef(UUID.randomUUID().toString())
             .checkNumber(intCount.incrementAndGet())

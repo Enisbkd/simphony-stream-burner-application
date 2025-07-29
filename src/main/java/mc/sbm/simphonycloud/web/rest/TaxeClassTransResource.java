@@ -69,7 +69,7 @@ public class TaxeClassTransResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<TaxeClassTrans> updateTaxeClassTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody TaxeClassTrans taxeClassTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to update TaxeClassTrans : {}, {}", id, taxeClassTrans);
@@ -103,7 +103,7 @@ public class TaxeClassTransResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<TaxeClassTrans> partialUpdateTaxeClassTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody TaxeClassTrans taxeClassTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update TaxeClassTrans partially : {}, {}", id, taxeClassTrans);
@@ -165,7 +165,7 @@ public class TaxeClassTransResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the taxeClassTrans, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<TaxeClassTrans> getTaxeClassTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<TaxeClassTrans> getTaxeClassTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get TaxeClassTrans : {}", id);
         Optional<TaxeClassTrans> taxeClassTrans = taxeClassTransRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(taxeClassTrans);
@@ -178,7 +178,7 @@ public class TaxeClassTransResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteTaxeClassTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteTaxeClassTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete TaxeClassTrans : {}", id);
         taxeClassTransRepository.deleteById(id);
         return ResponseEntity.noContent()

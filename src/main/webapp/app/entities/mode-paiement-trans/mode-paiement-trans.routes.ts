@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import ModePaiementTransResolve from './route/mode-paiement-trans-routing-resolve.service';
 
 const modePaiementTransRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/mode-paiement-trans.component').then(m => m.ModePaiementTransComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

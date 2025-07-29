@@ -17,7 +17,7 @@
       "detail": {
         "title": "Bar Code Trans"
       },
-      "id": "ID",
+      "id": "Id",
       "locRef": "Loc Ref",
       "rvcRef": "Rvc Ref",
       "barcodeId": "Barcode Id",

@@ -17,7 +17,7 @@
       "detail": {
         "title": "Guest Check BI"
       },
-      "id": "ID",
+      "id": "Id",
       "guestCheckId": "Guest Check Id",
       "chkNum": "Chk Num",
       "opnLcl": "Opn Lcl",

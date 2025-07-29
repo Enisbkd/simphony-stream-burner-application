@@ -72,7 +72,7 @@ public class PartieDeJourneeResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<PartieDeJournee> updatePartieDeJournee(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @Valid @RequestBody PartieDeJournee partieDeJournee
     ) throws URISyntaxException {
         LOG.debug("REST request to update PartieDeJournee : {}, {}", id, partieDeJournee);
@@ -106,7 +106,7 @@ public class PartieDeJourneeResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<PartieDeJournee> partialUpdatePartieDeJournee(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @NotNull @RequestBody PartieDeJournee partieDeJournee
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update PartieDeJournee partially : {}, {}", id, partieDeJournee);
@@ -162,7 +162,7 @@ public class PartieDeJourneeResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the partieDeJournee, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<PartieDeJournee> getPartieDeJournee(@PathVariable("id") Long id) {
+    public ResponseEntity<PartieDeJournee> getPartieDeJournee(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get PartieDeJournee : {}", id);
         Optional<PartieDeJournee> partieDeJournee = partieDeJourneeRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(partieDeJournee);
@@ -175,7 +175,7 @@ public class PartieDeJourneeResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePartieDeJournee(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deletePartieDeJournee(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete PartieDeJournee : {}", id);
         partieDeJourneeRepository.deleteById(id);
         return ResponseEntity.noContent()

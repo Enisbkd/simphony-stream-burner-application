@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import OrderTypeBIResolve from './route/order-type-bi-routing-resolve.service';
 
 const orderTypeBIRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/order-type-bi.component').then(m => m.OrderTypeBIComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

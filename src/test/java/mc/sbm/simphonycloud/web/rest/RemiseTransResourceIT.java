@@ -10,7 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import mc.sbm.simphonycloud.IntegrationTest;
 import mc.sbm.simphonycloud.domain.RemiseTrans;
 import mc.sbm.simphonycloud.repository.RemiseTransRepository;
@@ -60,7 +60,7 @@ class RemiseTransResourceIT {
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
     private static Random random = new Random();
-    private static AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+    private static AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     @Autowired
     private ObjectMapper om;
@@ -153,7 +153,7 @@ class RemiseTransResourceIT {
     @Transactional
     void createRemiseTransWithExistingId() throws Exception {
         // Create the RemiseTrans with an existing ID
-        remiseTrans.setId(1L);
+        remiseTrans.setId(1);
 
         long databaseSizeBeforeCreate = getRepositoryCount();
 
@@ -214,7 +214,7 @@ class RemiseTransResourceIT {
     @Transactional
     void getNonExistingRemiseTrans() throws Exception {
         // Get the remiseTrans
-        restRemiseTransMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
+        restRemiseTransMockMvc.perform(get(ENTITY_API_URL_ID, Integer.MAX_VALUE)).andExpect(status().isNotFound());
     }
 
     @Test
@@ -256,7 +256,7 @@ class RemiseTransResourceIT {
     @Transactional
     void putNonExistingRemiseTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        remiseTrans.setId(longCount.incrementAndGet());
+        remiseTrans.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restRemiseTransMockMvc
@@ -275,12 +275,12 @@ class RemiseTransResourceIT {
     @Transactional
     void putWithIdMismatchRemiseTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        remiseTrans.setId(longCount.incrementAndGet());
+        remiseTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restRemiseTransMockMvc
             .perform(
-                put(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                put(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(om.writeValueAsBytes(remiseTrans))
             )
@@ -294,7 +294,7 @@ class RemiseTransResourceIT {
     @Transactional
     void putWithMissingIdPathParamRemiseTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        remiseTrans.setId(longCount.incrementAndGet());
+        remiseTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restRemiseTransMockMvc
@@ -376,7 +376,7 @@ class RemiseTransResourceIT {
     @Transactional
     void patchNonExistingRemiseTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        remiseTrans.setId(longCount.incrementAndGet());
+        remiseTrans.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restRemiseTransMockMvc
@@ -395,12 +395,12 @@ class RemiseTransResourceIT {
     @Transactional
     void patchWithIdMismatchRemiseTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        remiseTrans.setId(longCount.incrementAndGet());
+        remiseTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restRemiseTransMockMvc
             .perform(
-                patch(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                patch(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType("application/merge-patch+json")
                     .content(om.writeValueAsBytes(remiseTrans))
             )
@@ -414,7 +414,7 @@ class RemiseTransResourceIT {
     @Transactional
     void patchWithMissingIdPathParamRemiseTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        remiseTrans.setId(longCount.incrementAndGet());
+        remiseTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restRemiseTransMockMvc

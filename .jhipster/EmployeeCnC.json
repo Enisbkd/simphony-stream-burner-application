@@ -6,6 +6,10 @@
   "entityTableName": "employee_cn_c",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "objectNum",
       "fieldType": "Integer"
     },

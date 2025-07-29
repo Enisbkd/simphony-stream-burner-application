@@ -23,7 +23,7 @@ public class DetailLineBI implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "id")
-    private Long id;
+    private Integer id;
 
     @Column(name = "guest_check_line_item_id")
     private Long guestCheckLineItemId;
@@ -109,16 +109,16 @@ public class DetailLineBI implements Serializable {
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
-    public Long getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public DetailLineBI id(Long id) {
+    public DetailLineBI id(Integer id) {
         this.setId(id);
         return this;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

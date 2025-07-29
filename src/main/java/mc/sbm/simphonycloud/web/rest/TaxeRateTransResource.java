@@ -69,7 +69,7 @@ public class TaxeRateTransResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<TaxeRateTrans> updateTaxeRateTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody TaxeRateTrans taxeRateTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to update TaxeRateTrans : {}, {}", id, taxeRateTrans);
@@ -103,7 +103,7 @@ public class TaxeRateTransResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<TaxeRateTrans> partialUpdateTaxeRateTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody TaxeRateTrans taxeRateTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update TaxeRateTrans partially : {}, {}", id, taxeRateTrans);
@@ -174,7 +174,7 @@ public class TaxeRateTransResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the taxeRateTrans, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<TaxeRateTrans> getTaxeRateTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<TaxeRateTrans> getTaxeRateTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get TaxeRateTrans : {}", id);
         Optional<TaxeRateTrans> taxeRateTrans = taxeRateTransRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(taxeRateTrans);
@@ -187,7 +187,7 @@ public class TaxeRateTransResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteTaxeRateTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteTaxeRateTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete TaxeRateTrans : {}", id);
         taxeRateTransRepository.deleteById(id);
         return ResponseEntity.noContent()

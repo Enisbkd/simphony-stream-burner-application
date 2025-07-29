@@ -10,7 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import mc.sbm.simphonycloud.IntegrationTest;
 import mc.sbm.simphonycloud.domain.PartieDeJournee;
 import mc.sbm.simphonycloud.repository.PartieDeJourneeRepository;
@@ -45,7 +45,7 @@ class PartieDeJourneeResourceIT {
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
     private static Random random = new Random();
-    private static AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+    private static AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     @Autowired
     private ObjectMapper om;
@@ -122,7 +122,7 @@ class PartieDeJourneeResourceIT {
     @Transactional
     void createPartieDeJourneeWithExistingId() throws Exception {
         // Create the PartieDeJournee with an existing ID
-        partieDeJournee.setId(1L);
+        partieDeJournee.setId(1);
 
         long databaseSizeBeforeCreate = getRepositoryCount();
 
@@ -189,7 +189,7 @@ class PartieDeJourneeResourceIT {
     @Transactional
     void getNonExistingPartieDeJournee() throws Exception {
         // Get the partieDeJournee
-        restPartieDeJourneeMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
+        restPartieDeJourneeMockMvc.perform(get(ENTITY_API_URL_ID, Integer.MAX_VALUE)).andExpect(status().isNotFound());
     }
 
     @Test
@@ -223,7 +223,7 @@ class PartieDeJourneeResourceIT {
     @Transactional
     void putNonExistingPartieDeJournee() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        partieDeJournee.setId(longCount.incrementAndGet());
+        partieDeJournee.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restPartieDeJourneeMockMvc
@@ -242,12 +242,12 @@ class PartieDeJourneeResourceIT {
     @Transactional
     void putWithIdMismatchPartieDeJournee() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        partieDeJournee.setId(longCount.incrementAndGet());
+        partieDeJournee.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restPartieDeJourneeMockMvc
             .perform(
-                put(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                put(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(om.writeValueAsBytes(partieDeJournee))
             )
@@ -261,7 +261,7 @@ class PartieDeJourneeResourceIT {
     @Transactional
     void putWithMissingIdPathParamPartieDeJournee() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        partieDeJournee.setId(longCount.incrementAndGet());
+        partieDeJournee.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restPartieDeJourneeMockMvc
@@ -338,7 +338,7 @@ class PartieDeJourneeResourceIT {
     @Transactional
     void patchNonExistingPartieDeJournee() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        partieDeJournee.setId(longCount.incrementAndGet());
+        partieDeJournee.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restPartieDeJourneeMockMvc
@@ -357,12 +357,12 @@ class PartieDeJourneeResourceIT {
     @Transactional
     void patchWithIdMismatchPartieDeJournee() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        partieDeJournee.setId(longCount.incrementAndGet());
+        partieDeJournee.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restPartieDeJourneeMockMvc
             .perform(
-                patch(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                patch(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType("application/merge-patch+json")
                     .content(om.writeValueAsBytes(partieDeJournee))
             )
@@ -376,7 +376,7 @@ class PartieDeJourneeResourceIT {
     @Transactional
     void patchWithMissingIdPathParamPartieDeJournee() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        partieDeJournee.setId(longCount.incrementAndGet());
+        partieDeJournee.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restPartieDeJourneeMockMvc

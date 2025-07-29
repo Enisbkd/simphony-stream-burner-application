@@ -71,7 +71,7 @@ public class OrganizationLocationTransResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<OrganizationLocationTrans> updateOrganizationLocationTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody OrganizationLocationTrans organizationLocationTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to update OrganizationLocationTrans : {}, {}", id, organizationLocationTrans);
@@ -105,7 +105,7 @@ public class OrganizationLocationTransResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<OrganizationLocationTrans> partialUpdateOrganizationLocationTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody OrganizationLocationTrans organizationLocationTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update OrganizationLocationTrans partially : {}, {}", id, organizationLocationTrans);
@@ -215,7 +215,7 @@ public class OrganizationLocationTransResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the organizationLocationTrans, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<OrganizationLocationTrans> getOrganizationLocationTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<OrganizationLocationTrans> getOrganizationLocationTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get OrganizationLocationTrans : {}", id);
         Optional<OrganizationLocationTrans> organizationLocationTrans = organizationLocationTransRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(organizationLocationTrans);
@@ -228,7 +228,7 @@ public class OrganizationLocationTransResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteOrganizationLocationTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteOrganizationLocationTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete OrganizationLocationTrans : {}", id);
         organizationLocationTransRepository.deleteById(id);
         return ResponseEntity.noContent()

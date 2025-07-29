@@ -70,7 +70,7 @@ public class ModePaiementTransResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<ModePaiementTrans> updateModePaiementTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody ModePaiementTrans modePaiementTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to update ModePaiementTrans : {}, {}", id, modePaiementTrans);
@@ -104,7 +104,7 @@ public class ModePaiementTransResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<ModePaiementTrans> partialUpdateModePaiementTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody ModePaiementTrans modePaiementTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update ModePaiementTrans partially : {}, {}", id, modePaiementTrans);
@@ -172,7 +172,7 @@ public class ModePaiementTransResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the modePaiementTrans, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<ModePaiementTrans> getModePaiementTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<ModePaiementTrans> getModePaiementTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get ModePaiementTrans : {}", id);
         Optional<ModePaiementTrans> modePaiementTrans = modePaiementTransRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(modePaiementTrans);
@@ -185,7 +185,7 @@ public class ModePaiementTransResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteModePaiementTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteModePaiementTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete ModePaiementTrans : {}", id);
         modePaiementTransRepository.deleteById(id);
         return ResponseEntity.noContent()

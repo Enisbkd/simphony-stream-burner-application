@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface LocationCnCRepository extends JpaRepository<LocationCnC, Long> {}
+public interface LocationCnCRepository extends JpaRepository<LocationCnC, Integer> {}

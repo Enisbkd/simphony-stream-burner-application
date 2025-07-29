@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import EmployeeCnCResolve from './route/employee-cn-c-routing-resolve.service';
 
 const employeeCnCRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/employee-cn-c.component').then(m => m.EmployeeCnCComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

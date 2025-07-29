@@ -11,7 +11,7 @@
     -->
     <changeSet id="20250729124419-1" author="jhipster">
         <createTable tableName="check_trans">
-            <column name="id" type="bigint">
+            <column name="id" type="integer">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="rvc_ref" type="integer">

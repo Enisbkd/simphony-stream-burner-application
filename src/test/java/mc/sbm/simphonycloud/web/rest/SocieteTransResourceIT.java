@@ -10,7 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import mc.sbm.simphonycloud.IntegrationTest;
 import mc.sbm.simphonycloud.domain.SocieteTrans;
 import mc.sbm.simphonycloud.repository.SocieteTransRepository;
@@ -42,7 +42,7 @@ class SocieteTransResourceIT {
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
     private static Random random = new Random();
-    private static AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+    private static AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     @Autowired
     private ObjectMapper om;
@@ -119,7 +119,7 @@ class SocieteTransResourceIT {
     @Transactional
     void createSocieteTransWithExistingId() throws Exception {
         // Create the SocieteTrans with an existing ID
-        societeTrans.setId(1L);
+        societeTrans.setId(1);
 
         long databaseSizeBeforeCreate = getRepositoryCount();
 
@@ -168,7 +168,7 @@ class SocieteTransResourceIT {
     @Transactional
     void getNonExistingSocieteTrans() throws Exception {
         // Get the societeTrans
-        restSocieteTransMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
+        restSocieteTransMockMvc.perform(get(ENTITY_API_URL_ID, Integer.MAX_VALUE)).andExpect(status().isNotFound());
     }
 
     @Test
@@ -202,7 +202,7 @@ class SocieteTransResourceIT {
     @Transactional
     void putNonExistingSocieteTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        societeTrans.setId(longCount.incrementAndGet());
+        societeTrans.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restSocieteTransMockMvc
@@ -221,12 +221,12 @@ class SocieteTransResourceIT {
     @Transactional
     void putWithIdMismatchSocieteTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        societeTrans.setId(longCount.incrementAndGet());
+        societeTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restSocieteTransMockMvc
             .perform(
-                put(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                put(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(om.writeValueAsBytes(societeTrans))
             )
@@ -240,7 +240,7 @@ class SocieteTransResourceIT {
     @Transactional
     void putWithMissingIdPathParamSocieteTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        societeTrans.setId(longCount.incrementAndGet());
+        societeTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restSocieteTransMockMvc
@@ -314,7 +314,7 @@ class SocieteTransResourceIT {
     @Transactional
     void patchNonExistingSocieteTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        societeTrans.setId(longCount.incrementAndGet());
+        societeTrans.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restSocieteTransMockMvc
@@ -333,12 +333,12 @@ class SocieteTransResourceIT {
     @Transactional
     void patchWithIdMismatchSocieteTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        societeTrans.setId(longCount.incrementAndGet());
+        societeTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restSocieteTransMockMvc
             .perform(
-                patch(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                patch(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType("application/merge-patch+json")
                     .content(om.writeValueAsBytes(societeTrans))
             )
@@ -352,7 +352,7 @@ class SocieteTransResourceIT {
     @Transactional
     void patchWithMissingIdPathParamSocieteTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        societeTrans.setId(longCount.incrementAndGet());
+        societeTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restSocieteTransMockMvc

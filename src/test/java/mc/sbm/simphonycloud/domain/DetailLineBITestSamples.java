@@ -13,7 +13,7 @@ public class DetailLineBITestSamples {
 
     public static DetailLineBI getDetailLineBISample1() {
         return new DetailLineBI()
-            .id(1L)
+            .id(1)
             .guestCheckLineItemId(1L)
             .seatNum(1)
             .prcLvl(1)
@@ -36,7 +36,7 @@ public class DetailLineBITestSamples {
 
     public static DetailLineBI getDetailLineBISample2() {
         return new DetailLineBI()
-            .id(2L)
+            .id(2)
             .guestCheckLineItemId(2L)
             .seatNum(2)
             .prcLvl(2)
@@ -59,7 +59,7 @@ public class DetailLineBITestSamples {
 
     public static DetailLineBI getDetailLineBIRandomSampleGenerator() {
         return new DetailLineBI()
-            .id(longCount.incrementAndGet())
+            .id(intCount.incrementAndGet())
             .guestCheckLineItemId(longCount.incrementAndGet())
             .seatNum(intCount.incrementAndGet())
             .prcLvl(intCount.incrementAndGet())

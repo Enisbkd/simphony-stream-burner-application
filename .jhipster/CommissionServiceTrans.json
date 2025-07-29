@@ -5,6 +5,10 @@
   "applications": "*",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "orgShortName",
       "fieldType": "String"
     },

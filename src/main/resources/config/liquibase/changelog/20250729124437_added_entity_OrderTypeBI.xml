@@ -11,7 +11,7 @@
     -->
     <changeSet id="20250729124437-1" author="jhipster">
         <createTable tableName="order_type_bi">
-            <column name="id" type="bigint">
+            <column name="id" type="integer">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="num" type="integer">

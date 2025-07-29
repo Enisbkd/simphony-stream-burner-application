@@ -70,7 +70,7 @@ public class CommissionServiceTransResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<CommissionServiceTrans> updateCommissionServiceTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody CommissionServiceTrans commissionServiceTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to update CommissionServiceTrans : {}, {}", id, commissionServiceTrans);
@@ -104,7 +104,7 @@ public class CommissionServiceTransResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<CommissionServiceTrans> partialUpdateCommissionServiceTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody CommissionServiceTrans commissionServiceTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update CommissionServiceTrans partially : {}, {}", id, commissionServiceTrans);
@@ -172,7 +172,7 @@ public class CommissionServiceTransResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the commissionServiceTrans, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<CommissionServiceTrans> getCommissionServiceTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<CommissionServiceTrans> getCommissionServiceTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get CommissionServiceTrans : {}", id);
         Optional<CommissionServiceTrans> commissionServiceTrans = commissionServiceTransRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(commissionServiceTrans);
@@ -185,7 +185,7 @@ public class CommissionServiceTransResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCommissionServiceTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteCommissionServiceTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete CommissionServiceTrans : {}", id);
         commissionServiceTransRepository.deleteById(id);
         return ResponseEntity.noContent()

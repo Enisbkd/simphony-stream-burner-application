@@ -6,6 +6,10 @@
   "entityTableName": "commission_service_bi",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "nom",
       "fieldType": "String"
     },

@@ -70,7 +70,7 @@ public class MenuItemMastersCnCResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<MenuItemMastersCnC> updateMenuItemMastersCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody MenuItemMastersCnC menuItemMastersCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to update MenuItemMastersCnC : {}, {}", id, menuItemMastersCnC);
@@ -104,7 +104,7 @@ public class MenuItemMastersCnCResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<MenuItemMastersCnC> partialUpdateMenuItemMastersCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody MenuItemMastersCnC menuItemMastersCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update MenuItemMastersCnC partially : {}, {}", id, menuItemMastersCnC);
@@ -178,7 +178,7 @@ public class MenuItemMastersCnCResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the menuItemMastersCnC, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<MenuItemMastersCnC> getMenuItemMastersCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<MenuItemMastersCnC> getMenuItemMastersCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get MenuItemMastersCnC : {}", id);
         Optional<MenuItemMastersCnC> menuItemMastersCnC = menuItemMastersCnCRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(menuItemMastersCnC);
@@ -191,7 +191,7 @@ public class MenuItemMastersCnCResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMenuItemMastersCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteMenuItemMastersCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete MenuItemMastersCnC : {}", id);
         menuItemMastersCnCRepository.deleteById(id);
         return ResponseEntity.noContent()

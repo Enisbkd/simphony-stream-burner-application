@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import CodeRaisonBIResolve from './route/code-raison-bi-routing-resolve.service';
 
 const codeRaisonBIRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/code-raison-bi.component').then(m => m.CodeRaisonBIComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

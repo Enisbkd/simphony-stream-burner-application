@@ -12,7 +12,7 @@ import jakarta.persistence.EntityManager;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import mc.sbm.simphonycloud.IntegrationTest;
 import mc.sbm.simphonycloud.domain.HttpCallAudit;
 import mc.sbm.simphonycloud.repository.HttpCallAuditRepository;
@@ -116,7 +116,7 @@ class HttpCallAuditResourceIT {
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
     private static Random random = new Random();
-    private static AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+    private static AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     @Autowired
     private ObjectMapper om;
@@ -245,7 +245,7 @@ class HttpCallAuditResourceIT {
     @Transactional
     void createHttpCallAuditWithExistingId() throws Exception {
         // Create the HttpCallAudit with an existing ID
-        httpCallAudit.setId(1L);
+        httpCallAudit.setId(1);
 
         long databaseSizeBeforeCreate = getRepositoryCount();
 
@@ -438,7 +438,7 @@ class HttpCallAuditResourceIT {
     @Transactional
     void getNonExistingHttpCallAudit() throws Exception {
         // Get the httpCallAudit
-        restHttpCallAuditMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
+        restHttpCallAuditMockMvc.perform(get(ENTITY_API_URL_ID, Integer.MAX_VALUE)).andExpect(status().isNotFound());
     }
 
     @Test
@@ -498,7 +498,7 @@ class HttpCallAuditResourceIT {
     @Transactional
     void putNonExistingHttpCallAudit() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        httpCallAudit.setId(longCount.incrementAndGet());
+        httpCallAudit.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restHttpCallAuditMockMvc
@@ -517,12 +517,12 @@ class HttpCallAuditResourceIT {
     @Transactional
     void putWithIdMismatchHttpCallAudit() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        httpCallAudit.setId(longCount.incrementAndGet());
+        httpCallAudit.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restHttpCallAuditMockMvc
             .perform(
-                put(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                put(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(om.writeValueAsBytes(httpCallAudit))
             )
@@ -536,7 +536,7 @@ class HttpCallAuditResourceIT {
     @Transactional
     void putWithMissingIdPathParamHttpCallAudit() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        httpCallAudit.setId(longCount.incrementAndGet());
+        httpCallAudit.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restHttpCallAuditMockMvc
@@ -649,7 +649,7 @@ class HttpCallAuditResourceIT {
     @Transactional
     void patchNonExistingHttpCallAudit() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        httpCallAudit.setId(longCount.incrementAndGet());
+        httpCallAudit.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restHttpCallAuditMockMvc
@@ -668,12 +668,12 @@ class HttpCallAuditResourceIT {
     @Transactional
     void patchWithIdMismatchHttpCallAudit() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        httpCallAudit.setId(longCount.incrementAndGet());
+        httpCallAudit.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restHttpCallAuditMockMvc
             .perform(
-                patch(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                patch(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType("application/merge-patch+json")
                     .content(om.writeValueAsBytes(httpCallAudit))
             )
@@ -687,7 +687,7 @@ class HttpCallAuditResourceIT {
     @Transactional
     void patchWithMissingIdPathParamHttpCallAudit() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        httpCallAudit.setId(longCount.incrementAndGet());
+        httpCallAudit.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restHttpCallAuditMockMvc

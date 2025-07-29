@@ -11,7 +11,7 @@
     -->
     <changeSet id="20250729124423-1" author="jhipster">
         <createTable tableName="detail_line_bi">
-            <column name="id" type="bigint">
+            <column name="id" type="integer">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="guest_check_line_item_id" type="bigint">
@@ -92,7 +92,7 @@
             <column name="mi_num" type="integer">
                 <constraints nullable="true" />
             </column>
-            <column name="guest_checkbi_id" type="bigint">
+            <column name="guest_checkbi_id" type="integer">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->

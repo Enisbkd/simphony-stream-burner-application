@@ -5,6 +5,10 @@
   "applications": "*",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "correlationId",
       "fieldType": "String",
       "fieldValidateRules": ["required"]

@@ -3,17 +3,15 @@ package mc.sbm.simphonycloud.domain;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class ModePaiementTransTestSamples {
 
     private static final Random random = new Random();
-    private static final AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
     private static final AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     public static ModePaiementTrans getModePaiementTransSample1() {
         return new ModePaiementTrans()
-            .id(1L)
+            .id(1)
             .tenderId(1)
             .name("name1")
             .type("type1")
@@ -25,7 +23,7 @@ public class ModePaiementTransTestSamples {
 
     public static ModePaiementTrans getModePaiementTransSample2() {
         return new ModePaiementTrans()
-            .id(2L)
+            .id(2)
             .tenderId(2)
             .name("name2")
             .type("type2")
@@ -37,7 +35,7 @@ public class ModePaiementTransTestSamples {
 
     public static ModePaiementTrans getModePaiementTransRandomSampleGenerator() {
         return new ModePaiementTrans()
-            .id(longCount.incrementAndGet())
+            .id(intCount.incrementAndGet())
             .tenderId(intCount.incrementAndGet())
             .name(UUID.randomUUID().toString())
             .type(UUID.randomUUID().toString())

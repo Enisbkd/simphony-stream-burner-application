@@ -10,7 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import mc.sbm.simphonycloud.IntegrationTest;
 import mc.sbm.simphonycloud.domain.ModePaiementBI;
 import mc.sbm.simphonycloud.repository.ModePaiementBIRepository;
@@ -48,7 +48,7 @@ class ModePaiementBIResourceIT {
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
     private static Random random = new Random();
-    private static AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+    private static AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     @Autowired
     private ObjectMapper om;
@@ -125,7 +125,7 @@ class ModePaiementBIResourceIT {
     @Transactional
     void createModePaiementBIWithExistingId() throws Exception {
         // Create the ModePaiementBI with an existing ID
-        modePaiementBI.setId(1L);
+        modePaiementBI.setId(1);
 
         long databaseSizeBeforeCreate = getRepositoryCount();
 
@@ -178,7 +178,7 @@ class ModePaiementBIResourceIT {
     @Transactional
     void getNonExistingModePaiementBI() throws Exception {
         // Get the modePaiementBI
-        restModePaiementBIMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
+        restModePaiementBIMockMvc.perform(get(ENTITY_API_URL_ID, Integer.MAX_VALUE)).andExpect(status().isNotFound());
     }
 
     @Test
@@ -212,7 +212,7 @@ class ModePaiementBIResourceIT {
     @Transactional
     void putNonExistingModePaiementBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        modePaiementBI.setId(longCount.incrementAndGet());
+        modePaiementBI.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restModePaiementBIMockMvc
@@ -231,12 +231,12 @@ class ModePaiementBIResourceIT {
     @Transactional
     void putWithIdMismatchModePaiementBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        modePaiementBI.setId(longCount.incrementAndGet());
+        modePaiementBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restModePaiementBIMockMvc
             .perform(
-                put(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                put(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(om.writeValueAsBytes(modePaiementBI))
             )
@@ -250,7 +250,7 @@ class ModePaiementBIResourceIT {
     @Transactional
     void putWithMissingIdPathParamModePaiementBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        modePaiementBI.setId(longCount.incrementAndGet());
+        modePaiementBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restModePaiementBIMockMvc
@@ -324,7 +324,7 @@ class ModePaiementBIResourceIT {
     @Transactional
     void patchNonExistingModePaiementBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        modePaiementBI.setId(longCount.incrementAndGet());
+        modePaiementBI.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restModePaiementBIMockMvc
@@ -343,12 +343,12 @@ class ModePaiementBIResourceIT {
     @Transactional
     void patchWithIdMismatchModePaiementBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        modePaiementBI.setId(longCount.incrementAndGet());
+        modePaiementBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restModePaiementBIMockMvc
             .perform(
-                patch(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                patch(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType("application/merge-patch+json")
                     .content(om.writeValueAsBytes(modePaiementBI))
             )
@@ -362,7 +362,7 @@ class ModePaiementBIResourceIT {
     @Transactional
     void patchWithMissingIdPathParamModePaiementBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        modePaiementBI.setId(longCount.incrementAndGet());
+        modePaiementBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restModePaiementBIMockMvc

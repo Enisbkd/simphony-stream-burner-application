@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import SocieteTransResolve from './route/societe-trans-routing-resolve.service';
 
 const societeTransRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/societe-trans.component').then(m => m.SocieteTransComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import PointDeVenteCnCResolve from './route/point-de-vente-cn-c-routing-resolve.service';
 
 const pointDeVenteCnCRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/point-de-vente-cn-c.component').then(m => m.PointDeVenteCnCComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

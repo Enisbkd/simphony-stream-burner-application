@@ -6,6 +6,10 @@
   "entityTableName": "order_type_bi",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "num",
       "fieldType": "Integer"
     },

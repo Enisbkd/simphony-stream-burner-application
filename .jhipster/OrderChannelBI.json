@@ -6,6 +6,10 @@
   "entityTableName": "order_channel_bi",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "num",
       "fieldType": "Integer"
     },

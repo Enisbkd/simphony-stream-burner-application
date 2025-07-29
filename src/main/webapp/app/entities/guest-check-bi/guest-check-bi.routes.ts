@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import GuestCheckBIResolve from './route/guest-check-bi-routing-resolve.service';
 
 const guestCheckBIRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/guest-check-bi.component').then(m => m.GuestCheckBIComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

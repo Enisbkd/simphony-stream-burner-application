@@ -10,7 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import mc.sbm.simphonycloud.IntegrationTest;
 import mc.sbm.simphonycloud.domain.PointDeVenteTrans;
 import mc.sbm.simphonycloud.repository.PointDeVenteTransRepository;
@@ -51,7 +51,7 @@ class PointDeVenteTransResourceIT {
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
     private static Random random = new Random();
-    private static AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+    private static AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     @Autowired
     private ObjectMapper om;
@@ -138,7 +138,7 @@ class PointDeVenteTransResourceIT {
     @Transactional
     void createPointDeVenteTransWithExistingId() throws Exception {
         // Create the PointDeVenteTrans with an existing ID
-        pointDeVenteTrans.setId(1L);
+        pointDeVenteTrans.setId(1);
 
         long databaseSizeBeforeCreate = getRepositoryCount();
 
@@ -193,7 +193,7 @@ class PointDeVenteTransResourceIT {
     @Transactional
     void getNonExistingPointDeVenteTrans() throws Exception {
         // Get the pointDeVenteTrans
-        restPointDeVenteTransMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
+        restPointDeVenteTransMockMvc.perform(get(ENTITY_API_URL_ID, Integer.MAX_VALUE)).andExpect(status().isNotFound());
     }
 
     @Test
@@ -232,7 +232,7 @@ class PointDeVenteTransResourceIT {
     @Transactional
     void putNonExistingPointDeVenteTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        pointDeVenteTrans.setId(longCount.incrementAndGet());
+        pointDeVenteTrans.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restPointDeVenteTransMockMvc
@@ -251,12 +251,12 @@ class PointDeVenteTransResourceIT {
     @Transactional
     void putWithIdMismatchPointDeVenteTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        pointDeVenteTrans.setId(longCount.incrementAndGet());
+        pointDeVenteTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restPointDeVenteTransMockMvc
             .perform(
-                put(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                put(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(om.writeValueAsBytes(pointDeVenteTrans))
             )
@@ -270,7 +270,7 @@ class PointDeVenteTransResourceIT {
     @Transactional
     void putWithMissingIdPathParamPointDeVenteTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        pointDeVenteTrans.setId(longCount.incrementAndGet());
+        pointDeVenteTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restPointDeVenteTransMockMvc
@@ -352,7 +352,7 @@ class PointDeVenteTransResourceIT {
     @Transactional
     void patchNonExistingPointDeVenteTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        pointDeVenteTrans.setId(longCount.incrementAndGet());
+        pointDeVenteTrans.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restPointDeVenteTransMockMvc
@@ -371,12 +371,12 @@ class PointDeVenteTransResourceIT {
     @Transactional
     void patchWithIdMismatchPointDeVenteTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        pointDeVenteTrans.setId(longCount.incrementAndGet());
+        pointDeVenteTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restPointDeVenteTransMockMvc
             .perform(
-                patch(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                patch(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType("application/merge-patch+json")
                     .content(om.writeValueAsBytes(pointDeVenteTrans))
             )
@@ -390,7 +390,7 @@ class PointDeVenteTransResourceIT {
     @Transactional
     void patchWithMissingIdPathParamPointDeVenteTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        pointDeVenteTrans.setId(longCount.incrementAndGet());
+        pointDeVenteTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restPointDeVenteTransMockMvc

@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import TaxeBIResolve from './route/taxe-bi-routing-resolve.service';
 
 const taxeBIRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/taxe-bi.component').then(m => m.TaxeBIComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

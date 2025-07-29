@@ -3,17 +3,15 @@ package mc.sbm.simphonycloud.domain;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class OrganizationLocationTransTestSamples {
 
     private static final Random random = new Random();
-    private static final AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
     private static final AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     public static OrganizationLocationTrans getOrganizationLocationTransSample1() {
         return new OrganizationLocationTrans()
-            .id(1L)
+            .id(1)
             .orgShortName("orgShortName1")
             .locRef("locRef1")
             .name("name1")
@@ -37,7 +35,7 @@ public class OrganizationLocationTransTestSamples {
 
     public static OrganizationLocationTrans getOrganizationLocationTransSample2() {
         return new OrganizationLocationTrans()
-            .id(2L)
+            .id(2)
             .orgShortName("orgShortName2")
             .locRef("locRef2")
             .name("name2")
@@ -61,7 +59,7 @@ public class OrganizationLocationTransTestSamples {
 
     public static OrganizationLocationTrans getOrganizationLocationTransRandomSampleGenerator() {
         return new OrganizationLocationTrans()
-            .id(longCount.incrementAndGet())
+            .id(intCount.incrementAndGet())
             .orgShortName(UUID.randomUUID().toString())
             .locRef(UUID.randomUUID().toString())
             .name(UUID.randomUUID().toString())

@@ -17,7 +17,7 @@
       "detail": {
         "title": "Partie De Journee"
       },
-      "id": "ID",
+      "id": "Id",
       "timeRangeStart": "Time Range Start",
       "timeRangeEnd": "Time Range End",
       "nom": "Nom"

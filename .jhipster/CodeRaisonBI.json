@@ -6,6 +6,10 @@
   "entityTableName": "code_raison_bi",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "nomCourt",
       "fieldType": "Integer",
       "fieldValidateRules": ["required"]

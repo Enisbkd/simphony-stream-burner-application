@@ -71,7 +71,7 @@ public class HierarchieCnCResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<HierarchieCnC> updateHierarchieCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @Valid @RequestBody HierarchieCnC hierarchieCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to update HierarchieCnC : {}, {}", id, hierarchieCnC);
@@ -105,7 +105,7 @@ public class HierarchieCnCResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<HierarchieCnC> partialUpdateHierarchieCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @NotNull @RequestBody HierarchieCnC hierarchieCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update HierarchieCnC partially : {}, {}", id, hierarchieCnC);
@@ -161,7 +161,7 @@ public class HierarchieCnCResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the hierarchieCnC, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<HierarchieCnC> getHierarchieCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<HierarchieCnC> getHierarchieCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get HierarchieCnC : {}", id);
         Optional<HierarchieCnC> hierarchieCnC = hierarchieCnCRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(hierarchieCnC);
@@ -174,7 +174,7 @@ public class HierarchieCnCResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteHierarchieCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteHierarchieCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete HierarchieCnC : {}", id);
         hierarchieCnCRepository.deleteById(id);
         return ResponseEntity.noContent()

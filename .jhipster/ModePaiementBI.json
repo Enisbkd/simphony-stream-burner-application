@@ -6,6 +6,10 @@
   "entityTableName": "mode_paiement_bi",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "locRef",
       "fieldType": "String"
     },

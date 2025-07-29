@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
 import java.math.BigDecimal;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import mc.sbm.simphonycloud.IntegrationTest;
 import mc.sbm.simphonycloud.domain.OrganizationLocationTrans;
 import mc.sbm.simphonycloud.repository.OrganizationLocationTransRepository;
@@ -101,7 +101,7 @@ class OrganizationLocationTransResourceIT {
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
     private static Random random = new Random();
-    private static AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+    private static AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     @Autowired
     private ObjectMapper om;
@@ -225,7 +225,7 @@ class OrganizationLocationTransResourceIT {
     @Transactional
     void createOrganizationLocationTransWithExistingId() throws Exception {
         // Create the OrganizationLocationTrans with an existing ID
-        organizationLocationTrans.setId(1L);
+        organizationLocationTrans.setId(1);
 
         long databaseSizeBeforeCreate = getRepositoryCount();
 
@@ -312,7 +312,7 @@ class OrganizationLocationTransResourceIT {
     @Transactional
     void getNonExistingOrganizationLocationTrans() throws Exception {
         // Get the organizationLocationTrans
-        restOrganizationLocationTransMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
+        restOrganizationLocationTransMockMvc.perform(get(ENTITY_API_URL_ID, Integer.MAX_VALUE)).andExpect(status().isNotFound());
     }
 
     @Test
@@ -369,7 +369,7 @@ class OrganizationLocationTransResourceIT {
     @Transactional
     void putNonExistingOrganizationLocationTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        organizationLocationTrans.setId(longCount.incrementAndGet());
+        organizationLocationTrans.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restOrganizationLocationTransMockMvc
@@ -388,12 +388,12 @@ class OrganizationLocationTransResourceIT {
     @Transactional
     void putWithIdMismatchOrganizationLocationTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        organizationLocationTrans.setId(longCount.incrementAndGet());
+        organizationLocationTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restOrganizationLocationTransMockMvc
             .perform(
-                put(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                put(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(om.writeValueAsBytes(organizationLocationTrans))
             )
@@ -407,7 +407,7 @@ class OrganizationLocationTransResourceIT {
     @Transactional
     void putWithMissingIdPathParamOrganizationLocationTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        organizationLocationTrans.setId(longCount.incrementAndGet());
+        organizationLocationTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restOrganizationLocationTransMockMvc
@@ -514,7 +514,7 @@ class OrganizationLocationTransResourceIT {
     @Transactional
     void patchNonExistingOrganizationLocationTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        organizationLocationTrans.setId(longCount.incrementAndGet());
+        organizationLocationTrans.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restOrganizationLocationTransMockMvc
@@ -533,12 +533,12 @@ class OrganizationLocationTransResourceIT {
     @Transactional
     void patchWithIdMismatchOrganizationLocationTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        organizationLocationTrans.setId(longCount.incrementAndGet());
+        organizationLocationTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restOrganizationLocationTransMockMvc
             .perform(
-                patch(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                patch(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType("application/merge-patch+json")
                     .content(om.writeValueAsBytes(organizationLocationTrans))
             )
@@ -552,7 +552,7 @@ class OrganizationLocationTransResourceIT {
     @Transactional
     void patchWithMissingIdPathParamOrganizationLocationTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        organizationLocationTrans.setId(longCount.incrementAndGet());
+        organizationLocationTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restOrganizationLocationTransMockMvc

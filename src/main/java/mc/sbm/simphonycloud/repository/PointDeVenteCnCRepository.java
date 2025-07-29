@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface PointDeVenteCnCRepository extends JpaRepository<PointDeVenteCnC, Long> {}
+public interface PointDeVenteCnCRepository extends JpaRepository<PointDeVenteCnC, Integer> {}

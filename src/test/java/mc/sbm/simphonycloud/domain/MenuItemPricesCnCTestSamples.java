@@ -13,7 +13,7 @@ public class MenuItemPricesCnCTestSamples {
 
     public static MenuItemPricesCnC getMenuItemPricesCnCSample1() {
         return new MenuItemPricesCnC()
-            .id(1L)
+            .id(1)
             .hierUnitId(1L)
             .menuItemPriceId(1L)
             .menuItemMasterId(1L)
@@ -30,7 +30,7 @@ public class MenuItemPricesCnCTestSamples {
 
     public static MenuItemPricesCnC getMenuItemPricesCnCSample2() {
         return new MenuItemPricesCnC()
-            .id(2L)
+            .id(2)
             .hierUnitId(2L)
             .menuItemPriceId(2L)
             .menuItemMasterId(2L)
@@ -47,7 +47,7 @@ public class MenuItemPricesCnCTestSamples {
 
     public static MenuItemPricesCnC getMenuItemPricesCnCRandomSampleGenerator() {
         return new MenuItemPricesCnC()
-            .id(longCount.incrementAndGet())
+            .id(intCount.incrementAndGet())
             .hierUnitId(longCount.incrementAndGet())
             .menuItemPriceId(longCount.incrementAndGet())
             .menuItemMasterId(longCount.incrementAndGet())

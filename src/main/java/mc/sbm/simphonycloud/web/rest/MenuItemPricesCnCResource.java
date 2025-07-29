@@ -70,7 +70,7 @@ public class MenuItemPricesCnCResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<MenuItemPricesCnC> updateMenuItemPricesCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody MenuItemPricesCnC menuItemPricesCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to update MenuItemPricesCnC : {}, {}", id, menuItemPricesCnC);
@@ -104,7 +104,7 @@ public class MenuItemPricesCnCResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<MenuItemPricesCnC> partialUpdateMenuItemPricesCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody MenuItemPricesCnC menuItemPricesCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update MenuItemPricesCnC partially : {}, {}", id, menuItemPricesCnC);
@@ -193,7 +193,7 @@ public class MenuItemPricesCnCResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the menuItemPricesCnC, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<MenuItemPricesCnC> getMenuItemPricesCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<MenuItemPricesCnC> getMenuItemPricesCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get MenuItemPricesCnC : {}", id);
         Optional<MenuItemPricesCnC> menuItemPricesCnC = menuItemPricesCnCRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(menuItemPricesCnC);
@@ -206,7 +206,7 @@ public class MenuItemPricesCnCResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMenuItemPricesCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteMenuItemPricesCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete MenuItemPricesCnC : {}", id);
         menuItemPricesCnCRepository.deleteById(id);
         return ResponseEntity.noContent()

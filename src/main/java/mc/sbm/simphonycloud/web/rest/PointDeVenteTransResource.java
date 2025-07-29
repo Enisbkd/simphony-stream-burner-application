@@ -70,7 +70,7 @@ public class PointDeVenteTransResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<PointDeVenteTrans> updatePointDeVenteTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody PointDeVenteTrans pointDeVenteTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to update PointDeVenteTrans : {}, {}", id, pointDeVenteTrans);
@@ -104,7 +104,7 @@ public class PointDeVenteTransResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<PointDeVenteTrans> partialUpdatePointDeVenteTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody PointDeVenteTrans pointDeVenteTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update PointDeVenteTrans partially : {}, {}", id, pointDeVenteTrans);
@@ -166,7 +166,7 @@ public class PointDeVenteTransResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the pointDeVenteTrans, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<PointDeVenteTrans> getPointDeVenteTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<PointDeVenteTrans> getPointDeVenteTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get PointDeVenteTrans : {}", id);
         Optional<PointDeVenteTrans> pointDeVenteTrans = pointDeVenteTransRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(pointDeVenteTrans);
@@ -179,7 +179,7 @@ public class PointDeVenteTransResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePointDeVenteTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deletePointDeVenteTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete PointDeVenteTrans : {}", id);
         pointDeVenteTransRepository.deleteById(id);
         return ResponseEntity.noContent()

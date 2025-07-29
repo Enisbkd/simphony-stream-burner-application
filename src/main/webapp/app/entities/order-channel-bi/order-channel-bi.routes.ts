@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import OrderChannelBIResolve from './route/order-channel-bi-routing-resolve.service';
 
 const orderChannelBIRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/order-channel-bi.component').then(m => m.OrderChannelBIComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

@@ -70,7 +70,7 @@ public class MenuItemDefinitionsCnCResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<MenuItemDefinitionsCnC> updateMenuItemDefinitionsCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody MenuItemDefinitionsCnC menuItemDefinitionsCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to update MenuItemDefinitionsCnC : {}, {}", id, menuItemDefinitionsCnC);
@@ -104,7 +104,7 @@ public class MenuItemDefinitionsCnCResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<MenuItemDefinitionsCnC> partialUpdateMenuItemDefinitionsCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody MenuItemDefinitionsCnC menuItemDefinitionsCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update MenuItemDefinitionsCnC partially : {}, {}", id, menuItemDefinitionsCnC);
@@ -217,7 +217,7 @@ public class MenuItemDefinitionsCnCResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the menuItemDefinitionsCnC, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<MenuItemDefinitionsCnC> getMenuItemDefinitionsCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<MenuItemDefinitionsCnC> getMenuItemDefinitionsCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get MenuItemDefinitionsCnC : {}", id);
         Optional<MenuItemDefinitionsCnC> menuItemDefinitionsCnC = menuItemDefinitionsCnCRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(menuItemDefinitionsCnC);
@@ -230,7 +230,7 @@ public class MenuItemDefinitionsCnCResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMenuItemDefinitionsCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteMenuItemDefinitionsCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete MenuItemDefinitionsCnC : {}", id);
         menuItemDefinitionsCnCRepository.deleteById(id);
         return ResponseEntity.noContent()

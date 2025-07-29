@@ -6,6 +6,10 @@
   "entityTableName": "guest_check_bi",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "guestCheckId",
       "fieldType": "Integer"
     },

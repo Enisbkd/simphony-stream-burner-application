@@ -71,7 +71,7 @@ public class HttpCallAuditResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<HttpCallAudit> updateHttpCallAudit(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @Valid @RequestBody HttpCallAudit httpCallAudit
     ) throws URISyntaxException {
         LOG.debug("REST request to update HttpCallAudit : {}, {}", id, httpCallAudit);
@@ -105,7 +105,7 @@ public class HttpCallAuditResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<HttpCallAudit> partialUpdateHttpCallAudit(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @NotNull @RequestBody HttpCallAudit httpCallAudit
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update HttpCallAudit partially : {}, {}", id, httpCallAudit);
@@ -230,7 +230,7 @@ public class HttpCallAuditResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the httpCallAudit, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<HttpCallAudit> getHttpCallAudit(@PathVariable("id") Long id) {
+    public ResponseEntity<HttpCallAudit> getHttpCallAudit(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get HttpCallAudit : {}", id);
         Optional<HttpCallAudit> httpCallAudit = httpCallAuditRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(httpCallAudit);
@@ -243,7 +243,7 @@ public class HttpCallAuditResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteHttpCallAudit(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteHttpCallAudit(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete HttpCallAudit : {}", id);
         httpCallAuditRepository.deleteById(id);
         return ResponseEntity.noContent()

@@ -3,17 +3,15 @@ package mc.sbm.simphonycloud.domain;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class EmployeeCnCTestSamples {
 
     private static final Random random = new Random();
-    private static final AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
     private static final AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     public static EmployeeCnC getEmployeeCnCSample1() {
         return new EmployeeCnC()
-            .id(1L)
+            .id(1)
             .objectNum(1)
             .firstName("firstName1")
             .lastName("lastName1")
@@ -44,7 +42,7 @@ public class EmployeeCnCTestSamples {
 
     public static EmployeeCnC getEmployeeCnCSample2() {
         return new EmployeeCnC()
-            .id(2L)
+            .id(2)
             .objectNum(2)
             .firstName("firstName2")
             .lastName("lastName2")
@@ -75,7 +73,7 @@ public class EmployeeCnCTestSamples {
 
     public static EmployeeCnC getEmployeeCnCRandomSampleGenerator() {
         return new EmployeeCnC()
-            .id(longCount.incrementAndGet())
+            .id(intCount.incrementAndGet())
             .objectNum(intCount.incrementAndGet())
             .firstName(UUID.randomUUID().toString())
             .lastName(UUID.randomUUID().toString())

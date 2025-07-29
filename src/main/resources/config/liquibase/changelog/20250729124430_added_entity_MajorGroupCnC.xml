@@ -11,7 +11,7 @@
     -->
     <changeSet id="20250729124430-1" author="jhipster">
         <createTable tableName="major_group_cn_c">
-            <column name="id" type="bigint">
+            <column name="id" type="integer">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="nom" type="varchar(255)">

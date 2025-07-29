@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface DetailLineBIRepository extends JpaRepository<DetailLineBI, Long> {}
+public interface DetailLineBIRepository extends JpaRepository<DetailLineBI, Integer> {}

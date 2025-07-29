@@ -69,7 +69,7 @@ public class FamilyGroupCnCResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<FamilyGroupCnC> updateFamilyGroupCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody FamilyGroupCnC familyGroupCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to update FamilyGroupCnC : {}, {}", id, familyGroupCnC);
@@ -103,7 +103,7 @@ public class FamilyGroupCnCResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<FamilyGroupCnC> partialUpdateFamilyGroupCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody FamilyGroupCnC familyGroupCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update FamilyGroupCnC partially : {}, {}", id, familyGroupCnC);
@@ -159,7 +159,7 @@ public class FamilyGroupCnCResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the familyGroupCnC, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<FamilyGroupCnC> getFamilyGroupCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<FamilyGroupCnC> getFamilyGroupCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get FamilyGroupCnC : {}", id);
         Optional<FamilyGroupCnC> familyGroupCnC = familyGroupCnCRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(familyGroupCnC);
@@ -172,7 +172,7 @@ public class FamilyGroupCnCResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteFamilyGroupCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteFamilyGroupCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete FamilyGroupCnC : {}", id);
         familyGroupCnCRepository.deleteById(id);
         return ResponseEntity.noContent()
