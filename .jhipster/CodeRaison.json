@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122337"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "nomCourt",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nomMstr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numMstr",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "etablissementRef",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "CodeRaison",
+  "relationships": [],
+  "searchEngine": "no"
+}

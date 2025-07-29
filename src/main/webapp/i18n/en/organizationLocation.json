@@ -1,0 +1,44 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "organizationLocation": {
+      "home": {
+        "title": "Organization Locations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Organization Location",
+        "createOrEditLabel": "Create or edit a Organization Location",
+        "notFound": "No Organization Locations found"
+      },
+      "created": "A new Organization Location is created with identifier {{ param }}",
+      "updated": "A Organization Location is updated with identifier {{ param }}",
+      "deleted": "A Organization Location is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Organization Location {{ id }}?"
+      },
+      "detail": {
+        "title": "Organization Location"
+      },
+      "id": "ID",
+      "orgShortName": "Org Short Name",
+      "locRef": "Loc Ref",
+      "name": "Name",
+      "currency": "Currency",
+      "phoneNumber": "Phone Number",
+      "languages": "Languages",
+      "timezoneIanaName": "Timezone Iana Name",
+      "timezoneWindowsName": "Timezone Windows Name",
+      "timezoneTzIndex": "Timezone Tz Index",
+      "addressLine1": "Address Line 1",
+      "addressLine2": "Address Line 2",
+      "addressFloor": "Address Floor",
+      "addressLocality": "Address Locality",
+      "addressRegion": "Address Region",
+      "addressPostalCode": "Address Postal Code",
+      "addressCountry": "Address Country",
+      "addressNotes": "Address Notes",
+      "geoLatitude": "Geo Latitude",
+      "geoLongitude": "Geo Longitude",
+      "posPlatformName": "Pos Platform Name",
+      "posPlatformVersion": "Pos Platform Version"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122335"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "locRef",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rvcRef",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "barcodeId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "barcode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "menuItemId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "defenitionSequence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "priceSequence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "preparationCost",
+      "fieldType": "Double"
+    }
+  ],
+  "name": "BarCodeTrans",
+  "relationships": [],
+  "searchEngine": "no"
+}

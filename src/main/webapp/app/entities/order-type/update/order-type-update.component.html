@@ -1,0 +1,187 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-order-type-heading"
+        data-cy="OrderTypeCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.home.createOrEditLabel"
+      >
+        Create or edit a Order Type
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_num" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.num">Num</label>
+          <input type="number" class="form-control" name="num" id="field_num" data-cy="num" formControlName="num" />
+        </div>
+
+        @let locRefRef = editForm.get('locRef')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_locRef" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.locRef">Loc Ref</label>
+          <input type="text" class="form-control" name="locRef" id="field_locRef" data-cy="locRef" formControlName="locRef" />
+          @if (locRefRef.invalid && (locRefRef.dirty || locRefRef.touched)) {
+            <div>
+              @if (editForm.get('locRef')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_name" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_mstrNum" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.mstrNum">Mstr Num</label>
+          <input type="number" class="form-control" name="mstrNum" id="field_mstrNum" data-cy="mstrNum" formControlName="mstrNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_mstrName" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.mstrName"
+            >Mstr Name</label
+          >
+          <input type="text" class="form-control" name="mstrName" id="field_mstrName" data-cy="mstrName" formControlName="mstrName" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_catGrpHierName1" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpHierName1"
+            >Cat Grp Hier Name 1</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="catGrpHierName1"
+            id="field_catGrpHierName1"
+            data-cy="catGrpHierName1"
+            formControlName="catGrpHierName1"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_catGrpName1" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpName1"
+            >Cat Grp Name 1</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="catGrpName1"
+            id="field_catGrpName1"
+            data-cy="catGrpName1"
+            formControlName="catGrpName1"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_catGrpHierName2" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpHierName2"
+            >Cat Grp Hier Name 2</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="catGrpHierName2"
+            id="field_catGrpHierName2"
+            data-cy="catGrpHierName2"
+            formControlName="catGrpHierName2"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_catGrpName2" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpName2"
+            >Cat Grp Name 2</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="catGrpName2"
+            id="field_catGrpName2"
+            data-cy="catGrpName2"
+            formControlName="catGrpName2"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_catGrpHierName3" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpHierName3"
+            >Cat Grp Hier Name 3</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="catGrpHierName3"
+            id="field_catGrpHierName3"
+            data-cy="catGrpHierName3"
+            formControlName="catGrpHierName3"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_catGrpName3" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpName3"
+            >Cat Grp Name 3</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="catGrpName3"
+            id="field_catGrpName3"
+            data-cy="catGrpName3"
+            formControlName="catGrpName3"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_catGrpHierName4" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpHierName4"
+            >Cat Grp Hier Name 4</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="catGrpHierName4"
+            id="field_catGrpHierName4"
+            data-cy="catGrpHierName4"
+            formControlName="catGrpHierName4"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_catGrpName4" jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpName4"
+            >Cat Grp Name 4</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="catGrpName4"
+            id="field_catGrpName4"
+            data-cy="catGrpName4"
+            formControlName="catGrpName4"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

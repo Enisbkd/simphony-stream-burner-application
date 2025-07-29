@@ -1,0 +1,26 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "majorGroup": {
+      "home": {
+        "title": "Major Groups",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Major Group",
+        "createOrEditLabel": "Create or edit a Major Group",
+        "notFound": "No Major Groups found"
+      },
+      "created": "A new Major Group is created with identifier {{ param }}",
+      "updated": "A Major Group is updated with identifier {{ param }}",
+      "deleted": "A Major Group is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Major Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Major Group"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "nomCourt": "Nom Court",
+      "pointDeVenteRef": "Point De Vente Ref"
+    }
+  }
+}

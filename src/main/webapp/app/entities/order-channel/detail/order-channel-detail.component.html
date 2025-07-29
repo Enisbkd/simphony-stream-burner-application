@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (orderChannel(); as orderChannelRef) {
+      <div>
+        <h2 data-cy="orderChannelDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannel.detail.title">Order Channel</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ orderChannelRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannel.num">Num</span></dt>
+          <dd>
+            <span>{{ orderChannelRef.num }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannel.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ orderChannelRef.locRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannel.name">Name</span></dt>
+          <dd>
+            <span>{{ orderChannelRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannel.mstrNum">Mstr Num</span></dt>
+          <dd>
+            <span>{{ orderChannelRef.mstrNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannel.mstrName">Mstr Name</span></dt>
+          <dd>
+            <span>{{ orderChannelRef.mstrName }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/order-channel', orderChannelRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

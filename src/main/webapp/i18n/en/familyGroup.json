@@ -1,0 +1,26 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "familyGroup": {
+      "home": {
+        "title": "Family Groups",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Family Group",
+        "createOrEditLabel": "Create or edit a Family Group",
+        "notFound": "No Family Groups found"
+      },
+      "created": "A new Family Group is created with identifier {{ param }}",
+      "updated": "A Family Group is updated with identifier {{ param }}",
+      "deleted": "A Family Group is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Family Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Family Group"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "nomCourt": "Nom Court",
+      "majorGroupRef": "Major Group Ref"
+    }
+  }
+}

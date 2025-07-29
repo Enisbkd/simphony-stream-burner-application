@@ -1,0 +1,30 @@
+@if (menuItemMastersCnC) {
+  <form name="deleteForm" (ngSubmit)="confirmDelete(menuItemMastersCnC.id!)">
+    <div class="modal-header">
+      <h4 class="modal-title" data-cy="menuItemMastersCnCDeleteDialogHeading" jhiTranslate="entity.delete.title">
+        Confirm delete operation
+      </h4>
+    </div>
+
+    <div class="modal-body">
+      <jhi-alert-error />
+      <p
+        id="jhi-delete-menuItemMastersCnC-heading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.delete.question"
+        [translateValues]="{ id: menuItemMastersCnC.id }"
+      >
+        Are you sure you want to delete Menu Item Masters Cn C {{ menuItemMastersCnC.id }}?
+      </p>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancel()">
+        <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+      </button>
+
+      <button id="jhi-confirm-delete-menuItemMastersCnC" data-cy="entityConfirmDeleteButton" type="submit" class="btn btn-danger">
+        <fa-icon icon="times"></fa-icon>&nbsp;<span jhiTranslate="entity.action.delete">Delete</span>
+      </button>
+    </div>
+  </form>
+}

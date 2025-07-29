@@ -1,0 +1,45 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "menuItemDefinitionsCnC": {
+      "home": {
+        "title": "Menu Item Definitions Cn CS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Menu Item Definitions Cn C",
+        "createOrEditLabel": "Create or edit a Menu Item Definitions Cn C",
+        "notFound": "No Menu Item Definitions Cn CS found"
+      },
+      "created": "A new Menu Item Definitions Cn C is created with identifier {{ param }}",
+      "updated": "A Menu Item Definitions Cn C is updated with identifier {{ param }}",
+      "deleted": "A Menu Item Definitions Cn C is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Menu Item Definitions Cn C {{ id }}?"
+      },
+      "detail": {
+        "title": "Menu Item Definitions Cn C"
+      },
+      "id": "ID",
+      "hierUnitId": "Hier Unit Id",
+      "menuItemMasterObjNum": "Menu Item Master Obj Num",
+      "menuItemMasterId": "Menu Item Master Id",
+      "menuItemDefinitionId": "Menu Item Definition Id",
+      "defSequenceNum": "Def Sequence Num",
+      "menuItemClassObjNum": "Menu Item Class Obj Num",
+      "overridePrintClassObjNum": "Override Print Class Obj Num",
+      "mainLevel": "Main Level",
+      "subLevel": "Sub Level",
+      "quantity": "Quantity",
+      "kdsPrepTime": "Kds Prep Time",
+      "prefixLevelOverride": "Prefix Level Override",
+      "guestCount": "Guest Count",
+      "slu1ObjNum": "Slu 1 Obj Num",
+      "slu2ObjNum": "Slu 2 Obj Num",
+      "slu3ObjNum": "Slu 3 Obj Num",
+      "slu4ObjNum": "Slu 4 Obj Num",
+      "slu5ObjNum": "Slu 5 Obj Num",
+      "slu6ObjNum": "Slu 6 Obj Num",
+      "slu7ObjNum": "Slu 7 Obj Num",
+      "slu8ObjNum": "Slu 8 Obj Num",
+      "firstName": "First Name"
+    }
+  }
+}

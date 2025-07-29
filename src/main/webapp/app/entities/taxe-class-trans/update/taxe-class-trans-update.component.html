@@ -1,0 +1,99 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-taxe-class-trans-heading"
+        data-cy="TaxeClassTransCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.taxeClassTrans.home.createOrEditLabel"
+      >
+        Create or edit a Taxe Class Trans
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.taxeClassTrans.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_orgShortName" jhiTranslate="simphonyStreamBurnerApplicationApp.taxeClassTrans.orgShortName"
+            >Org Short Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="orgShortName"
+            id="field_orgShortName"
+            data-cy="orgShortName"
+            formControlName="orgShortName"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_locRef" jhiTranslate="simphonyStreamBurnerApplicationApp.taxeClassTrans.locRef"
+            >Loc Ref</label
+          >
+          <input type="text" class="form-control" name="locRef" id="field_locRef" data-cy="locRef" formControlName="locRef" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_rvcRef" jhiTranslate="simphonyStreamBurnerApplicationApp.taxeClassTrans.rvcRef"
+            >Rvc Ref</label
+          >
+          <input type="number" class="form-control" name="rvcRef" id="field_rvcRef" data-cy="rvcRef" formControlName="rvcRef" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_taxClassId" jhiTranslate="simphonyStreamBurnerApplicationApp.taxeClassTrans.taxClassId"
+            >Tax Class Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="taxClassId"
+            id="field_taxClassId"
+            data-cy="taxClassId"
+            formControlName="taxClassId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_activeTaxRateRefs"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.taxeClassTrans.activeTaxRateRefs"
+            >Active Tax Rate Refs</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="activeTaxRateRefs"
+            id="field_activeTaxRateRefs"
+            data-cy="activeTaxRateRefs"
+            formControlName="activeTaxRateRefs"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

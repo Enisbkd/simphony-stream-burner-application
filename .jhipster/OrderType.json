@@ -1,0 +1,64 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122355"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "num",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mstrNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mstrName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpHierName1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpName1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpHierName2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpName2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpHierName3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpName3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpHierName4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpName4",
+      "fieldType": "String"
+    }
+  ],
+  "name": "OrderType",
+  "relationships": [],
+  "searchEngine": "no"
+}

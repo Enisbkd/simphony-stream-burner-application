@@ -1,0 +1,256 @@
+<div>
+  <h2 id="page-heading" data-cy="OrganizationLocationHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.home.title">Organization Locations</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-organization-location"
+        [routerLink]="['/organization-location/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.home.createLabel"
+          >Create a new Organization Location</span
+        >
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (organizationLocations().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.home.notFound">No Organization Locations found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="orgShortName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.orgShortName">Org Short Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="locRef">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.locRef">Loc Ref</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="name">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.name">Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="currency">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.currency">Currency</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="phoneNumber">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.phoneNumber">Phone Number</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="languages">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.languages">Languages</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="timezoneIanaName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.timezoneIanaName">Timezone Iana Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="timezoneWindowsName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.timezoneWindowsName"
+                  >Timezone Windows Name</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="timezoneTzIndex">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.timezoneTzIndex">Timezone Tz Index</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="addressLine1">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressLine1">Address Line 1</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="addressLine2">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressLine2">Address Line 2</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="addressFloor">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressFloor">Address Floor</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="addressLocality">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressLocality">Address Locality</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="addressRegion">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressRegion">Address Region</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="addressPostalCode">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressPostalCode">Address Postal Code</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="addressCountry">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressCountry">Address Country</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="addressNotes">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressNotes">Address Notes</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="geoLatitude">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.geoLatitude">Geo Latitude</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="geoLongitude">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.geoLongitude">Geo Longitude</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="posPlatformName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.posPlatformName">Pos Platform Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="posPlatformVersion">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.posPlatformVersion">Pos Platform Version</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (organizationLocation of organizationLocations(); track trackId(organizationLocation)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/organization-location', organizationLocation.id, 'view']">{{ organizationLocation.id }}</a>
+              </td>
+              <td>{{ organizationLocation.orgShortName }}</td>
+              <td>{{ organizationLocation.locRef }}</td>
+              <td>{{ organizationLocation.name }}</td>
+              <td>{{ organizationLocation.currency }}</td>
+              <td>{{ organizationLocation.phoneNumber }}</td>
+              <td>{{ organizationLocation.languages }}</td>
+              <td>{{ organizationLocation.timezoneIanaName }}</td>
+              <td>{{ organizationLocation.timezoneWindowsName }}</td>
+              <td>{{ organizationLocation.timezoneTzIndex }}</td>
+              <td>{{ organizationLocation.addressLine1 }}</td>
+              <td>{{ organizationLocation.addressLine2 }}</td>
+              <td>{{ organizationLocation.addressFloor }}</td>
+              <td>{{ organizationLocation.addressLocality }}</td>
+              <td>{{ organizationLocation.addressRegion }}</td>
+              <td>{{ organizationLocation.addressPostalCode }}</td>
+              <td>{{ organizationLocation.addressCountry }}</td>
+              <td>{{ organizationLocation.addressNotes }}</td>
+              <td>{{ organizationLocation.geoLatitude }}</td>
+              <td>{{ organizationLocation.geoLongitude }}</td>
+              <td>{{ organizationLocation.posPlatformName }}</td>
+              <td>{{ organizationLocation.posPlatformVersion }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a
+                    [routerLink]="['/organization-location', organizationLocation.id, 'view']"
+                    class="btn btn-info btn-sm"
+                    data-cy="entityDetailsButton"
+                  >
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a
+                    [routerLink]="['/organization-location', organizationLocation.id, 'edit']"
+                    class="btn btn-primary btn-sm"
+                    data-cy="entityEditButton"
+                  >
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(organizationLocation)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

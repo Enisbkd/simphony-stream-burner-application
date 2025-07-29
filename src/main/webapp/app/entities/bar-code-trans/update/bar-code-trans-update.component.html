@@ -1,0 +1,131 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-bar-code-trans-heading"
+        data-cy="BarCodeTransCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.home.createOrEditLabel"
+      >
+        Create or edit a Bar Code Trans
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_locRef" jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.locRef">Loc Ref</label>
+          <input type="text" class="form-control" name="locRef" id="field_locRef" data-cy="locRef" formControlName="locRef" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_rvcRef" jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.rvcRef">Rvc Ref</label>
+          <input type="number" class="form-control" name="rvcRef" id="field_rvcRef" data-cy="rvcRef" formControlName="rvcRef" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_barcodeId" jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.barcodeId"
+            >Barcode Id</label
+          >
+          <input type="number" class="form-control" name="barcodeId" id="field_barcodeId" data-cy="barcodeId" formControlName="barcodeId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_barcode" jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.barcode"
+            >Barcode</label
+          >
+          <input type="text" class="form-control" name="barcode" id="field_barcode" data-cy="barcode" formControlName="barcode" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_menuItemId" jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.menuItemId"
+            >Menu Item Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="menuItemId"
+            id="field_menuItemId"
+            data-cy="menuItemId"
+            formControlName="menuItemId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_defenitionSequence"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.defenitionSequence"
+            >Defenition Sequence</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="defenitionSequence"
+            id="field_defenitionSequence"
+            data-cy="defenitionSequence"
+            formControlName="defenitionSequence"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_price" jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.price">Price</label>
+          <input type="number" class="form-control" name="price" id="field_price" data-cy="price" formControlName="price" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_priceSequence" jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.priceSequence"
+            >Price Sequence</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="priceSequence"
+            id="field_priceSequence"
+            data-cy="priceSequence"
+            formControlName="priceSequence"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_preparationCost"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.preparationCost"
+            >Preparation Cost</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="preparationCost"
+            id="field_preparationCost"
+            data-cy="preparationCost"
+            formControlName="preparationCost"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

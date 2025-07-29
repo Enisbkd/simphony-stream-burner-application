@@ -1,0 +1,46 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "checkTrans": {
+      "home": {
+        "title": "Check Trans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Check Trans",
+        "createOrEditLabel": "Create or edit a Check Trans",
+        "notFound": "No Check Trans found"
+      },
+      "created": "A new Check Trans is created with identifier {{ param }}",
+      "updated": "A Check Trans is updated with identifier {{ param }}",
+      "deleted": "A Check Trans is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Check Trans {{ id }}?"
+      },
+      "detail": {
+        "title": "Check Trans"
+      },
+      "id": "ID",
+      "rvcRef": "Rvc Ref",
+      "checkRef": "Check Ref",
+      "checkNumber": "Check Number",
+      "checkName": "Check Name",
+      "checkEmployeeRef": "Check Employee Ref",
+      "orderTypeRef": "Order Type Ref",
+      "orderChannelRef": "Order Channel Ref",
+      "tableName": "Table Name",
+      "tableGroupNumber": "Table Group Number",
+      "openTime": "Open Time",
+      "guestCount": "Guest Count",
+      "language": "Language",
+      "isTrainingCheck": "Is Training Check",
+      "status": "Status",
+      "preparationStatus": "Preparation Status",
+      "subtotal": "Subtotal",
+      "subtotalDiscountTotal": "Subtotal Discount Total",
+      "autoServiceChargeTotal": "Auto Service Charge Total",
+      "serviceChargeTotal": "Service Charge Total",
+      "taxTotal": "Tax Total",
+      "paymentTotal": "Payment Total",
+      "totalDue": "Total Due",
+      "taxRateId": "Tax Rate Id"
+    }
+  }
+}

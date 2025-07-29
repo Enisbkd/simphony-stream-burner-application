@@ -1,0 +1,23 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122348"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomCourt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pointDeVenteRef",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "MajorGroup",
+  "relationships": [],
+  "searchEngine": "no"
+}

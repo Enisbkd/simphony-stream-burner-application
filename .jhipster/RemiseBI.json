@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122400"
+  },
+  "applications": "*",
+  "entityTableName": "remise_bi",
+  "fields": [
+    {
+      "fieldName": "num",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "posPercent",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "rptGrpNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "rptGrpName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String"
+    }
+  ],
+  "name": "RemiseBI",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,0 +1,120 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (organizationLocation(); as organizationLocationRef) {
+      <div>
+        <h2 data-cy="organizationLocationDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.detail.title">Organization Location</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.orgShortName">Org Short Name</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.orgShortName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.locRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.name">Name</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.currency">Currency</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.currency }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.phoneNumber">Phone Number</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.phoneNumber }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.languages">Languages</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.languages }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.timezoneIanaName">Timezone Iana Name</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.timezoneIanaName }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.timezoneWindowsName">Timezone Windows Name</span>
+          </dt>
+          <dd>
+            <span>{{ organizationLocationRef.timezoneWindowsName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.timezoneTzIndex">Timezone Tz Index</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.timezoneTzIndex }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressLine1">Address Line 1</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.addressLine1 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressLine2">Address Line 2</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.addressLine2 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressFloor">Address Floor</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.addressFloor }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressLocality">Address Locality</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.addressLocality }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressRegion">Address Region</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.addressRegion }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressPostalCode">Address Postal Code</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.addressPostalCode }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressCountry">Address Country</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.addressCountry }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.addressNotes">Address Notes</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.addressNotes }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.geoLatitude">Geo Latitude</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.geoLatitude }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.geoLongitude">Geo Longitude</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.geoLongitude }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.posPlatformName">Pos Platform Name</span></dt>
+          <dd>
+            <span>{{ organizationLocationRef.posPlatformName }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocation.posPlatformVersion">Pos Platform Version</span>
+          </dt>
+          <dd>
+            <span>{{ organizationLocationRef.posPlatformVersion }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/organization-location', organizationLocationRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

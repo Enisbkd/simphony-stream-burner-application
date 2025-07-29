@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122353"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "tenderId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extensions",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orgShortName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rvcRef",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "ModePaiementTrans",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,0 +1,148 @@
+<div>
+  <h2 id="page-heading" data-cy="TaxeRateTransHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeRateTrans.home.title">Taxe Rate Trans</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeRateTrans.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-taxe-rate-trans"
+        [routerLink]="['/taxe-rate-trans/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeRateTrans.home.createLabel">Create a new Taxe Rate Trans</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (taxeRateTrans().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeRateTrans.home.notFound">No Taxe Rate Trans found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="orgShortName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeRateTrans.orgShortName">Org Short Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="locRef">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeRateTrans.locRef">Loc Ref</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="rvcRef">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeRateTrans.rvcRef">Rvc Ref</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="taxRateId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeRateTrans.taxRateId">Tax Rate Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="percentage">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeRateTrans.percentage">Percentage</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="taxType">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeRateTrans.taxType">Tax Type</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nameFr">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeRateTrans.nameFr">Name Fr</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nameEn">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeRateTrans.nameEn">Name En</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (taxeRateTrans of taxeRateTrans(); track trackId(taxeRateTrans)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/taxe-rate-trans', taxeRateTrans.id, 'view']">{{ taxeRateTrans.id }}</a>
+              </td>
+              <td>{{ taxeRateTrans.orgShortName }}</td>
+              <td>{{ taxeRateTrans.locRef }}</td>
+              <td>{{ taxeRateTrans.rvcRef }}</td>
+              <td>{{ taxeRateTrans.taxRateId }}</td>
+              <td>{{ taxeRateTrans.percentage }}</td>
+              <td>{{ taxeRateTrans.taxType }}</td>
+              <td>{{ taxeRateTrans.nameFr }}</td>
+              <td>{{ taxeRateTrans.nameEn }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a
+                    [routerLink]="['/taxe-rate-trans', taxeRateTrans.id, 'view']"
+                    class="btn btn-info btn-sm"
+                    data-cy="entityDetailsButton"
+                  >
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a
+                    [routerLink]="['/taxe-rate-trans', taxeRateTrans.id, 'edit']"
+                    class="btn btn-primary btn-sm"
+                    data-cy="entityEditButton"
+                  >
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(taxeRateTrans)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

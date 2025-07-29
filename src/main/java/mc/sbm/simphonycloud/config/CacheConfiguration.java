@@ -83,6 +83,38 @@ public class CacheConfiguration {
             createCache(cm, mc.sbm.simphonycloud.domain.User.class.getName(), jcacheConfiguration);
             createCache(cm, mc.sbm.simphonycloud.domain.Authority.class.getName(), jcacheConfiguration);
             createCache(cm, mc.sbm.simphonycloud.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.BarCodeTrans.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.CheckTrans.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.CodeRaison.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.CommissionServiceBI.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.CommissionServiceTrans.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.DetailLineBI.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.ElementMenu.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.EmployeeCnC.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.FamilyGroup.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.GuestCheckBI.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.GuestCheckBI.class.getName() + ".detailLineBILists", jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.Hierarchie.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.HttpCallAudit.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.Location.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.MajorGroup.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.MenuItemDefinitionsCnC.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.MenuItemMastersCnC.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.MenuItemPricesCnC.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.ModePaiementBI.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.ModePaiementTrans.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.OrderChannel.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.OrderType.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.OrganizationLocation.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.PartieDeJournee.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.PointDeVenteCnC.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.PointDeVenteTrans.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.RemiseBI.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.RemiseTrans.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.Societe.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.TaxeBI.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.TaxeClassTrans.class.getName(), jcacheConfiguration);
+            createCache(cm, mc.sbm.simphonycloud.domain.TaxeRateTrans.class.getName(), jcacheConfiguration);
             // jhipster-needle-redis-add-entry
         };
     }

@@ -1,0 +1,77 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-order-channel-heading"
+        data-cy="OrderChannelCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannel.home.createOrEditLabel"
+      >
+        Create or edit a Order Channel
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannel.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_num" jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannel.num">Num</label>
+          <input type="number" class="form-control" name="num" id="field_num" data-cy="num" formControlName="num" />
+        </div>
+
+        @let locRefRef = editForm.get('locRef')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_locRef" jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannel.locRef">Loc Ref</label>
+          <input type="text" class="form-control" name="locRef" id="field_locRef" data-cy="locRef" formControlName="locRef" />
+          @if (locRefRef.invalid && (locRefRef.dirty || locRefRef.touched)) {
+            <div>
+              @if (editForm.get('locRef')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_name" jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannel.name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_mstrNum" jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannel.mstrNum"
+            >Mstr Num</label
+          >
+          <input type="number" class="form-control" name="mstrNum" id="field_mstrNum" data-cy="mstrNum" formControlName="mstrNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_mstrName" jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannel.mstrName"
+            >Mstr Name</label
+          >
+          <input type="text" class="form-control" name="mstrName" id="field_mstrName" data-cy="mstrName" formControlName="mstrName" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

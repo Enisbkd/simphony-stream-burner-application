@@ -1,0 +1,50 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "location": {
+      "home": {
+        "title": "Locations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Location",
+        "createOrEditLabel": "Create or edit a Location",
+        "notFound": "No Locations found"
+      },
+      "created": "A new Location is created with identifier {{ param }}",
+      "updated": "A Location is updated with identifier {{ param }}",
+      "deleted": "A Location is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Location {{ id }}?"
+      },
+      "detail": {
+        "title": "Location"
+      },
+      "id": "ID",
+      "hierUnitId": "Hier Unit Id",
+      "tzIndex": "Tz Index",
+      "tzName": "Tz Name",
+      "localeInfoId": "Locale Info Id",
+      "name": "Name",
+      "reportingLocName": "Reporting Loc Name",
+      "locRef": "Loc Ref",
+      "reportingParentEnterpriseLevelName": "Reporting Parent Enterprise Level Name",
+      "objectNum": "Object Num",
+      "sbmPmsIfcIp": "Sbm Pms Ifc Ip",
+      "sbmPmsIfcPort": "Sbm Pms Ifc Port",
+      "sbmPriveRoomStart": "Sbm Prive Room Start",
+      "sbmPriveRoomEnd": "Sbm Prive Room End",
+      "sbmPmsSendAllDetails": "Sbm Pms Send All Details",
+      "sbmPmsSendFullDscv": "Sbm Pms Send Full Dscv",
+      "sbmPmsSend64Tax": "Sbm Pms Send 64 Tax",
+      "sbmCardPaymentUrl": "Sbm Card Payment Url",
+      "sbmCheckHotelDataUrl": "Sbm Check Hotel Data Url",
+      "sbmVoucherSvcUrl": "Sbm Voucher Svc Url",
+      "sbmVoucherInvPm": "Sbm Voucher Inv Pm",
+      "sbmVoucherCorpPm": "Sbm Voucher Corp Pm",
+      "sbmVoucherRewardPm": "Sbm Voucher Reward Pm",
+      "sbmVoucherMcPm": "Sbm Voucher Mc Pm",
+      "sbmPmsIfcPort2": "Sbm Pms Ifc Port 2",
+      "sbmPmsIfcPort3": "Sbm Pms Ifc Port 3",
+      "sbmPmsIfcPort4": "Sbm Pms Ifc Port 4",
+      "sbmTimeout": "Sbm Timeout"
+    }
+  }
+}

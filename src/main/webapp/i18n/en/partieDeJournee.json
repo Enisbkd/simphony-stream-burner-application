@@ -1,0 +1,26 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "partieDeJournee": {
+      "home": {
+        "title": "Partie De Journees",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Partie De Journee",
+        "createOrEditLabel": "Create or edit a Partie De Journee",
+        "notFound": "No Partie De Journees found"
+      },
+      "created": "A new Partie De Journee is created with identifier {{ param }}",
+      "updated": "A Partie De Journee is updated with identifier {{ param }}",
+      "deleted": "A Partie De Journee is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Partie De Journee {{ id }}?"
+      },
+      "detail": {
+        "title": "Partie De Journee"
+      },
+      "id": "ID",
+      "timeRangeStart": "Time Range Start",
+      "timeRangeEnd": "Time Range End",
+      "nom": "Nom"
+    }
+  }
+}

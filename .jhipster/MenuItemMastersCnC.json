@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122350"
+  },
+  "applications": "*",
+  "entityTableName": "menu_item_masters_cn_c",
+  "fields": [
+    {
+      "fieldName": "hierUnitId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "menuItemMasterId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "familyGroupObjectNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "majorGroupObjectNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "reportGroupObjectNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "externalReference1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "externalReference2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "objectNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "name": "MenuItemMastersCnC",
+  "relationships": [],
+  "searchEngine": "no"
+}

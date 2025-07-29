@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122339"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "orgShortName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rvcRef",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "serviceChargeId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "Double"
+    }
+  ],
+  "name": "CommissionServiceTrans",
+  "relationships": [],
+  "searchEngine": "no"
+}

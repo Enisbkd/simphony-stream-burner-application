@@ -1,0 +1,124 @@
+<div>
+  <h2 id="page-heading" data-cy="ElementMenuHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.home.title">Element Menus</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-element-menu"
+        [routerLink]="['/element-menu/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.home.createLabel">Create a new Element Menu</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (elementMenus().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.home.notFound">No Element Menus found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="masterId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.masterId">Master Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nom">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.nom">Nom</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nomCourt">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.nomCourt">Nom Court</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="familyGroupRef">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.familyGroupRef">Family Group Ref</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="prix">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.prix">Prix</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="menuRef">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.menuRef">Menu Ref</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (elementMenu of elementMenus(); track trackId(elementMenu)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/element-menu', elementMenu.id, 'view']">{{ elementMenu.id }}</a>
+              </td>
+              <td>{{ elementMenu.masterId }}</td>
+              <td>{{ elementMenu.nom }}</td>
+              <td>{{ elementMenu.nomCourt }}</td>
+              <td>{{ elementMenu.familyGroupRef }}</td>
+              <td>{{ elementMenu.prix }}</td>
+              <td>{{ elementMenu.menuRef }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/element-menu', elementMenu.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/element-menu', elementMenu.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(elementMenu)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

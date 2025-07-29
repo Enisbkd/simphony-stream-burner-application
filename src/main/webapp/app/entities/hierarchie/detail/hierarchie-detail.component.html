@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (hierarchie(); as hierarchieRef) {
+      <div>
+        <h2 data-cy="hierarchieDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.hierarchie.detail.title">Hierarchie</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ hierarchieRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.hierarchie.nom">Nom</span></dt>
+          <dd>
+            <span>{{ hierarchieRef.nom }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.hierarchie.parentHierId">Parent Hier Id</span></dt>
+          <dd>
+            <span>{{ hierarchieRef.parentHierId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.hierarchie.unitId">Unit Id</span></dt>
+          <dd>
+            <span>{{ hierarchieRef.unitId }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/hierarchie', hierarchieRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

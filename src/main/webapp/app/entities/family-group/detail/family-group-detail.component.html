@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (familyGroup(); as familyGroupRef) {
+      <div>
+        <h2 data-cy="familyGroupDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.familyGroup.detail.title">Family Group</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ familyGroupRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.familyGroup.nom">Nom</span></dt>
+          <dd>
+            <span>{{ familyGroupRef.nom }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.familyGroup.nomCourt">Nom Court</span></dt>
+          <dd>
+            <span>{{ familyGroupRef.nomCourt }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.familyGroup.majorGroupRef">Major Group Ref</span></dt>
+          <dd>
+            <span>{{ familyGroupRef.majorGroupRef }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/family-group', familyGroupRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

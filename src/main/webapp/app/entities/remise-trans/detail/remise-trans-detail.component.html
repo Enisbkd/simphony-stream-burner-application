@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (remiseTrans(); as remiseTransRef) {
+      <div>
+        <h2 data-cy="remiseTransDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.detail.title">Remise Trans</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ remiseTransRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.orgShortName">Org Short Name</span></dt>
+          <dd>
+            <span>{{ remiseTransRef.orgShortName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ remiseTransRef.locRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.rvcRef">Rvc Ref</span></dt>
+          <dd>
+            <span>{{ remiseTransRef.rvcRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.discountId">Discount Id</span></dt>
+          <dd>
+            <span>{{ remiseTransRef.discountId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.frName">Fr Name</span></dt>
+          <dd>
+            <span>{{ remiseTransRef.frName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.engName">Eng Name</span></dt>
+          <dd>
+            <span>{{ remiseTransRef.engName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.discountType">Discount Type</span></dt>
+          <dd>
+            <span>{{ remiseTransRef.discountType }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.discountValue">Discount Value</span></dt>
+          <dd>
+            <span>{{ remiseTransRef.discountValue }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/remise-trans', remiseTransRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

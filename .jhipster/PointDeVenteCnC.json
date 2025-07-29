@@ -1,0 +1,44 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122358"
+  },
+  "applications": "*",
+  "entityTableName": "point_de_vente_cn_c",
+  "fields": [
+    {
+      "fieldName": "locHierUnitId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "locObjNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "rvcId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "kdsControllerId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "hierUnitId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "objectNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataExtensions",
+      "fieldType": "String"
+    }
+  ],
+  "name": "PointDeVenteCnC",
+  "relationships": [],
+  "searchEngine": "no"
+}

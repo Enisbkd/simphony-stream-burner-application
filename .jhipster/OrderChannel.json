@@ -1,0 +1,32 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122354"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "num",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mstrNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mstrName",
+      "fieldType": "String"
+    }
+  ],
+  "name": "OrderChannel",
+  "relationships": [],
+  "searchEngine": "no"
+}

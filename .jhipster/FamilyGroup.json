@@ -1,0 +1,23 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122343"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomCourt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "majorGroupRef",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "FamilyGroup",
+  "relationships": [],
+  "searchEngine": "no"
+}

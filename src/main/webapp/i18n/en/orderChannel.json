@@ -1,0 +1,28 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "orderChannel": {
+      "home": {
+        "title": "Order Channels",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Order Channel",
+        "createOrEditLabel": "Create or edit a Order Channel",
+        "notFound": "No Order Channels found"
+      },
+      "created": "A new Order Channel is created with identifier {{ param }}",
+      "updated": "A Order Channel is updated with identifier {{ param }}",
+      "deleted": "A Order Channel is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Order Channel {{ id }}?"
+      },
+      "detail": {
+        "title": "Order Channel"
+      },
+      "id": "ID",
+      "num": "Num",
+      "locRef": "Loc Ref",
+      "name": "Name",
+      "mstrNum": "Mstr Num",
+      "mstrName": "Mstr Name"
+    }
+  }
+}

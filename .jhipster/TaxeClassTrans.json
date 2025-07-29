@@ -1,0 +1,31 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122404"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "orgShortName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rvcRef",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "taxClassId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "activeTaxRateRefs",
+      "fieldType": "String"
+    }
+  ],
+  "name": "TaxeClassTrans",
+  "relationships": [],
+  "searchEngine": "no"
+}

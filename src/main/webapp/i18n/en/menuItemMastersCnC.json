@@ -1,0 +1,32 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "menuItemMastersCnC": {
+      "home": {
+        "title": "Menu Item Masters Cn CS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Menu Item Masters Cn C",
+        "createOrEditLabel": "Create or edit a Menu Item Masters Cn C",
+        "notFound": "No Menu Item Masters Cn CS found"
+      },
+      "created": "A new Menu Item Masters Cn C is created with identifier {{ param }}",
+      "updated": "A Menu Item Masters Cn C is updated with identifier {{ param }}",
+      "deleted": "A Menu Item Masters Cn C is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Menu Item Masters Cn C {{ id }}?"
+      },
+      "detail": {
+        "title": "Menu Item Masters Cn C"
+      },
+      "id": "ID",
+      "hierUnitId": "Hier Unit Id",
+      "menuItemMasterId": "Menu Item Master Id",
+      "familyGroupObjectNum": "Family Group Object Num",
+      "majorGroupObjectNum": "Major Group Object Num",
+      "reportGroupObjectNum": "Report Group Object Num",
+      "externalReference1": "External Reference 1",
+      "externalReference2": "External Reference 2",
+      "objectNum": "Object Num",
+      "name": "Name"
+    }
+  }
+}

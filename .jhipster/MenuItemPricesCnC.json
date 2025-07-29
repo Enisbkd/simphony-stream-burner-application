@@ -1,0 +1,68 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122351"
+  },
+  "applications": "*",
+  "entityTableName": "menu_item_prices_cn_c",
+  "fields": [
+    {
+      "fieldName": "hierUnitId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "menuItemPriceId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "menuItemMasterId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "menuItemMasterObjNum",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "menuItemDefinitionId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "defSequenceNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "externalReference1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "externalReference2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "priceSequenceNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "activeOnMenuLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "effectivityGroupObjNum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prepCost",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "options",
+      "fieldType": "String"
+    }
+  ],
+  "name": "MenuItemPricesCnC",
+  "relationships": [],
+  "searchEngine": "no"
+}

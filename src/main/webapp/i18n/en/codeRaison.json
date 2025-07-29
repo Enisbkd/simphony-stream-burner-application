@@ -1,0 +1,28 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "codeRaison": {
+      "home": {
+        "title": "Code Raisons",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Code Raison",
+        "createOrEditLabel": "Create or edit a Code Raison",
+        "notFound": "No Code Raisons found"
+      },
+      "created": "A new Code Raison is created with identifier {{ param }}",
+      "updated": "A Code Raison is updated with identifier {{ param }}",
+      "deleted": "A Code Raison is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Code Raison {{ id }}?"
+      },
+      "detail": {
+        "title": "Code Raison"
+      },
+      "id": "ID",
+      "nomCourt": "Nom Court",
+      "nomMstr": "Nom Mstr",
+      "numMstr": "Num Mstr",
+      "name": "Name",
+      "etablissementRef": "Etablissement Ref"
+    }
+  }
+}

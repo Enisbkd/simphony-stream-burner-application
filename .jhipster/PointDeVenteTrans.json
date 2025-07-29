@@ -1,0 +1,31 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122359"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "rvcRef",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orgShortName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    }
+  ],
+  "name": "PointDeVenteTrans",
+  "relationships": [],
+  "searchEngine": "no"
+}

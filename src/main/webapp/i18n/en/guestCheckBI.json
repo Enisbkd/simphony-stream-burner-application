@@ -1,0 +1,43 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "guestCheckBI": {
+      "home": {
+        "title": "Guest Check BIS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Guest Check BI",
+        "createOrEditLabel": "Create or edit a Guest Check BI",
+        "notFound": "No Guest Check BIS found"
+      },
+      "created": "A new Guest Check BI is created with identifier {{ param }}",
+      "updated": "A Guest Check BI is updated with identifier {{ param }}",
+      "deleted": "A Guest Check BI is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Guest Check BI {{ id }}?"
+      },
+      "detail": {
+        "title": "Guest Check BI"
+      },
+      "id": "ID",
+      "guestCheckId": "Guest Check Id",
+      "chkNum": "Chk Num",
+      "opnLcl": "Opn Lcl",
+      "clsdLcl": "Clsd Lcl",
+      "cancelFlag": "Cancel Flag",
+      "gstCnt": "Gst Cnt",
+      "tblNum": "Tbl Num",
+      "taxCollTtl": "Tax Coll Ttl",
+      "subTtl": "Sub Ttl",
+      "chkTtl": "Chk Ttl",
+      "svcChgTtl": "Svc Chg Ttl",
+      "tipTotal": "Tip Total",
+      "dscTtl": "Dsc Ttl",
+      "errorCorrectTtl": "Error Correct Ttl",
+      "returnTtl": "Return Ttl",
+      "xferToChkNum": "Xfer To Chk Num",
+      "xferStatus": "Xfer Status",
+      "otNum": "Ot Num",
+      "locRef": "Loc Ref",
+      "detailLineBIList": "Detail Line BI List"
+    }
+  }
+}

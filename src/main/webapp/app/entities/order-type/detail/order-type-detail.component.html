@@ -1,0 +1,84 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (orderType(); as orderTypeRef) {
+      <div>
+        <h2 data-cy="orderTypeDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.detail.title">Order Type</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.num">Num</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.num }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.locRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.name">Name</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.mstrNum">Mstr Num</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.mstrNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.mstrName">Mstr Name</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.mstrName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpHierName1">Cat Grp Hier Name 1</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.catGrpHierName1 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpName1">Cat Grp Name 1</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.catGrpName1 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpHierName2">Cat Grp Hier Name 2</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.catGrpHierName2 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpName2">Cat Grp Name 2</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.catGrpName2 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpHierName3">Cat Grp Hier Name 3</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.catGrpHierName3 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpName3">Cat Grp Name 3</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.catGrpName3 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpHierName4">Cat Grp Hier Name 4</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.catGrpHierName4 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderType.catGrpName4">Cat Grp Name 4</span></dt>
+          <dd>
+            <span>{{ orderTypeRef.catGrpName4 }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/order-type', orderTypeRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

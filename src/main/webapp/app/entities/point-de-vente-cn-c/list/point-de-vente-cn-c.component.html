@@ -1,0 +1,148 @@
+<div>
+  <h2 id="page-heading" data-cy="PointDeVenteCnCHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.home.title">Point De Vente Cn CS</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-point-de-vente-cn-c"
+        [routerLink]="['/point-de-vente-cn-c/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.home.createLabel">Create a new Point De Vente Cn C</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (pointDeVenteCnCS().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.home.notFound">No Point De Vente Cn CS found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="locHierUnitId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.locHierUnitId">Loc Hier Unit Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="locObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.locObjNum">Loc Obj Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="rvcId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.rvcId">Rvc Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="kdsControllerId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.kdsControllerId">Kds Controller Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="hierUnitId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.hierUnitId">Hier Unit Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="objectNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.objectNum">Object Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="name">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.name">Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="dataExtensions">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.dataExtensions">Data Extensions</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (pointDeVenteCnC of pointDeVenteCnCS(); track trackId(pointDeVenteCnC)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/point-de-vente-cn-c', pointDeVenteCnC.id, 'view']">{{ pointDeVenteCnC.id }}</a>
+              </td>
+              <td>{{ pointDeVenteCnC.locHierUnitId }}</td>
+              <td>{{ pointDeVenteCnC.locObjNum }}</td>
+              <td>{{ pointDeVenteCnC.rvcId }}</td>
+              <td>{{ pointDeVenteCnC.kdsControllerId }}</td>
+              <td>{{ pointDeVenteCnC.hierUnitId }}</td>
+              <td>{{ pointDeVenteCnC.objectNum }}</td>
+              <td>{{ pointDeVenteCnC.name }}</td>
+              <td>{{ pointDeVenteCnC.dataExtensions }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a
+                    [routerLink]="['/point-de-vente-cn-c', pointDeVenteCnC.id, 'view']"
+                    class="btn btn-info btn-sm"
+                    data-cy="entityDetailsButton"
+                  >
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a
+                    [routerLink]="['/point-de-vente-cn-c', pointDeVenteCnC.id, 'edit']"
+                    class="btn btn-primary btn-sm"
+                    data-cy="entityEditButton"
+                  >
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(pointDeVenteCnC)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

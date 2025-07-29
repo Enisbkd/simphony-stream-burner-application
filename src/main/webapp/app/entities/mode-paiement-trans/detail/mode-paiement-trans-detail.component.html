@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (modePaiementTrans(); as modePaiementTransRef) {
+      <div>
+        <h2 data-cy="modePaiementTransDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.detail.title">Mode Paiement Trans</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ modePaiementTransRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.tenderId">Tender Id</span></dt>
+          <dd>
+            <span>{{ modePaiementTransRef.tenderId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.name">Name</span></dt>
+          <dd>
+            <span>{{ modePaiementTransRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.type">Type</span></dt>
+          <dd>
+            <span>{{ modePaiementTransRef.type }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.extensions">Extensions</span></dt>
+          <dd>
+            <span>{{ modePaiementTransRef.extensions }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.orgShortName">Org Short Name</span></dt>
+          <dd>
+            <span>{{ modePaiementTransRef.orgShortName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ modePaiementTransRef.locRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.rvcRef">Rvc Ref</span></dt>
+          <dd>
+            <span>{{ modePaiementTransRef.rvcRef }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/mode-paiement-trans', modePaiementTransRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

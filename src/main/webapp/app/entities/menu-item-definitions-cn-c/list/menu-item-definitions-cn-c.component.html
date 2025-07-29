@@ -1,0 +1,274 @@
+<div>
+  <h2 id="page-heading" data-cy="MenuItemDefinitionsCnCHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.home.title">Menu Item Definitions Cn CS</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-menu-item-definitions-cn-c"
+        [routerLink]="['/menu-item-definitions-cn-c/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.home.createLabel"
+          >Create a new Menu Item Definitions Cn C</span
+        >
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (menuItemDefinitionsCnCS().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.home.notFound"
+        >No Menu Item Definitions Cn CS found</span
+      >
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="hierUnitId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.hierUnitId">Hier Unit Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="menuItemMasterObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.menuItemMasterObjNum"
+                  >Menu Item Master Obj Num</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="menuItemMasterId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.menuItemMasterId">Menu Item Master Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="menuItemDefinitionId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.menuItemDefinitionId"
+                  >Menu Item Definition Id</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="defSequenceNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.defSequenceNum">Def Sequence Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="menuItemClassObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.menuItemClassObjNum"
+                  >Menu Item Class Obj Num</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="overridePrintClassObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.overridePrintClassObjNum"
+                  >Override Print Class Obj Num</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="mainLevel">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.mainLevel">Main Level</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="subLevel">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.subLevel">Sub Level</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="quantity">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.quantity">Quantity</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="kdsPrepTime">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.kdsPrepTime">Kds Prep Time</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="prefixLevelOverride">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.prefixLevelOverride"
+                  >Prefix Level Override</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="guestCount">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.guestCount">Guest Count</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="slu1ObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu1ObjNum">Slu 1 Obj Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="slu2ObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu2ObjNum">Slu 2 Obj Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="slu3ObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu3ObjNum">Slu 3 Obj Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="slu4ObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu4ObjNum">Slu 4 Obj Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="slu5ObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu5ObjNum">Slu 5 Obj Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="slu6ObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu6ObjNum">Slu 6 Obj Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="slu7ObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu7ObjNum">Slu 7 Obj Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="slu8ObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu8ObjNum">Slu 8 Obj Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.firstName">First Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (menuItemDefinitionsCnC of menuItemDefinitionsCnCS(); track trackId(menuItemDefinitionsCnC)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/menu-item-definitions-cn-c', menuItemDefinitionsCnC.id, 'view']">{{ menuItemDefinitionsCnC.id }}</a>
+              </td>
+              <td>{{ menuItemDefinitionsCnC.hierUnitId }}</td>
+              <td>{{ menuItemDefinitionsCnC.menuItemMasterObjNum }}</td>
+              <td>{{ menuItemDefinitionsCnC.menuItemMasterId }}</td>
+              <td>{{ menuItemDefinitionsCnC.menuItemDefinitionId }}</td>
+              <td>{{ menuItemDefinitionsCnC.defSequenceNum }}</td>
+              <td>{{ menuItemDefinitionsCnC.menuItemClassObjNum }}</td>
+              <td>{{ menuItemDefinitionsCnC.overridePrintClassObjNum }}</td>
+              <td>{{ menuItemDefinitionsCnC.mainLevel }}</td>
+              <td>{{ menuItemDefinitionsCnC.subLevel }}</td>
+              <td>{{ menuItemDefinitionsCnC.quantity }}</td>
+              <td>{{ menuItemDefinitionsCnC.kdsPrepTime }}</td>
+              <td>{{ menuItemDefinitionsCnC.prefixLevelOverride }}</td>
+              <td>{{ menuItemDefinitionsCnC.guestCount }}</td>
+              <td>{{ menuItemDefinitionsCnC.slu1ObjNum }}</td>
+              <td>{{ menuItemDefinitionsCnC.slu2ObjNum }}</td>
+              <td>{{ menuItemDefinitionsCnC.slu3ObjNum }}</td>
+              <td>{{ menuItemDefinitionsCnC.slu4ObjNum }}</td>
+              <td>{{ menuItemDefinitionsCnC.slu5ObjNum }}</td>
+              <td>{{ menuItemDefinitionsCnC.slu6ObjNum }}</td>
+              <td>{{ menuItemDefinitionsCnC.slu7ObjNum }}</td>
+              <td>{{ menuItemDefinitionsCnC.slu8ObjNum }}</td>
+              <td>{{ menuItemDefinitionsCnC.firstName }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a
+                    [routerLink]="['/menu-item-definitions-cn-c', menuItemDefinitionsCnC.id, 'view']"
+                    class="btn btn-info btn-sm"
+                    data-cy="entityDetailsButton"
+                  >
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a
+                    [routerLink]="['/menu-item-definitions-cn-c', menuItemDefinitionsCnC.id, 'edit']"
+                    class="btn btn-primary btn-sm"
+                    data-cy="entityEditButton"
+                  >
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(menuItemDefinitionsCnC)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

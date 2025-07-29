@@ -1,0 +1,119 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122347"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "hierUnitId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tzIndex",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tzName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "localeInfoId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reportingLocName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reportingParentEnterpriseLevelName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "objectNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "sbmPmsIfcIp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmPmsIfcPort",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmPriveRoomStart",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmPriveRoomEnd",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmPmsSendAllDetails",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmPmsSendFullDscv",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmPmsSend64Tax",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmCardPaymentUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmCheckHotelDataUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmVoucherSvcUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmVoucherInvPm",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmVoucherCorpPm",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmVoucherRewardPm",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmVoucherMcPm",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmPmsIfcPort2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmPmsIfcPort3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmPmsIfcPort4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sbmTimeout",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Location",
+  "relationships": [],
+  "searchEngine": "no"
+}

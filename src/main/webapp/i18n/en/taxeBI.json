@@ -1,0 +1,27 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "taxeBI": {
+      "home": {
+        "title": "Taxe BIS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Taxe BI",
+        "createOrEditLabel": "Create or edit a Taxe BI",
+        "notFound": "No Taxe BIS found"
+      },
+      "created": "A new Taxe BI is created with identifier {{ param }}",
+      "updated": "A Taxe BI is updated with identifier {{ param }}",
+      "deleted": "A Taxe BI is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Taxe BI {{ id }}?"
+      },
+      "detail": {
+        "title": "Taxe BI"
+      },
+      "id": "ID",
+      "locRef": "Loc Ref",
+      "num": "Num",
+      "name": "Name",
+      "type": "Type"
+    }
+  }
+}

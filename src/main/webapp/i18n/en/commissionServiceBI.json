@@ -1,0 +1,28 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "commissionServiceBI": {
+      "home": {
+        "title": "Commission Service BIS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Commission Service BI",
+        "createOrEditLabel": "Create or edit a Commission Service BI",
+        "notFound": "No Commission Service BIS found"
+      },
+      "created": "A new Commission Service BI is created with identifier {{ param }}",
+      "updated": "A Commission Service BI is updated with identifier {{ param }}",
+      "deleted": "A Commission Service BI is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Commission Service BI {{ id }}?"
+      },
+      "detail": {
+        "title": "Commission Service BI"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "nomCourt": "Nom Court",
+      "typeValue": "Type Value",
+      "value": "Value",
+      "etablissementRef": "Etablissement Ref"
+    }
+  }
+}

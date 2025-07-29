@@ -1,0 +1,96 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122344"
+  },
+  "applications": "*",
+  "entityTableName": "guest_check_bi",
+  "fields": [
+    {
+      "fieldName": "guestCheckId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "chkNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "opnLcl",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "clsdLcl",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "cancelFlag",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "gstCnt",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tblNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "taxCollTtl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "subTtl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "chkTtl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "svcChgTtl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "tipTotal",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "dscTtl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "errorCorrectTtl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "returnTtl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "xferToChkNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "xferStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "otNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String"
+    }
+  ],
+  "name": "GuestCheckBI",
+  "relationships": [
+    {
+      "otherEntityName": "detailLineBI",
+      "otherEntityRelationshipName": "guestCheckBI",
+      "relationshipName": "detailLineBIList",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122341"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "masterId",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nomCourt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "familyGroupRef",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "prix",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "menuRef",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "ElementMenu",
+  "relationships": [],
+  "searchEngine": "no"
+}

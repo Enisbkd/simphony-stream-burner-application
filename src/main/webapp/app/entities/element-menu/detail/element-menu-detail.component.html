@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (elementMenu(); as elementMenuRef) {
+      <div>
+        <h2 data-cy="elementMenuDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.detail.title">Element Menu</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ elementMenuRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.masterId">Master Id</span></dt>
+          <dd>
+            <span>{{ elementMenuRef.masterId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.nom">Nom</span></dt>
+          <dd>
+            <span>{{ elementMenuRef.nom }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.nomCourt">Nom Court</span></dt>
+          <dd>
+            <span>{{ elementMenuRef.nomCourt }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.familyGroupRef">Family Group Ref</span></dt>
+          <dd>
+            <span>{{ elementMenuRef.familyGroupRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.prix">Prix</span></dt>
+          <dd>
+            <span>{{ elementMenuRef.prix }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.elementMenu.menuRef">Menu Ref</span></dt>
+          <dd>
+            <span>{{ elementMenuRef.menuRef }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/element-menu', elementMenuRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

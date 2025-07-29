@@ -1,0 +1,168 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-menu-item-masters-cn-c-heading"
+        data-cy="MenuItemMastersCnCCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.home.createOrEditLabel"
+      >
+        Create or edit a Menu Item Masters Cn C
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_hierUnitId" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.hierUnitId"
+            >Hier Unit Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="hierUnitId"
+            id="field_hierUnitId"
+            data-cy="hierUnitId"
+            formControlName="hierUnitId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_menuItemMasterId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.menuItemMasterId"
+            >Menu Item Master Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="menuItemMasterId"
+            id="field_menuItemMasterId"
+            data-cy="menuItemMasterId"
+            formControlName="menuItemMasterId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_familyGroupObjectNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.familyGroupObjectNum"
+            >Family Group Object Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="familyGroupObjectNum"
+            id="field_familyGroupObjectNum"
+            data-cy="familyGroupObjectNum"
+            formControlName="familyGroupObjectNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_majorGroupObjectNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.majorGroupObjectNum"
+            >Major Group Object Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="majorGroupObjectNum"
+            id="field_majorGroupObjectNum"
+            data-cy="majorGroupObjectNum"
+            formControlName="majorGroupObjectNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_reportGroupObjectNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.reportGroupObjectNum"
+            >Report Group Object Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="reportGroupObjectNum"
+            id="field_reportGroupObjectNum"
+            data-cy="reportGroupObjectNum"
+            formControlName="reportGroupObjectNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_externalReference1"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.externalReference1"
+            >External Reference 1</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="externalReference1"
+            id="field_externalReference1"
+            data-cy="externalReference1"
+            formControlName="externalReference1"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_externalReference2"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.externalReference2"
+            >External Reference 2</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="externalReference2"
+            id="field_externalReference2"
+            data-cy="externalReference2"
+            formControlName="externalReference2"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_objectNum" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.objectNum"
+            >Object Num</label
+          >
+          <input type="number" class="form-control" name="objectNum" id="field_objectNum" data-cy="objectNum" formControlName="objectNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_name" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+{
+  "annotations": {
+    "changelogDate": "20250729122405"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "orgShortName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rvcRef",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "taxRateId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "percentage",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "taxType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nameFr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nameEn",
+      "fieldType": "String"
+    }
+  ],
+  "name": "TaxeRateTrans",
+  "relationships": [],
+  "searchEngine": "no"
+}

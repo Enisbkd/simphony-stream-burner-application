@@ -1,0 +1,126 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (checkTrans(); as checkTransRef) {
+      <div>
+        <h2 data-cy="checkTransDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.detail.title">Check Trans</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ checkTransRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.rvcRef">Rvc Ref</span></dt>
+          <dd>
+            <span>{{ checkTransRef.rvcRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.checkRef">Check Ref</span></dt>
+          <dd>
+            <span>{{ checkTransRef.checkRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.checkNumber">Check Number</span></dt>
+          <dd>
+            <span>{{ checkTransRef.checkNumber }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.checkName">Check Name</span></dt>
+          <dd>
+            <span>{{ checkTransRef.checkName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.checkEmployeeRef">Check Employee Ref</span></dt>
+          <dd>
+            <span>{{ checkTransRef.checkEmployeeRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.orderTypeRef">Order Type Ref</span></dt>
+          <dd>
+            <span>{{ checkTransRef.orderTypeRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.orderChannelRef">Order Channel Ref</span></dt>
+          <dd>
+            <span>{{ checkTransRef.orderChannelRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.tableName">Table Name</span></dt>
+          <dd>
+            <span>{{ checkTransRef.tableName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.tableGroupNumber">Table Group Number</span></dt>
+          <dd>
+            <span>{{ checkTransRef.tableGroupNumber }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.openTime">Open Time</span></dt>
+          <dd>
+            <span>{{ checkTransRef.openTime | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.guestCount">Guest Count</span></dt>
+          <dd>
+            <span>{{ checkTransRef.guestCount }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.language">Language</span></dt>
+          <dd>
+            <span>{{ checkTransRef.language }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.isTrainingCheck">Is Training Check</span></dt>
+          <dd>
+            <span>{{ checkTransRef.isTrainingCheck }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.status">Status</span></dt>
+          <dd>
+            <span>{{ checkTransRef.status }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.preparationStatus">Preparation Status</span></dt>
+          <dd>
+            <span>{{ checkTransRef.preparationStatus }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.subtotal">Subtotal</span></dt>
+          <dd>
+            <span>{{ checkTransRef.subtotal }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.subtotalDiscountTotal">Subtotal Discount Total</span></dt>
+          <dd>
+            <span>{{ checkTransRef.subtotalDiscountTotal }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.autoServiceChargeTotal">Auto Service Charge Total</span>
+          </dt>
+          <dd>
+            <span>{{ checkTransRef.autoServiceChargeTotal }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.serviceChargeTotal">Service Charge Total</span></dt>
+          <dd>
+            <span>{{ checkTransRef.serviceChargeTotal }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.taxTotal">Tax Total</span></dt>
+          <dd>
+            <span>{{ checkTransRef.taxTotal }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.paymentTotal">Payment Total</span></dt>
+          <dd>
+            <span>{{ checkTransRef.paymentTotal }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.totalDue">Total Due</span></dt>
+          <dd>
+            <span>{{ checkTransRef.totalDue }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.taxRateId">Tax Rate Id</span></dt>
+          <dd>
+            <span>{{ checkTransRef.taxRateId }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/check-trans', checkTransRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>
