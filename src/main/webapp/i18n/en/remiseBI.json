@@ -1,0 +1,29 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "remiseBI": {
+      "home": {
+        "title": "Remise BIS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Remise BI",
+        "createOrEditLabel": "Create or edit a Remise BI",
+        "notFound": "No Remise BIS found"
+      },
+      "created": "A new Remise BI is created with identifier {{ param }}",
+      "updated": "A Remise BI is updated with identifier {{ param }}",
+      "deleted": "A Remise BI is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Remise BI {{ id }}?"
+      },
+      "detail": {
+        "title": "Remise BI"
+      },
+      "id": "ID",
+      "num": "Num",
+      "name": "Name",
+      "posPercent": "Pos Percent",
+      "rptGrpNum": "Rpt Grp Num",
+      "rptGrpName": "Rpt Grp Name",
+      "locRef": "Loc Ref"
+    }
+  }
+}

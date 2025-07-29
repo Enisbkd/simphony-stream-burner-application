@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (pointDeVenteCnC(); as pointDeVenteCnCRef) {
+      <div>
+        <h2 data-cy="pointDeVenteCnCDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.detail.title">Point De Vente Cn C</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ pointDeVenteCnCRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.locHierUnitId">Loc Hier Unit Id</span></dt>
+          <dd>
+            <span>{{ pointDeVenteCnCRef.locHierUnitId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.locObjNum">Loc Obj Num</span></dt>
+          <dd>
+            <span>{{ pointDeVenteCnCRef.locObjNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.rvcId">Rvc Id</span></dt>
+          <dd>
+            <span>{{ pointDeVenteCnCRef.rvcId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.kdsControllerId">Kds Controller Id</span></dt>
+          <dd>
+            <span>{{ pointDeVenteCnCRef.kdsControllerId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.hierUnitId">Hier Unit Id</span></dt>
+          <dd>
+            <span>{{ pointDeVenteCnCRef.hierUnitId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.objectNum">Object Num</span></dt>
+          <dd>
+            <span>{{ pointDeVenteCnCRef.objectNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.name">Name</span></dt>
+          <dd>
+            <span>{{ pointDeVenteCnCRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.dataExtensions">Data Extensions</span></dt>
+          <dd>
+            <span>{{ pointDeVenteCnCRef.dataExtensions }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/point-de-vente-cn-c', pointDeVenteCnCRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

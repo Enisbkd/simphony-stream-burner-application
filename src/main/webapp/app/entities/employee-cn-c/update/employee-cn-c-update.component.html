@@ -1,0 +1,373 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-employee-cn-c-heading"
+        data-cy="EmployeeCnCCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.home.createOrEditLabel"
+      >
+        Create or edit a Employee Cn C
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_objectNum" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.objectNum"
+            >Object Num</label
+          >
+          <input type="number" class="form-control" name="objectNum" id="field_objectNum" data-cy="objectNum" formControlName="objectNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_firstName" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstName"
+            >First Name</label
+          >
+          <input type="text" class="form-control" name="firstName" id="field_firstName" data-cy="firstName" formControlName="firstName" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_lastName" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.lastName"
+            >Last Name</label
+          >
+          <input type="text" class="form-control" name="lastName" id="field_lastName" data-cy="lastName" formControlName="lastName" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_checkName" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.checkName"
+            >Check Name</label
+          >
+          <input type="text" class="form-control" name="checkName" id="field_checkName" data-cy="checkName" formControlName="checkName" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_email" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.email">Email</label>
+          <input type="text" class="form-control" name="email" id="field_email" data-cy="email" formControlName="email" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_languageObjNum" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.languageObjNum"
+            >Language Obj Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="languageObjNum"
+            id="field_languageObjNum"
+            data-cy="languageObjNum"
+            formControlName="languageObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_langId" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.langId">Lang Id</label>
+          <input type="number" class="form-control" name="langId" id="field_langId" data-cy="langId" formControlName="langId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_alternateId" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.alternateId"
+            >Alternate Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="alternateId"
+            id="field_alternateId"
+            data-cy="alternateId"
+            formControlName="alternateId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_level" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.level">Level</label>
+          <input type="number" class="form-control" name="level" id="field_level" data-cy="level" formControlName="level" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_group" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.group">Group</label>
+          <input type="number" class="form-control" name="group" id="field_group" data-cy="group" formControlName="group" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_userName" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.userName"
+            >User Name</label
+          >
+          <input type="text" class="form-control" name="userName" id="field_userName" data-cy="userName" formControlName="userName" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstRoleHierUnitId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstRoleHierUnitId"
+            >First Role Hier Unit Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="firstRoleHierUnitId"
+            id="field_firstRoleHierUnitId"
+            data-cy="firstRoleHierUnitId"
+            formControlName="firstRoleHierUnitId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstRoleObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstRoleObjNum"
+            >First Role Obj Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="firstRoleObjNum"
+            id="field_firstRoleObjNum"
+            data-cy="firstRoleObjNum"
+            formControlName="firstRoleObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstVisibilityHierUnitId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstVisibilityHierUnitId"
+            >First Visibility Hier Unit Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="firstVisibilityHierUnitId"
+            id="field_firstVisibilityHierUnitId"
+            data-cy="firstVisibilityHierUnitId"
+            formControlName="firstVisibilityHierUnitId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstVisibilityPropagateToChildren"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstVisibilityPropagateToChildren"
+            >First Visibility Propagate To Children</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="firstVisibilityPropagateToChildren"
+            id="field_firstVisibilityPropagateToChildren"
+            data-cy="firstVisibilityPropagateToChildren"
+            formControlName="firstVisibilityPropagateToChildren"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstPropertyHierUnitId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstPropertyHierUnitId"
+            >First Property Hier Unit Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="firstPropertyHierUnitId"
+            id="field_firstPropertyHierUnitId"
+            data-cy="firstPropertyHierUnitId"
+            formControlName="firstPropertyHierUnitId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstPropertyObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstPropertyObjNum"
+            >First Property Obj Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="firstPropertyObjNum"
+            id="field_firstPropertyObjNum"
+            data-cy="firstPropertyObjNum"
+            formControlName="firstPropertyObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstPropertyEmpClassObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstPropertyEmpClassObjNum"
+            >First Property Emp Class Obj Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="firstPropertyEmpClassObjNum"
+            id="field_firstPropertyEmpClassObjNum"
+            data-cy="firstPropertyEmpClassObjNum"
+            formControlName="firstPropertyEmpClassObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstPropertyOptions"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstPropertyOptions"
+            >First Property Options</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="firstPropertyOptions"
+            id="field_firstPropertyOptions"
+            data-cy="firstPropertyOptions"
+            formControlName="firstPropertyOptions"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstOperatorRvcHierUnitId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorRvcHierUnitId"
+            >First Operator Rvc Hier Unit Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="firstOperatorRvcHierUnitId"
+            id="field_firstOperatorRvcHierUnitId"
+            data-cy="firstOperatorRvcHierUnitId"
+            formControlName="firstOperatorRvcHierUnitId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstOperatorRvcObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorRvcObjNum"
+            >First Operator Rvc Obj Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="firstOperatorRvcObjNum"
+            id="field_firstOperatorRvcObjNum"
+            data-cy="firstOperatorRvcObjNum"
+            formControlName="firstOperatorRvcObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstOperatorOptions"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorOptions"
+            >First Operator Options</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="firstOperatorOptions"
+            id="field_firstOperatorOptions"
+            data-cy="firstOperatorOptions"
+            formControlName="firstOperatorOptions"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstOperatorCashDrawerObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorCashDrawerObjNum"
+            >First Operator Cash Drawer Obj Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="firstOperatorCashDrawerObjNum"
+            id="field_firstOperatorCashDrawerObjNum"
+            data-cy="firstOperatorCashDrawerObjNum"
+            formControlName="firstOperatorCashDrawerObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstOperatorTmsColorObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorTmsColorObjNum"
+            >First Operator Tms Color Obj Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="firstOperatorTmsColorObjNum"
+            id="field_firstOperatorTmsColorObjNum"
+            data-cy="firstOperatorTmsColorObjNum"
+            formControlName="firstOperatorTmsColorObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_firstOperatorServerEfficiency"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorServerEfficiency"
+            >First Operator Server Efficiency</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="firstOperatorServerEfficiency"
+            id="field_firstOperatorServerEfficiency"
+            data-cy="firstOperatorServerEfficiency"
+            formControlName="firstOperatorServerEfficiency"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_pin" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.pin">Pin</label>
+          <input type="text" class="form-control" name="pin" id="field_pin" data-cy="pin" formControlName="pin" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_accessId" jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.accessId"
+            >Access Id</label
+          >
+          <input type="number" class="form-control" name="accessId" id="field_accessId" data-cy="accessId" formControlName="accessId" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

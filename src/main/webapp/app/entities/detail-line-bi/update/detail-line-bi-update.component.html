@@ -1,0 +1,299 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-detail-line-bi-heading"
+        data-cy="DetailLineBICreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.home.createOrEditLabel"
+      >
+        Create or edit a Detail Line BI
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_guestCheckLineItemId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.guestCheckLineItemId"
+            >Guest Check Line Item Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="guestCheckLineItemId"
+            id="field_guestCheckLineItemId"
+            data-cy="guestCheckLineItemId"
+            formControlName="guestCheckLineItemId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_detailUTC" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.detailUTC"
+            >Detail UTC</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_detailUTC"
+              data-cy="detailUTC"
+              type="datetime-local"
+              class="form-control"
+              name="detailUTC"
+              formControlName="detailUTC"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_detailLcl" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.detailLcl"
+            >Detail Lcl</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_detailLcl"
+              data-cy="detailLcl"
+              type="datetime-local"
+              class="form-control"
+              name="detailLcl"
+              formControlName="detailLcl"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_seatNum" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.seatNum"
+            >Seat Num</label
+          >
+          <input type="number" class="form-control" name="seatNum" id="field_seatNum" data-cy="seatNum" formControlName="seatNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_prcLvl" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.prcLvl">Prc Lvl</label>
+          <input type="number" class="form-control" name="prcLvl" id="field_prcLvl" data-cy="prcLvl" formControlName="prcLvl" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_dspTtl" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.dspTtl">Dsp Ttl</label>
+          <input type="number" class="form-control" name="dspTtl" id="field_dspTtl" data-cy="dspTtl" formControlName="dspTtl" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_dspQty" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.dspQty">Dsp Qty</label>
+          <input type="number" class="form-control" name="dspQty" id="field_dspQty" data-cy="dspQty" formControlName="dspQty" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_errCorFlag" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.errCorFlag"
+            >Err Cor Flag</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="errCorFlag"
+            id="field_errCorFlag"
+            data-cy="errCorFlag"
+            formControlName="errCorFlag"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_vdFlag" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.vdFlag">Vd Flag</label>
+          <input type="checkbox" class="form-check" name="vdFlag" id="field_vdFlag" data-cy="vdFlag" formControlName="vdFlag" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_returnFlag" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.returnFlag"
+            >Return Flag</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="returnFlag"
+            id="field_returnFlag"
+            data-cy="returnFlag"
+            formControlName="returnFlag"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_doNotShowFlag" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.doNotShowFlag"
+            >Do Not Show Flag</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="doNotShowFlag"
+            id="field_doNotShowFlag"
+            data-cy="doNotShowFlag"
+            formControlName="doNotShowFlag"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_aggTtl" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.aggTtl">Agg Ttl</label>
+          <input type="number" class="form-control" name="aggTtl" id="field_aggTtl" data-cy="aggTtl" formControlName="aggTtl" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_rsnCodeNum" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.rsnCodeNum"
+            >Rsn Code Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="rsnCodeNum"
+            id="field_rsnCodeNum"
+            data-cy="rsnCodeNum"
+            formControlName="rsnCodeNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_refInfo1" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.refInfo1"
+            >Ref Info 1</label
+          >
+          <input type="text" class="form-control" name="refInfo1" id="field_refInfo1" data-cy="refInfo1" formControlName="refInfo1" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_refInfo2" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.refInfo2"
+            >Ref Info 2</label
+          >
+          <input type="text" class="form-control" name="refInfo2" id="field_refInfo2" data-cy="refInfo2" formControlName="refInfo2" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_svcRndNum" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.svcRndNum"
+            >Svc Rnd Num</label
+          >
+          <input type="number" class="form-control" name="svcRndNum" id="field_svcRndNum" data-cy="svcRndNum" formControlName="svcRndNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_parDtlId" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.parDtlId"
+            >Par Dtl Id</label
+          >
+          <input type="number" class="form-control" name="parDtlId" id="field_parDtlId" data-cy="parDtlId" formControlName="parDtlId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_chkEmpId" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.chkEmpId"
+            >Chk Emp Id</label
+          >
+          <input type="number" class="form-control" name="chkEmpId" id="field_chkEmpId" data-cy="chkEmpId" formControlName="chkEmpId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_transEmpNum" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.transEmpNum"
+            >Trans Emp Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="transEmpNum"
+            id="field_transEmpNum"
+            data-cy="transEmpNum"
+            formControlName="transEmpNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_mgrEmpNum" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.mgrEmpNum"
+            >Mgr Emp Num</label
+          >
+          <input type="number" class="form-control" name="mgrEmpNum" id="field_mgrEmpNum" data-cy="mgrEmpNum" formControlName="mgrEmpNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_mealEmpNum" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.mealEmpNum"
+            >Meal Emp Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="mealEmpNum"
+            id="field_mealEmpNum"
+            data-cy="mealEmpNum"
+            formControlName="mealEmpNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_dscNum" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.dscNum">Dsc Num</label>
+          <input type="number" class="form-control" name="dscNum" id="field_dscNum" data-cy="dscNum" formControlName="dscNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_dscMiNum" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.dscMiNum"
+            >Dsc Mi Num</label
+          >
+          <input type="number" class="form-control" name="dscMiNum" id="field_dscMiNum" data-cy="dscMiNum" formControlName="dscMiNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_svcChgNum" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.svcChgNum"
+            >Svc Chg Num</label
+          >
+          <input type="number" class="form-control" name="svcChgNum" id="field_svcChgNum" data-cy="svcChgNum" formControlName="svcChgNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_tmedNum" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.tmedNum"
+            >Tmed Num</label
+          >
+          <input type="number" class="form-control" name="tmedNum" id="field_tmedNum" data-cy="tmedNum" formControlName="tmedNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_miNum" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.miNum">Mi Num</label>
+          <input type="number" class="form-control" name="miNum" id="field_miNum" data-cy="miNum" formControlName="miNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_guestCheckBI" jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.guestCheckBI"
+            >Guest Check BI</label
+          >
+          <select
+            class="form-control"
+            id="field_guestCheckBI"
+            data-cy="guestCheckBI"
+            name="guestCheckBI"
+            formControlName="guestCheckBI"
+            [compareWith]="compareGuestCheckBI"
+          >
+            <option [ngValue]="null"></option>
+            @for (guestCheckBIOption of guestCheckBISSharedCollection; track $index) {
+              <option [ngValue]="guestCheckBIOption">{{ guestCheckBIOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

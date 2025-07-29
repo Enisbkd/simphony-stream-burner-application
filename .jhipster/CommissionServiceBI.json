@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124421"
+  },
+  "applications": "*",
+  "entityTableName": "commission_service_bi",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomCourt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typeValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "etablissementRef",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "CommissionServiceBI",
+  "relationships": [],
+  "searchEngine": "no"
+}

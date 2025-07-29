@@ -1,0 +1,108 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (guestCheckBI(); as guestCheckBIRef) {
+      <div>
+        <h2 data-cy="guestCheckBIDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.detail.title">Guest Check BI</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.guestCheckId">Guest Check Id</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.guestCheckId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.chkNum">Chk Num</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.chkNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.opnLcl">Opn Lcl</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.opnLcl | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.clsdLcl">Clsd Lcl</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.clsdLcl | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.cancelFlag">Cancel Flag</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.cancelFlag }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.gstCnt">Gst Cnt</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.gstCnt }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.tblNum">Tbl Num</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.tblNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.taxCollTtl">Tax Coll Ttl</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.taxCollTtl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.subTtl">Sub Ttl</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.subTtl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.chkTtl">Chk Ttl</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.chkTtl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.svcChgTtl">Svc Chg Ttl</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.svcChgTtl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.tipTotal">Tip Total</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.tipTotal }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.dscTtl">Dsc Ttl</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.dscTtl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.errorCorrectTtl">Error Correct Ttl</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.errorCorrectTtl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.returnTtl">Return Ttl</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.returnTtl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.xferToChkNum">Xfer To Chk Num</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.xferToChkNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.xferStatus">Xfer Status</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.xferStatus }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.otNum">Ot Num</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.otNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ guestCheckBIRef.locRef }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/guest-check-bi', guestCheckBIRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

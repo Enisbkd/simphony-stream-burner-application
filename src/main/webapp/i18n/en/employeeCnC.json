@@ -1,0 +1,50 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "employeeCnC": {
+      "home": {
+        "title": "Employee Cn CS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Employee Cn C",
+        "createOrEditLabel": "Create or edit a Employee Cn C",
+        "notFound": "No Employee Cn CS found"
+      },
+      "created": "A new Employee Cn C is created with identifier {{ param }}",
+      "updated": "A Employee Cn C is updated with identifier {{ param }}",
+      "deleted": "A Employee Cn C is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Employee Cn C {{ id }}?"
+      },
+      "detail": {
+        "title": "Employee Cn C"
+      },
+      "id": "ID",
+      "objectNum": "Object Num",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "checkName": "Check Name",
+      "email": "Email",
+      "languageObjNum": "Language Obj Num",
+      "langId": "Lang Id",
+      "alternateId": "Alternate Id",
+      "level": "Level",
+      "group": "Group",
+      "userName": "User Name",
+      "firstRoleHierUnitId": "First Role Hier Unit Id",
+      "firstRoleObjNum": "First Role Obj Num",
+      "firstVisibilityHierUnitId": "First Visibility Hier Unit Id",
+      "firstVisibilityPropagateToChildren": "First Visibility Propagate To Children",
+      "firstPropertyHierUnitId": "First Property Hier Unit Id",
+      "firstPropertyObjNum": "First Property Obj Num",
+      "firstPropertyEmpClassObjNum": "First Property Emp Class Obj Num",
+      "firstPropertyOptions": "First Property Options",
+      "firstOperatorRvcHierUnitId": "First Operator Rvc Hier Unit Id",
+      "firstOperatorRvcObjNum": "First Operator Rvc Obj Num",
+      "firstOperatorOptions": "First Operator Options",
+      "firstOperatorCashDrawerObjNum": "First Operator Cash Drawer Obj Num",
+      "firstOperatorTmsColorObjNum": "First Operator Tms Color Obj Num",
+      "firstOperatorServerEfficiency": "First Operator Server Efficiency",
+      "pin": "Pin",
+      "accessId": "Access Id"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (remiseBI(); as remiseBIRef) {
+      <div>
+        <h2 data-cy="remiseBIDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseBI.detail.title">Remise BI</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ remiseBIRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseBI.num">Num</span></dt>
+          <dd>
+            <span>{{ remiseBIRef.num }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseBI.name">Name</span></dt>
+          <dd>
+            <span>{{ remiseBIRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseBI.posPercent">Pos Percent</span></dt>
+          <dd>
+            <span>{{ remiseBIRef.posPercent }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseBI.rptGrpNum">Rpt Grp Num</span></dt>
+          <dd>
+            <span>{{ remiseBIRef.rptGrpNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseBI.rptGrpName">Rpt Grp Name</span></dt>
+          <dd>
+            <span>{{ remiseBIRef.rptGrpName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.remiseBI.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ remiseBIRef.locRef }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/remise-bi', remiseBIRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

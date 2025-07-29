@@ -1,0 +1,136 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (httpCallAudit(); as httpCallAuditRef) {
+      <div>
+        <h2 data-cy="httpCallAuditDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.detail.title">Http Call Audit</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.correlationId">Correlation Id</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.correlationId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.method">Method</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.method }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.basePath">Base Path</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.basePath }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.endpoint">Endpoint</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.endpoint }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.fullUrl">Full Url</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.fullUrl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.pathParams">Path Params</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.pathParams }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.queryParams">Query Params</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.queryParams }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.requestHeaders">Request Headers</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.requestHeaders }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.requestBody">Request Body</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.requestBody }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.responseStatusCode">Response Status Code</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.responseStatusCode }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.responseStatusText">Response Status Text</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.responseStatusText }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.responseHeaders">Response Headers</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.responseHeaders }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.responseBody">Response Body</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.responseBody }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.timestamp">Timestamp</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.timestamp | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.durationMs">Duration Ms</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.durationMs }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.errorMessage">Error Message</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.errorMessage }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.errorType">Error Type</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.errorType }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.serviceName">Service Name</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.serviceName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.environment">Environment</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.environment }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.userAgent">User Agent</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.userAgent }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.clientIp">Client Ip</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.clientIp }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.success">Success</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.success }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.retryCount">Retry Count</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.retryCount }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.kafkaTopic">Kafka Topic</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.kafkaTopic }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.sessionId">Session Id</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.sessionId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.userId">User Id</span></dt>
+          <dd>
+            <span>{{ httpCallAuditRef.userId }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/http-call-audit', httpCallAuditRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

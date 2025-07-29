@@ -1,0 +1,30 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "commissionServiceTrans": {
+      "home": {
+        "title": "Commission Service Trans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Commission Service Trans",
+        "createOrEditLabel": "Create or edit a Commission Service Trans",
+        "notFound": "No Commission Service Trans found"
+      },
+      "created": "A new Commission Service Trans is created with identifier {{ param }}",
+      "updated": "A Commission Service Trans is updated with identifier {{ param }}",
+      "deleted": "A Commission Service Trans is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Commission Service Trans {{ id }}?"
+      },
+      "detail": {
+        "title": "Commission Service Trans"
+      },
+      "id": "ID",
+      "orgShortName": "Org Short Name",
+      "locRef": "Loc Ref",
+      "rvcRef": "Rvc Ref",
+      "serviceChargeId": "Service Charge Id",
+      "name": "Name",
+      "type": "Type",
+      "value": "Value"
+    }
+  }
+}

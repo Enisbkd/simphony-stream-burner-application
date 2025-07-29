@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (pointDeVenteTrans(); as pointDeVenteTransRef) {
+      <div>
+        <h2 data-cy="pointDeVenteTransDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteTrans.detail.title">Point De Vente Trans</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ pointDeVenteTransRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteTrans.rvcRef">Rvc Ref</span></dt>
+          <dd>
+            <span>{{ pointDeVenteTransRef.rvcRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteTrans.name">Name</span></dt>
+          <dd>
+            <span>{{ pointDeVenteTransRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteTrans.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ pointDeVenteTransRef.locRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteTrans.orgShortName">Org Short Name</span></dt>
+          <dd>
+            <span>{{ pointDeVenteTransRef.orgShortName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteTrans.address">Address</span></dt>
+          <dd>
+            <span>{{ pointDeVenteTransRef.address }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/point-de-vente-trans', pointDeVenteTransRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

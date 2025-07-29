@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (taxeBI(); as taxeBIRef) {
+      <div>
+        <h2 data-cy="taxeBIDetailsHeading"><span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeBI.detail.title">Taxe BI</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ taxeBIRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeBI.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ taxeBIRef.locRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeBI.num">Num</span></dt>
+          <dd>
+            <span>{{ taxeBIRef.num }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeBI.name">Name</span></dt>
+          <dd>
+            <span>{{ taxeBIRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.taxeBI.type">Type</span></dt>
+          <dd>
+            <span>{{ taxeBIRef.type }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/taxe-bi', taxeBIRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,28 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "orderChannelBI": {
+      "home": {
+        "title": "Order Channel BIS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Order Channel BI",
+        "createOrEditLabel": "Create or edit a Order Channel BI",
+        "notFound": "No Order Channel BIS found"
+      },
+      "created": "A new Order Channel BI is created with identifier {{ param }}",
+      "updated": "A Order Channel BI is updated with identifier {{ param }}",
+      "deleted": "A Order Channel BI is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Order Channel BI {{ id }}?"
+      },
+      "detail": {
+        "title": "Order Channel BI"
+      },
+      "id": "ID",
+      "num": "Num",
+      "locRef": "Loc Ref",
+      "name": "Name",
+      "mstrNum": "Mstr Num",
+      "mstrName": "Mstr Name"
+    }
+  }
+}

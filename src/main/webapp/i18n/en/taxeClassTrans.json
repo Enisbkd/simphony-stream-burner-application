@@ -1,0 +1,28 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "taxeClassTrans": {
+      "home": {
+        "title": "Taxe Class Trans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Taxe Class Trans",
+        "createOrEditLabel": "Create or edit a Taxe Class Trans",
+        "notFound": "No Taxe Class Trans found"
+      },
+      "created": "A new Taxe Class Trans is created with identifier {{ param }}",
+      "updated": "A Taxe Class Trans is updated with identifier {{ param }}",
+      "deleted": "A Taxe Class Trans is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Taxe Class Trans {{ id }}?"
+      },
+      "detail": {
+        "title": "Taxe Class Trans"
+      },
+      "id": "ID",
+      "orgShortName": "Org Short Name",
+      "locRef": "Loc Ref",
+      "rvcRef": "Rvc Ref",
+      "taxClassId": "Tax Class Id",
+      "activeTaxRateRefs": "Active Tax Rate Refs"
+    }
+  }
+}

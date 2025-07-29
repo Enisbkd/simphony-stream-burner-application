@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (modePaiementBI(); as modePaiementBIRef) {
+      <div>
+        <h2 data-cy="modePaiementBIDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementBI.detail.title">Mode Paiement BI</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ modePaiementBIRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementBI.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ modePaiementBIRef.locRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementBI.num">Num</span></dt>
+          <dd>
+            <span>{{ modePaiementBIRef.num }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementBI.name">Name</span></dt>
+          <dd>
+            <span>{{ modePaiementBIRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementBI.type">Type</span></dt>
+          <dd>
+            <span>{{ modePaiementBIRef.type }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/mode-paiement-bi', modePaiementBIRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

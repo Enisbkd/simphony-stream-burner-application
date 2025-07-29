@@ -1,0 +1,308 @@
+<div>
+  <h2 id="page-heading" data-cy="EmployeeCnCHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.home.title">Employee Cn CS</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-employee-cn-c"
+        [routerLink]="['/employee-cn-c/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.home.createLabel">Create a new Employee Cn C</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (employeeCnCS().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.home.notFound">No Employee Cn CS found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="objectNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.objectNum">Object Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstName">First Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="lastName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.lastName">Last Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="checkName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.checkName">Check Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="email">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.email">Email</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="languageObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.languageObjNum">Language Obj Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="langId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.langId">Lang Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="alternateId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.alternateId">Alternate Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="level">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.level">Level</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="group">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.group">Group</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="userName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.userName">User Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstRoleHierUnitId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstRoleHierUnitId">First Role Hier Unit Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstRoleObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstRoleObjNum">First Role Obj Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstVisibilityHierUnitId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstVisibilityHierUnitId"
+                  >First Visibility Hier Unit Id</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstVisibilityPropagateToChildren">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstVisibilityPropagateToChildren"
+                  >First Visibility Propagate To Children</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstPropertyHierUnitId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstPropertyHierUnitId"
+                  >First Property Hier Unit Id</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstPropertyObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstPropertyObjNum">First Property Obj Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstPropertyEmpClassObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstPropertyEmpClassObjNum"
+                  >First Property Emp Class Obj Num</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstPropertyOptions">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstPropertyOptions">First Property Options</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstOperatorRvcHierUnitId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorRvcHierUnitId"
+                  >First Operator Rvc Hier Unit Id</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstOperatorRvcObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorRvcObjNum">First Operator Rvc Obj Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstOperatorOptions">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorOptions">First Operator Options</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstOperatorCashDrawerObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorCashDrawerObjNum"
+                  >First Operator Cash Drawer Obj Num</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstOperatorTmsColorObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorTmsColorObjNum"
+                  >First Operator Tms Color Obj Num</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstOperatorServerEfficiency">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorServerEfficiency"
+                  >First Operator Server Efficiency</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="pin">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.pin">Pin</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="accessId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.accessId">Access Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (employeeCnC of employeeCnCS(); track trackId(employeeCnC)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/employee-cn-c', employeeCnC.id, 'view']">{{ employeeCnC.id }}</a>
+              </td>
+              <td>{{ employeeCnC.objectNum }}</td>
+              <td>{{ employeeCnC.firstName }}</td>
+              <td>{{ employeeCnC.lastName }}</td>
+              <td>{{ employeeCnC.checkName }}</td>
+              <td>{{ employeeCnC.email }}</td>
+              <td>{{ employeeCnC.languageObjNum }}</td>
+              <td>{{ employeeCnC.langId }}</td>
+              <td>{{ employeeCnC.alternateId }}</td>
+              <td>{{ employeeCnC.level }}</td>
+              <td>{{ employeeCnC.group }}</td>
+              <td>{{ employeeCnC.userName }}</td>
+              <td>{{ employeeCnC.firstRoleHierUnitId }}</td>
+              <td>{{ employeeCnC.firstRoleObjNum }}</td>
+              <td>{{ employeeCnC.firstVisibilityHierUnitId }}</td>
+              <td>{{ employeeCnC.firstVisibilityPropagateToChildren }}</td>
+              <td>{{ employeeCnC.firstPropertyHierUnitId }}</td>
+              <td>{{ employeeCnC.firstPropertyObjNum }}</td>
+              <td>{{ employeeCnC.firstPropertyEmpClassObjNum }}</td>
+              <td>{{ employeeCnC.firstPropertyOptions }}</td>
+              <td>{{ employeeCnC.firstOperatorRvcHierUnitId }}</td>
+              <td>{{ employeeCnC.firstOperatorRvcObjNum }}</td>
+              <td>{{ employeeCnC.firstOperatorOptions }}</td>
+              <td>{{ employeeCnC.firstOperatorCashDrawerObjNum }}</td>
+              <td>{{ employeeCnC.firstOperatorTmsColorObjNum }}</td>
+              <td>{{ employeeCnC.firstOperatorServerEfficiency }}</td>
+              <td>{{ employeeCnC.pin }}</td>
+              <td>{{ employeeCnC.accessId }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/employee-cn-c', employeeCnC.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/employee-cn-c', employeeCnC.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(employeeCnC)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

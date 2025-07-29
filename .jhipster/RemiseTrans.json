@@ -1,0 +1,43 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124443"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "orgShortName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rvcRef",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "discountId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "frName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "engName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "discountType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "discountValue",
+      "fieldType": "Double"
+    }
+  ],
+  "name": "RemiseTrans",
+  "relationships": [],
+  "searchEngine": "no"
+}

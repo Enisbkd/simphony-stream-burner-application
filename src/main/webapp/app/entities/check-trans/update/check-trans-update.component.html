@@ -1,0 +1,309 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-check-trans-heading"
+        data-cy="CheckTransCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.home.createOrEditLabel"
+      >
+        Create or edit a Check Trans
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_rvcRef" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.rvcRef">Rvc Ref</label>
+          <input type="number" class="form-control" name="rvcRef" id="field_rvcRef" data-cy="rvcRef" formControlName="rvcRef" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_checkRef" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.checkRef"
+            >Check Ref</label
+          >
+          <input type="text" class="form-control" name="checkRef" id="field_checkRef" data-cy="checkRef" formControlName="checkRef" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_checkNumber" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.checkNumber"
+            >Check Number</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="checkNumber"
+            id="field_checkNumber"
+            data-cy="checkNumber"
+            formControlName="checkNumber"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_checkName" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.checkName"
+            >Check Name</label
+          >
+          <input type="text" class="form-control" name="checkName" id="field_checkName" data-cy="checkName" formControlName="checkName" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_checkEmployeeRef"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.checkEmployeeRef"
+            >Check Employee Ref</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="checkEmployeeRef"
+            id="field_checkEmployeeRef"
+            data-cy="checkEmployeeRef"
+            formControlName="checkEmployeeRef"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_orderTypeRef" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.orderTypeRef"
+            >Order Type Ref</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="orderTypeRef"
+            id="field_orderTypeRef"
+            data-cy="orderTypeRef"
+            formControlName="orderTypeRef"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_orderChannelRef" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.orderChannelRef"
+            >Order Channel Ref</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="orderChannelRef"
+            id="field_orderChannelRef"
+            data-cy="orderChannelRef"
+            formControlName="orderChannelRef"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_tableName" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.tableName"
+            >Table Name</label
+          >
+          <input type="text" class="form-control" name="tableName" id="field_tableName" data-cy="tableName" formControlName="tableName" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_tableGroupNumber"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.tableGroupNumber"
+            >Table Group Number</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="tableGroupNumber"
+            id="field_tableGroupNumber"
+            data-cy="tableGroupNumber"
+            formControlName="tableGroupNumber"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_openTime" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.openTime"
+            >Open Time</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_openTime"
+              data-cy="openTime"
+              type="datetime-local"
+              class="form-control"
+              name="openTime"
+              formControlName="openTime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_guestCount" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.guestCount"
+            >Guest Count</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="guestCount"
+            id="field_guestCount"
+            data-cy="guestCount"
+            formControlName="guestCount"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_language" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.language"
+            >Language</label
+          >
+          <input type="text" class="form-control" name="language" id="field_language" data-cy="language" formControlName="language" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_isTrainingCheck" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.isTrainingCheck"
+            >Is Training Check</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="isTrainingCheck"
+            id="field_isTrainingCheck"
+            data-cy="isTrainingCheck"
+            formControlName="isTrainingCheck"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_status" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.status">Status</label>
+          <input type="text" class="form-control" name="status" id="field_status" data-cy="status" formControlName="status" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_preparationStatus"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.preparationStatus"
+            >Preparation Status</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="preparationStatus"
+            id="field_preparationStatus"
+            data-cy="preparationStatus"
+            formControlName="preparationStatus"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_subtotal" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.subtotal"
+            >Subtotal</label
+          >
+          <input type="number" class="form-control" name="subtotal" id="field_subtotal" data-cy="subtotal" formControlName="subtotal" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_subtotalDiscountTotal"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.subtotalDiscountTotal"
+            >Subtotal Discount Total</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="subtotalDiscountTotal"
+            id="field_subtotalDiscountTotal"
+            data-cy="subtotalDiscountTotal"
+            formControlName="subtotalDiscountTotal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_autoServiceChargeTotal"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.autoServiceChargeTotal"
+            >Auto Service Charge Total</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="autoServiceChargeTotal"
+            id="field_autoServiceChargeTotal"
+            data-cy="autoServiceChargeTotal"
+            formControlName="autoServiceChargeTotal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_serviceChargeTotal"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.serviceChargeTotal"
+            >Service Charge Total</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="serviceChargeTotal"
+            id="field_serviceChargeTotal"
+            data-cy="serviceChargeTotal"
+            formControlName="serviceChargeTotal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_taxTotal" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.taxTotal"
+            >Tax Total</label
+          >
+          <input type="number" class="form-control" name="taxTotal" id="field_taxTotal" data-cy="taxTotal" formControlName="taxTotal" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_paymentTotal" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.paymentTotal"
+            >Payment Total</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="paymentTotal"
+            id="field_paymentTotal"
+            data-cy="paymentTotal"
+            formControlName="paymentTotal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_totalDue" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.totalDue"
+            >Total Due</label
+          >
+          <input type="number" class="form-control" name="totalDue" id="field_totalDue" data-cy="totalDue" formControlName="totalDue" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_taxRateId" jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.taxRateId"
+            >Tax Rate Id</label
+          >
+          <input type="number" class="form-control" name="taxRateId" id="field_taxRateId" data-cy="taxRateId" formControlName="taxRateId" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

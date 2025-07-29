@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity GuestCheckBI.
+    -->
+    <changeSet id="20250729124426-1" author="jhipster">
+        <createTable tableName="guest_check_bi">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="guest_check_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="chk_num" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="opn_lcl" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="clsd_lcl" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="cancel_flag" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="gst_cnt" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="tbl_num" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="tax_coll_ttl" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sub_ttl" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="chk_ttl" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="svc_chg_ttl" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="tip_total" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dsc_ttl" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="error_correct_ttl" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="return_ttl" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="xfer_to_chk_num" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="xfer_status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ot_num" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="loc_ref" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="guest_check_bi" columnName="opn_lcl" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="guest_check_bi" columnName="clsd_lcl" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20250729124426-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/guest_check_bi.csv"
+                  separator=";"
+                  tableName="guest_check_bi"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="guest_check_id" type="numeric"/>
+            <column name="chk_num" type="numeric"/>
+            <column name="opn_lcl" type="date"/>
+            <column name="clsd_lcl" type="date"/>
+            <column name="cancel_flag" type="boolean"/>
+            <column name="gst_cnt" type="numeric"/>
+            <column name="tbl_num" type="numeric"/>
+            <column name="tax_coll_ttl" type="numeric"/>
+            <column name="sub_ttl" type="numeric"/>
+            <column name="chk_ttl" type="numeric"/>
+            <column name="svc_chg_ttl" type="numeric"/>
+            <column name="tip_total" type="numeric"/>
+            <column name="dsc_ttl" type="numeric"/>
+            <column name="error_correct_ttl" type="numeric"/>
+            <column name="return_ttl" type="numeric"/>
+            <column name="xfer_to_chk_num" type="numeric"/>
+            <column name="xfer_status" type="string"/>
+            <column name="ot_num" type="numeric"/>
+            <column name="loc_ref" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,118 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-remise-trans-heading"
+        data-cy="RemiseTransCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.home.createOrEditLabel"
+      >
+        Create or edit a Remise Trans
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_orgShortName" jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.orgShortName"
+            >Org Short Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="orgShortName"
+            id="field_orgShortName"
+            data-cy="orgShortName"
+            formControlName="orgShortName"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_locRef" jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.locRef">Loc Ref</label>
+          <input type="text" class="form-control" name="locRef" id="field_locRef" data-cy="locRef" formControlName="locRef" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_rvcRef" jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.rvcRef">Rvc Ref</label>
+          <input type="number" class="form-control" name="rvcRef" id="field_rvcRef" data-cy="rvcRef" formControlName="rvcRef" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_discountId" jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.discountId"
+            >Discount Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="discountId"
+            id="field_discountId"
+            data-cy="discountId"
+            formControlName="discountId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_frName" jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.frName">Fr Name</label>
+          <input type="text" class="form-control" name="frName" id="field_frName" data-cy="frName" formControlName="frName" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_engName" jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.engName"
+            >Eng Name</label
+          >
+          <input type="text" class="form-control" name="engName" id="field_engName" data-cy="engName" formControlName="engName" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_discountType" jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.discountType"
+            >Discount Type</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="discountType"
+            id="field_discountType"
+            data-cy="discountType"
+            formControlName="discountType"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_discountValue" jhiTranslate="simphonyStreamBurnerApplicationApp.remiseTrans.discountValue"
+            >Discount Value</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="discountValue"
+            id="field_discountValue"
+            data-cy="discountValue"
+            formControlName="discountValue"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

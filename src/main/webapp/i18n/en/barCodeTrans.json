@@ -1,0 +1,32 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "barCodeTrans": {
+      "home": {
+        "title": "Bar Code Trans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Bar Code Trans",
+        "createOrEditLabel": "Create or edit a Bar Code Trans",
+        "notFound": "No Bar Code Trans found"
+      },
+      "created": "A new Bar Code Trans is created with identifier {{ param }}",
+      "updated": "A Bar Code Trans is updated with identifier {{ param }}",
+      "deleted": "A Bar Code Trans is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Bar Code Trans {{ id }}?"
+      },
+      "detail": {
+        "title": "Bar Code Trans"
+      },
+      "id": "ID",
+      "locRef": "Loc Ref",
+      "rvcRef": "Rvc Ref",
+      "barcodeId": "Barcode Id",
+      "barcode": "Barcode",
+      "menuItemId": "Menu Item Id",
+      "defenitionSequence": "Defenition Sequence",
+      "price": "Price",
+      "priceSequence": "Price Sequence",
+      "preparationCost": "Preparation Cost"
+    }
+  }
+}

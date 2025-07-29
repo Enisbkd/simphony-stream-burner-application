@@ -1,0 +1,245 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-menu-item-prices-cn-c-heading"
+        data-cy="MenuItemPricesCnCCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.home.createOrEditLabel"
+      >
+        Create or edit a Menu Item Prices Cn C
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_hierUnitId" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.hierUnitId"
+            >Hier Unit Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="hierUnitId"
+            id="field_hierUnitId"
+            data-cy="hierUnitId"
+            formControlName="hierUnitId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_menuItemPriceId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.menuItemPriceId"
+            >Menu Item Price Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="menuItemPriceId"
+            id="field_menuItemPriceId"
+            data-cy="menuItemPriceId"
+            formControlName="menuItemPriceId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_menuItemMasterId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.menuItemMasterId"
+            >Menu Item Master Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="menuItemMasterId"
+            id="field_menuItemMasterId"
+            data-cy="menuItemMasterId"
+            formControlName="menuItemMasterId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_menuItemMasterObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.menuItemMasterObjNum"
+            >Menu Item Master Obj Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="menuItemMasterObjNum"
+            id="field_menuItemMasterObjNum"
+            data-cy="menuItemMasterObjNum"
+            formControlName="menuItemMasterObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_menuItemDefinitionId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.menuItemDefinitionId"
+            >Menu Item Definition Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="menuItemDefinitionId"
+            id="field_menuItemDefinitionId"
+            data-cy="menuItemDefinitionId"
+            formControlName="menuItemDefinitionId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_defSequenceNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.defSequenceNum"
+            >Def Sequence Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="defSequenceNum"
+            id="field_defSequenceNum"
+            data-cy="defSequenceNum"
+            formControlName="defSequenceNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_externalReference1"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.externalReference1"
+            >External Reference 1</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="externalReference1"
+            id="field_externalReference1"
+            data-cy="externalReference1"
+            formControlName="externalReference1"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_externalReference2"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.externalReference2"
+            >External Reference 2</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="externalReference2"
+            id="field_externalReference2"
+            data-cy="externalReference2"
+            formControlName="externalReference2"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_priceSequenceNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.priceSequenceNum"
+            >Price Sequence Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="priceSequenceNum"
+            id="field_priceSequenceNum"
+            data-cy="priceSequenceNum"
+            formControlName="priceSequenceNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_activeOnMenuLevel"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.activeOnMenuLevel"
+            >Active On Menu Level</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="activeOnMenuLevel"
+            id="field_activeOnMenuLevel"
+            data-cy="activeOnMenuLevel"
+            formControlName="activeOnMenuLevel"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_effectivityGroupObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.effectivityGroupObjNum"
+            >Effectivity Group Obj Num</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="effectivityGroupObjNum"
+            id="field_effectivityGroupObjNum"
+            data-cy="effectivityGroupObjNum"
+            formControlName="effectivityGroupObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_prepCost" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.prepCost"
+            >Prep Cost</label
+          >
+          <input type="number" class="form-control" name="prepCost" id="field_prepCost" data-cy="prepCost" formControlName="prepCost" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_price" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.price"
+            >Price</label
+          >
+          <input type="number" class="form-control" name="price" id="field_price" data-cy="price" formControlName="price" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_options" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.options"
+            >Options</label
+          >
+          <input type="text" class="form-control" name="options" id="field_options" data-cy="options" formControlName="options" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,129 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-point-de-vente-cn-c-heading"
+        data-cy="PointDeVenteCnCCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.home.createOrEditLabel"
+      >
+        Create or edit a Point De Vente Cn C
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_locHierUnitId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.locHierUnitId"
+            >Loc Hier Unit Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="locHierUnitId"
+            id="field_locHierUnitId"
+            data-cy="locHierUnitId"
+            formControlName="locHierUnitId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_locObjNum" jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.locObjNum"
+            >Loc Obj Num</label
+          >
+          <input type="number" class="form-control" name="locObjNum" id="field_locObjNum" data-cy="locObjNum" formControlName="locObjNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_rvcId" jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.rvcId">Rvc Id</label>
+          <input type="number" class="form-control" name="rvcId" id="field_rvcId" data-cy="rvcId" formControlName="rvcId" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_kdsControllerId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.kdsControllerId"
+            >Kds Controller Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="kdsControllerId"
+            id="field_kdsControllerId"
+            data-cy="kdsControllerId"
+            formControlName="kdsControllerId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_hierUnitId" jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.hierUnitId"
+            >Hier Unit Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="hierUnitId"
+            id="field_hierUnitId"
+            data-cy="hierUnitId"
+            formControlName="hierUnitId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_objectNum" jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.objectNum"
+            >Object Num</label
+          >
+          <input type="number" class="form-control" name="objectNum" id="field_objectNum" data-cy="objectNum" formControlName="objectNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_name" jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_dataExtensions"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteCnC.dataExtensions"
+            >Data Extensions</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="dataExtensions"
+            id="field_dataExtensions"
+            data-cy="dataExtensions"
+            formControlName="dataExtensions"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

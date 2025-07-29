@@ -1,0 +1,30 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "modePaiementTrans": {
+      "home": {
+        "title": "Mode Paiement Trans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Mode Paiement Trans",
+        "createOrEditLabel": "Create or edit a Mode Paiement Trans",
+        "notFound": "No Mode Paiement Trans found"
+      },
+      "created": "A new Mode Paiement Trans is created with identifier {{ param }}",
+      "updated": "A Mode Paiement Trans is updated with identifier {{ param }}",
+      "deleted": "A Mode Paiement Trans is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Mode Paiement Trans {{ id }}?"
+      },
+      "detail": {
+        "title": "Mode Paiement Trans"
+      },
+      "id": "ID",
+      "tenderId": "Tender Id",
+      "name": "Name",
+      "type": "Type",
+      "extensions": "Extensions",
+      "orgShortName": "Org Short Name",
+      "locRef": "Loc Ref",
+      "rvcRef": "Rvc Ref"
+    }
+  }
+}

@@ -1,0 +1,202 @@
+<div>
+  <h2 id="page-heading" data-cy="MenuItemPricesCnCHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.home.title">Menu Item Prices Cn CS</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-menu-item-prices-cn-c"
+        [routerLink]="['/menu-item-prices-cn-c/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.home.createLabel">Create a new Menu Item Prices Cn C</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (menuItemPricesCnCS().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.home.notFound">No Menu Item Prices Cn CS found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="hierUnitId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.hierUnitId">Hier Unit Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="menuItemPriceId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.menuItemPriceId">Menu Item Price Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="menuItemMasterId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.menuItemMasterId">Menu Item Master Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="menuItemMasterObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.menuItemMasterObjNum"
+                  >Menu Item Master Obj Num</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="menuItemDefinitionId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.menuItemDefinitionId"
+                  >Menu Item Definition Id</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="defSequenceNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.defSequenceNum">Def Sequence Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="externalReference1">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.externalReference1">External Reference 1</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="externalReference2">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.externalReference2">External Reference 2</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="priceSequenceNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.priceSequenceNum">Price Sequence Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="activeOnMenuLevel">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.activeOnMenuLevel">Active On Menu Level</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="effectivityGroupObjNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.effectivityGroupObjNum"
+                  >Effectivity Group Obj Num</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="prepCost">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.prepCost">Prep Cost</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="price">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.price">Price</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="options">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.options">Options</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (menuItemPricesCnC of menuItemPricesCnCS(); track trackId(menuItemPricesCnC)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/menu-item-prices-cn-c', menuItemPricesCnC.id, 'view']">{{ menuItemPricesCnC.id }}</a>
+              </td>
+              <td>{{ menuItemPricesCnC.hierUnitId }}</td>
+              <td>{{ menuItemPricesCnC.menuItemPriceId }}</td>
+              <td>{{ menuItemPricesCnC.menuItemMasterId }}</td>
+              <td>{{ menuItemPricesCnC.menuItemMasterObjNum }}</td>
+              <td>{{ menuItemPricesCnC.menuItemDefinitionId }}</td>
+              <td>{{ menuItemPricesCnC.defSequenceNum }}</td>
+              <td>{{ menuItemPricesCnC.externalReference1 }}</td>
+              <td>{{ menuItemPricesCnC.externalReference2 }}</td>
+              <td>{{ menuItemPricesCnC.priceSequenceNum }}</td>
+              <td>{{ menuItemPricesCnC.activeOnMenuLevel }}</td>
+              <td>{{ menuItemPricesCnC.effectivityGroupObjNum }}</td>
+              <td>{{ menuItemPricesCnC.prepCost }}</td>
+              <td>{{ menuItemPricesCnC.price }}</td>
+              <td>{{ menuItemPricesCnC.options }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a
+                    [routerLink]="['/menu-item-prices-cn-c', menuItemPricesCnC.id, 'view']"
+                    class="btn btn-info btn-sm"
+                    data-cy="entityDetailsButton"
+                  >
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a
+                    [routerLink]="['/menu-item-prices-cn-c', menuItemPricesCnC.id, 'edit']"
+                    class="btn btn-primary btn-sm"
+                    data-cy="entityEditButton"
+                  >
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(menuItemPricesCnC)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

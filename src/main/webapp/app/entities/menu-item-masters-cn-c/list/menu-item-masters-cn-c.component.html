@@ -1,0 +1,162 @@
+<div>
+  <h2 id="page-heading" data-cy="MenuItemMastersCnCHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.home.title">Menu Item Masters Cn CS</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-menu-item-masters-cn-c"
+        [routerLink]="['/menu-item-masters-cn-c/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.home.createLabel"
+          >Create a new Menu Item Masters Cn C</span
+        >
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (menuItemMastersCnCS().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.home.notFound">No Menu Item Masters Cn CS found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="hierUnitId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.hierUnitId">Hier Unit Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="menuItemMasterId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.menuItemMasterId">Menu Item Master Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="familyGroupObjectNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.familyGroupObjectNum"
+                  >Family Group Object Num</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="majorGroupObjectNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.majorGroupObjectNum">Major Group Object Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="reportGroupObjectNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.reportGroupObjectNum"
+                  >Report Group Object Num</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="externalReference1">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.externalReference1">External Reference 1</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="externalReference2">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.externalReference2">External Reference 2</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="objectNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.objectNum">Object Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="name">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemMastersCnC.name">Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (menuItemMastersCnC of menuItemMastersCnCS(); track trackId(menuItemMastersCnC)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/menu-item-masters-cn-c', menuItemMastersCnC.id, 'view']">{{ menuItemMastersCnC.id }}</a>
+              </td>
+              <td>{{ menuItemMastersCnC.hierUnitId }}</td>
+              <td>{{ menuItemMastersCnC.menuItemMasterId }}</td>
+              <td>{{ menuItemMastersCnC.familyGroupObjectNum }}</td>
+              <td>{{ menuItemMastersCnC.majorGroupObjectNum }}</td>
+              <td>{{ menuItemMastersCnC.reportGroupObjectNum }}</td>
+              <td>{{ menuItemMastersCnC.externalReference1 }}</td>
+              <td>{{ menuItemMastersCnC.externalReference2 }}</td>
+              <td>{{ menuItemMastersCnC.objectNum }}</td>
+              <td>{{ menuItemMastersCnC.name }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a
+                    [routerLink]="['/menu-item-masters-cn-c', menuItemMastersCnC.id, 'view']"
+                    class="btn btn-info btn-sm"
+                    data-cy="entityDetailsButton"
+                  >
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a
+                    [routerLink]="['/menu-item-masters-cn-c', menuItemMastersCnC.id, 'edit']"
+                    class="btn btn-primary btn-sm"
+                    data-cy="entityEditButton"
+                  >
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(menuItemMastersCnC)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

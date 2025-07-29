@@ -1,0 +1,30 @@
+@if (pointDeVenteTrans) {
+  <form name="deleteForm" (ngSubmit)="confirmDelete(pointDeVenteTrans.id!)">
+    <div class="modal-header">
+      <h4 class="modal-title" data-cy="pointDeVenteTransDeleteDialogHeading" jhiTranslate="entity.delete.title">
+        Confirm delete operation
+      </h4>
+    </div>
+
+    <div class="modal-body">
+      <jhi-alert-error />
+      <p
+        id="jhi-delete-pointDeVenteTrans-heading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.pointDeVenteTrans.delete.question"
+        [translateValues]="{ id: pointDeVenteTrans.id }"
+      >
+        Are you sure you want to delete Point De Vente Trans {{ pointDeVenteTrans.id }}?
+      </p>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancel()">
+        <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+      </button>
+
+      <button id="jhi-confirm-delete-pointDeVenteTrans" data-cy="entityConfirmDeleteButton" type="submit" class="btn btn-danger">
+        <fa-icon icon="times"></fa-icon>&nbsp;<span jhiTranslate="entity.action.delete">Delete</span>
+      </button>
+    </div>
+  </form>
+}

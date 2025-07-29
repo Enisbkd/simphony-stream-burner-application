@@ -1,0 +1,25 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "societeTrans": {
+      "home": {
+        "title": "Societe Trans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Societe Trans",
+        "createOrEditLabel": "Create or edit a Societe Trans",
+        "notFound": "No Societe Trans found"
+      },
+      "created": "A new Societe Trans is created with identifier {{ param }}",
+      "updated": "A Societe Trans is updated with identifier {{ param }}",
+      "deleted": "A Societe Trans is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Societe Trans {{ id }}?"
+      },
+      "detail": {
+        "title": "Societe Trans"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "nomCourt": "Nom Court"
+    }
+  }
+}

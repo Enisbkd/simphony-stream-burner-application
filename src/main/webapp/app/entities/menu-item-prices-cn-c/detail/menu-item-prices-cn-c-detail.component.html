@@ -1,0 +1,96 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (menuItemPricesCnC(); as menuItemPricesCnCRef) {
+      <div>
+        <h2 data-cy="menuItemPricesCnCDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.detail.title">Menu Item Prices Cn C</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.hierUnitId">Hier Unit Id</span></dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.hierUnitId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.menuItemPriceId">Menu Item Price Id</span></dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.menuItemPriceId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.menuItemMasterId">Menu Item Master Id</span></dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.menuItemMasterId }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.menuItemMasterObjNum">Menu Item Master Obj Num</span>
+          </dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.menuItemMasterObjNum }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.menuItemDefinitionId">Menu Item Definition Id</span>
+          </dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.menuItemDefinitionId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.defSequenceNum">Def Sequence Num</span></dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.defSequenceNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.externalReference1">External Reference 1</span></dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.externalReference1 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.externalReference2">External Reference 2</span></dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.externalReference2 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.priceSequenceNum">Price Sequence Num</span></dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.priceSequenceNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.activeOnMenuLevel">Active On Menu Level</span></dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.activeOnMenuLevel }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.effectivityGroupObjNum"
+              >Effectivity Group Obj Num</span
+            >
+          </dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.effectivityGroupObjNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.prepCost">Prep Cost</span></dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.prepCost }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.price">Price</span></dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.price }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemPricesCnC.options">Options</span></dt>
+          <dd>
+            <span>{{ menuItemPricesCnCRef.options }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/menu-item-prices-cn-c', menuItemPricesCnCRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

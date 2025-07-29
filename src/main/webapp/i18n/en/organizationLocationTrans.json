@@ -1,0 +1,44 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "organizationLocationTrans": {
+      "home": {
+        "title": "Organization Location Trans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Organization Location Trans",
+        "createOrEditLabel": "Create or edit a Organization Location Trans",
+        "notFound": "No Organization Location Trans found"
+      },
+      "created": "A new Organization Location Trans is created with identifier {{ param }}",
+      "updated": "A Organization Location Trans is updated with identifier {{ param }}",
+      "deleted": "A Organization Location Trans is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Organization Location Trans {{ id }}?"
+      },
+      "detail": {
+        "title": "Organization Location Trans"
+      },
+      "id": "ID",
+      "orgShortName": "Org Short Name",
+      "locRef": "Loc Ref",
+      "name": "Name",
+      "currency": "Currency",
+      "phoneNumber": "Phone Number",
+      "languages": "Languages",
+      "timezoneIanaName": "Timezone Iana Name",
+      "timezoneWindowsName": "Timezone Windows Name",
+      "timezoneTzIndex": "Timezone Tz Index",
+      "addressLine1": "Address Line 1",
+      "addressLine2": "Address Line 2",
+      "addressFloor": "Address Floor",
+      "addressLocality": "Address Locality",
+      "addressRegion": "Address Region",
+      "addressPostalCode": "Address Postal Code",
+      "addressCountry": "Address Country",
+      "addressNotes": "Address Notes",
+      "geoLatitude": "Geo Latitude",
+      "geoLongitude": "Geo Longitude",
+      "posPlatformName": "Pos Platform Name",
+      "posPlatformVersion": "Pos Platform Version"
+    }
+  }
+}

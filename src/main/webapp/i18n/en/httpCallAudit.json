@@ -1,0 +1,49 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "httpCallAudit": {
+      "home": {
+        "title": "Http Call Audits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Http Call Audit",
+        "createOrEditLabel": "Create or edit a Http Call Audit",
+        "notFound": "No Http Call Audits found"
+      },
+      "created": "A new Http Call Audit is created with identifier {{ param }}",
+      "updated": "A Http Call Audit is updated with identifier {{ param }}",
+      "deleted": "A Http Call Audit is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Http Call Audit {{ id }}?"
+      },
+      "detail": {
+        "title": "Http Call Audit"
+      },
+      "id": "ID",
+      "correlationId": "Correlation Id",
+      "method": "Method",
+      "basePath": "Base Path",
+      "endpoint": "Endpoint",
+      "fullUrl": "Full Url",
+      "pathParams": "Path Params",
+      "queryParams": "Query Params",
+      "requestHeaders": "Request Headers",
+      "requestBody": "Request Body",
+      "responseStatusCode": "Response Status Code",
+      "responseStatusText": "Response Status Text",
+      "responseHeaders": "Response Headers",
+      "responseBody": "Response Body",
+      "timestamp": "Timestamp",
+      "durationMs": "Duration Ms",
+      "errorMessage": "Error Message",
+      "errorType": "Error Type",
+      "serviceName": "Service Name",
+      "environment": "Environment",
+      "userAgent": "User Agent",
+      "clientIp": "Client Ip",
+      "success": "Success",
+      "retryCount": "Retry Count",
+      "kafkaTopic": "Kafka Topic",
+      "sessionId": "Session Id",
+      "userId": "User Id"
+    }
+  }
+}

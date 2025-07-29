@@ -1,0 +1,26 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "majorGroupCnC": {
+      "home": {
+        "title": "Major Group Cn CS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Major Group Cn C",
+        "createOrEditLabel": "Create or edit a Major Group Cn C",
+        "notFound": "No Major Group Cn CS found"
+      },
+      "created": "A new Major Group Cn C is created with identifier {{ param }}",
+      "updated": "A Major Group Cn C is updated with identifier {{ param }}",
+      "deleted": "A Major Group Cn C is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Major Group Cn C {{ id }}?"
+      },
+      "detail": {
+        "title": "Major Group Cn C"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "nomCourt": "Nom Court",
+      "pointDeVenteRef": "Point De Vente Ref"
+    }
+  }
+}

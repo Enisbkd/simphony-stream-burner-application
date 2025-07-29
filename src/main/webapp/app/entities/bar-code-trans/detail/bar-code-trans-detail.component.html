@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (barCodeTrans(); as barCodeTransRef) {
+      <div>
+        <h2 data-cy="barCodeTransDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.detail.title">Bar Code Trans</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ barCodeTransRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ barCodeTransRef.locRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.rvcRef">Rvc Ref</span></dt>
+          <dd>
+            <span>{{ barCodeTransRef.rvcRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.barcodeId">Barcode Id</span></dt>
+          <dd>
+            <span>{{ barCodeTransRef.barcodeId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.barcode">Barcode</span></dt>
+          <dd>
+            <span>{{ barCodeTransRef.barcode }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.menuItemId">Menu Item Id</span></dt>
+          <dd>
+            <span>{{ barCodeTransRef.menuItemId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.defenitionSequence">Defenition Sequence</span></dt>
+          <dd>
+            <span>{{ barCodeTransRef.defenitionSequence }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.price">Price</span></dt>
+          <dd>
+            <span>{{ barCodeTransRef.price }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.priceSequence">Price Sequence</span></dt>
+          <dd>
+            <span>{{ barCodeTransRef.priceSequence }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.barCodeTrans.preparationCost">Preparation Cost</span></dt>
+          <dd>
+            <span>{{ barCodeTransRef.preparationCost }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/bar-code-trans', barCodeTransRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,28 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "codeRaisonBI": {
+      "home": {
+        "title": "Code Raison BIS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Code Raison BI",
+        "createOrEditLabel": "Create or edit a Code Raison BI",
+        "notFound": "No Code Raison BIS found"
+      },
+      "created": "A new Code Raison BI is created with identifier {{ param }}",
+      "updated": "A Code Raison BI is updated with identifier {{ param }}",
+      "deleted": "A Code Raison BI is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Code Raison BI {{ id }}?"
+      },
+      "detail": {
+        "title": "Code Raison BI"
+      },
+      "id": "ID",
+      "nomCourt": "Nom Court",
+      "nomMstr": "Nom Mstr",
+      "numMstr": "Num Mstr",
+      "name": "Name",
+      "etablissementRef": "Etablissement Ref"
+    }
+  }
+}

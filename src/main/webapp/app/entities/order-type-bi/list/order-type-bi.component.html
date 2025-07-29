@@ -1,0 +1,180 @@
+<div>
+  <h2 id="page-heading" data-cy="OrderTypeBIHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.home.title">Order Type BIS</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-order-type-bi"
+        [routerLink]="['/order-type-bi/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.home.createLabel">Create a new Order Type BI</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (orderTypeBIS().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.home.notFound">No Order Type BIS found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="num">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.num">Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="locRef">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.locRef">Loc Ref</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="name">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.name">Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="mstrNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.mstrNum">Mstr Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="mstrName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.mstrName">Mstr Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="catGrpHierName1">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.catGrpHierName1">Cat Grp Hier Name 1</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="catGrpName1">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.catGrpName1">Cat Grp Name 1</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="catGrpHierName2">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.catGrpHierName2">Cat Grp Hier Name 2</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="catGrpName2">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.catGrpName2">Cat Grp Name 2</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="catGrpHierName3">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.catGrpHierName3">Cat Grp Hier Name 3</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="catGrpName3">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.catGrpName3">Cat Grp Name 3</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="catGrpHierName4">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.catGrpHierName4">Cat Grp Hier Name 4</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="catGrpName4">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderTypeBI.catGrpName4">Cat Grp Name 4</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (orderTypeBI of orderTypeBIS(); track trackId(orderTypeBI)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/order-type-bi', orderTypeBI.id, 'view']">{{ orderTypeBI.id }}</a>
+              </td>
+              <td>{{ orderTypeBI.num }}</td>
+              <td>{{ orderTypeBI.locRef }}</td>
+              <td>{{ orderTypeBI.name }}</td>
+              <td>{{ orderTypeBI.mstrNum }}</td>
+              <td>{{ orderTypeBI.mstrName }}</td>
+              <td>{{ orderTypeBI.catGrpHierName1 }}</td>
+              <td>{{ orderTypeBI.catGrpName1 }}</td>
+              <td>{{ orderTypeBI.catGrpHierName2 }}</td>
+              <td>{{ orderTypeBI.catGrpName2 }}</td>
+              <td>{{ orderTypeBI.catGrpHierName3 }}</td>
+              <td>{{ orderTypeBI.catGrpName3 }}</td>
+              <td>{{ orderTypeBI.catGrpHierName4 }}</td>
+              <td>{{ orderTypeBI.catGrpName4 }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/order-type-bi', orderTypeBI.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/order-type-bi', orderTypeBI.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(orderTypeBI)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

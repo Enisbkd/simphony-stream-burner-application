@@ -1,0 +1,416 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-location-cn-c-heading"
+        data-cy="LocationCnCCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.home.createOrEditLabel"
+      >
+        Create or edit a Location Cn C
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_hierUnitId" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.hierUnitId"
+            >Hier Unit Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="hierUnitId"
+            id="field_hierUnitId"
+            data-cy="hierUnitId"
+            formControlName="hierUnitId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_tzIndex" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.tzIndex"
+            >Tz Index</label
+          >
+          <input type="number" class="form-control" name="tzIndex" id="field_tzIndex" data-cy="tzIndex" formControlName="tzIndex" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_tzName" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.tzName">Tz Name</label>
+          <input type="text" class="form-control" name="tzName" id="field_tzName" data-cy="tzName" formControlName="tzName" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_localeInfoId" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.localeInfoId"
+            >Locale Info Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="localeInfoId"
+            id="field_localeInfoId"
+            data-cy="localeInfoId"
+            formControlName="localeInfoId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_name" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_reportingLocName"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.reportingLocName"
+            >Reporting Loc Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="reportingLocName"
+            id="field_reportingLocName"
+            data-cy="reportingLocName"
+            formControlName="reportingLocName"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_locRef" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.locRef">Loc Ref</label>
+          <input type="text" class="form-control" name="locRef" id="field_locRef" data-cy="locRef" formControlName="locRef" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_reportingParentEnterpriseLevelName"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.reportingParentEnterpriseLevelName"
+            >Reporting Parent Enterprise Level Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="reportingParentEnterpriseLevelName"
+            id="field_reportingParentEnterpriseLevelName"
+            data-cy="reportingParentEnterpriseLevelName"
+            formControlName="reportingParentEnterpriseLevelName"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_objectNum" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.objectNum"
+            >Object Num</label
+          >
+          <input type="number" class="form-control" name="objectNum" id="field_objectNum" data-cy="objectNum" formControlName="objectNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_sbmPmsIfcIp" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcIp"
+            >Sbm Pms Ifc Ip</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmPmsIfcIp"
+            id="field_sbmPmsIfcIp"
+            data-cy="sbmPmsIfcIp"
+            formControlName="sbmPmsIfcIp"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_sbmPmsIfcPort" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcPort"
+            >Sbm Pms Ifc Port</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmPmsIfcPort"
+            id="field_sbmPmsIfcPort"
+            data-cy="sbmPmsIfcPort"
+            formControlName="sbmPmsIfcPort"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_sbmPriveRoomStart"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPriveRoomStart"
+            >Sbm Prive Room Start</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmPriveRoomStart"
+            id="field_sbmPriveRoomStart"
+            data-cy="sbmPriveRoomStart"
+            formControlName="sbmPriveRoomStart"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_sbmPriveRoomEnd"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPriveRoomEnd"
+            >Sbm Prive Room End</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmPriveRoomEnd"
+            id="field_sbmPriveRoomEnd"
+            data-cy="sbmPriveRoomEnd"
+            formControlName="sbmPriveRoomEnd"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_sbmPmsSendAllDetails"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsSendAllDetails"
+            >Sbm Pms Send All Details</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmPmsSendAllDetails"
+            id="field_sbmPmsSendAllDetails"
+            data-cy="sbmPmsSendAllDetails"
+            formControlName="sbmPmsSendAllDetails"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_sbmPmsSendFullDscv"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsSendFullDscv"
+            >Sbm Pms Send Full Dscv</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmPmsSendFullDscv"
+            id="field_sbmPmsSendFullDscv"
+            data-cy="sbmPmsSendFullDscv"
+            formControlName="sbmPmsSendFullDscv"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_sbmPmsSend64Tax"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsSend64Tax"
+            >Sbm Pms Send 64 Tax</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmPmsSend64Tax"
+            id="field_sbmPmsSend64Tax"
+            data-cy="sbmPmsSend64Tax"
+            formControlName="sbmPmsSend64Tax"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_sbmCardPaymentUrl"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmCardPaymentUrl"
+            >Sbm Card Payment Url</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmCardPaymentUrl"
+            id="field_sbmCardPaymentUrl"
+            data-cy="sbmCardPaymentUrl"
+            formControlName="sbmCardPaymentUrl"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_sbmCheckHotelDataUrl"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmCheckHotelDataUrl"
+            >Sbm Check Hotel Data Url</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmCheckHotelDataUrl"
+            id="field_sbmCheckHotelDataUrl"
+            data-cy="sbmCheckHotelDataUrl"
+            formControlName="sbmCheckHotelDataUrl"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_sbmVoucherSvcUrl"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherSvcUrl"
+            >Sbm Voucher Svc Url</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmVoucherSvcUrl"
+            id="field_sbmVoucherSvcUrl"
+            data-cy="sbmVoucherSvcUrl"
+            formControlName="sbmVoucherSvcUrl"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_sbmVoucherInvPm"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherInvPm"
+            >Sbm Voucher Inv Pm</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmVoucherInvPm"
+            id="field_sbmVoucherInvPm"
+            data-cy="sbmVoucherInvPm"
+            formControlName="sbmVoucherInvPm"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_sbmVoucherCorpPm"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherCorpPm"
+            >Sbm Voucher Corp Pm</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmVoucherCorpPm"
+            id="field_sbmVoucherCorpPm"
+            data-cy="sbmVoucherCorpPm"
+            formControlName="sbmVoucherCorpPm"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_sbmVoucherRewardPm"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherRewardPm"
+            >Sbm Voucher Reward Pm</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmVoucherRewardPm"
+            id="field_sbmVoucherRewardPm"
+            data-cy="sbmVoucherRewardPm"
+            formControlName="sbmVoucherRewardPm"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_sbmVoucherMcPm" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherMcPm"
+            >Sbm Voucher Mc Pm</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmVoucherMcPm"
+            id="field_sbmVoucherMcPm"
+            data-cy="sbmVoucherMcPm"
+            formControlName="sbmVoucherMcPm"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_sbmPmsIfcPort2" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcPort2"
+            >Sbm Pms Ifc Port 2</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmPmsIfcPort2"
+            id="field_sbmPmsIfcPort2"
+            data-cy="sbmPmsIfcPort2"
+            formControlName="sbmPmsIfcPort2"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_sbmPmsIfcPort3" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcPort3"
+            >Sbm Pms Ifc Port 3</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmPmsIfcPort3"
+            id="field_sbmPmsIfcPort3"
+            data-cy="sbmPmsIfcPort3"
+            formControlName="sbmPmsIfcPort3"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_sbmPmsIfcPort4" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcPort4"
+            >Sbm Pms Ifc Port 4</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmPmsIfcPort4"
+            id="field_sbmPmsIfcPort4"
+            data-cy="sbmPmsIfcPort4"
+            formControlName="sbmPmsIfcPort4"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_sbmTimeout" jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmTimeout"
+            >Sbm Timeout</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="sbmTimeout"
+            id="field_sbmTimeout"
+            data-cy="sbmTimeout"
+            formControlName="sbmTimeout"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
