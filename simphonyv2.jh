@@ -1,6 +1,7 @@
 // JDL file generated from Java entities
 
-entity BarCodeTrans {
+entity BarCodeTrans { 
+ id Integer
   locRef String,
   rvcRef Integer,
   barcodeId Integer,
@@ -12,7 +13,8 @@ entity BarCodeTrans {
   preparationCost Double
 }
 
-entity CheckTrans {
+entity CheckTrans { 
+ id Integer
   rvcRef Integer,
   checkRef String,
   checkNumber Integer,
@@ -38,7 +40,8 @@ entity CheckTrans {
   taxRateId Integer
 }
 
-entity CodeRaisonBI {
+entity CodeRaisonBI { 
+ id Integer
   nomCourt Integer required,
   nomMstr String,
   numMstr Integer,
@@ -46,7 +49,8 @@ entity CodeRaisonBI {
   etablissementRef String required
 }
 
-entity CommissionServiceBI {
+entity CommissionServiceBI { 
+ id Integer
   nom String,
   nomCourt String,
   typeValue String,
@@ -54,7 +58,8 @@ entity CommissionServiceBI {
   etablissementRef String required
 }
 
-entity CommissionServiceTrans {
+entity CommissionServiceTrans { 
+ id Integer
   orgShortName String,
   locRef String,
   rvcRef Integer,
@@ -64,7 +69,8 @@ entity CommissionServiceTrans {
   value Double
 }
 
-entity DetailLineBI {
+entity DetailLineBI { 
+ id Integer
   guestCheckLineItemId Long,
   detailUTC Instant,
   detailLcl Instant,
@@ -93,7 +99,8 @@ entity DetailLineBI {
   miNum Integer
 }
 
-entity EmployeeCnC {
+entity EmployeeCnC { 
+ id Integer
   objectNum Integer,
   firstName String,
   lastName String,
@@ -123,13 +130,15 @@ entity EmployeeCnC {
   accessId Integer
 }
 
-entity FamilyGroupCnC {
+entity FamilyGroupCnC { 
+ id Integer
   nom String,
   nomCourt String,
   majorGroupRef Integer
 }
 
-entity GuestCheckBI {
+entity GuestCheckBI { 
+ id Integer
   guestCheckId Integer,
   chkNum Integer,
   opnLcl Instant,
@@ -151,13 +160,15 @@ entity GuestCheckBI {
   locRef String
 }
 
-entity HierarchieCnC {
+entity HierarchieCnC { 
+ id Integer
   nom String required,
   parentHierId String,
   unitId String
 }
 
-entity HttpCallAudit {
+entity HttpCallAudit { 
+ id Integer
   correlationId String required,
   method String required,
   basePath String,
@@ -186,7 +197,8 @@ entity HttpCallAudit {
   userId String
 }
 
-entity LocationCnC {
+entity LocationCnC { 
+ id Integer
   hierUnitId Integer,
   tzIndex Integer,
   tzName String,
@@ -216,13 +228,15 @@ entity LocationCnC {
   sbmTimeout String
 }
 
-entity MajorGroupCnC {
+entity MajorGroupCnC { 
+ id Integer
   nom String,
   nomCourt String,
   pointDeVenteRef Integer
 }
 
-entity MenuItemDefinitionsCnC {
+entity MenuItemDefinitionsCnC { 
+ id Integer
   hierUnitId Integer,
   menuItemMasterObjNum Integer,
   menuItemMasterId Integer,
@@ -247,7 +261,8 @@ entity MenuItemDefinitionsCnC {
   firstName String
 }
 
-entity MenuItemMastersCnC {
+entity MenuItemMastersCnC { 
+ id Integer
   hierUnitId Integer,
   menuItemMasterId Integer,
   familyGroupObjectNum Integer,
@@ -259,7 +274,8 @@ entity MenuItemMastersCnC {
   name String
 }
 
-entity MenuItemPricesCnC {
+entity MenuItemPricesCnC { 
+ id Integer
   hierUnitId Long,
   menuItemPriceId Long,
   menuItemMasterId Long,
@@ -276,14 +292,16 @@ entity MenuItemPricesCnC {
   options String
 }
 
-entity ModePaiementBI {
+entity ModePaiementBI { 
+ id Integer
   locRef String,
   num Integer,
   name String,
   type Integer
 }
 
-entity ModePaiementTrans {
+entity ModePaiementTrans { 
+ id Integer
   tenderId Integer,
   name String,
   type String,
@@ -293,7 +311,8 @@ entity ModePaiementTrans {
   rvcRef Integer
 }
 
-entity OrderChannelBI {
+entity OrderChannelBI { 
+ id Integer
   num Integer,
   locRef String required,
   name String,
@@ -301,7 +320,8 @@ entity OrderChannelBI {
   mstrName String
 }
 
-entity OrderTypeBI {
+entity OrderTypeBI { 
+ id Integer
   num Integer,
   locRef String required,
   name String,
@@ -317,7 +337,8 @@ entity OrderTypeBI {
   catGrpName4 String
 }
 
-entity OrganizationLocationTrans {
+entity OrganizationLocationTrans { 
+ id Integer
   orgShortName String,
   locRef String,
   name String,
@@ -341,13 +362,15 @@ entity OrganizationLocationTrans {
   posPlatformVersion String
 }
 
-entity PartieDeJournee {
+entity PartieDeJournee { 
+ id Integer
   timeRangeStart String,
   timeRangeEnd String,
   nom String required
 }
 
-entity PointDeVenteCnC {
+entity PointDeVenteCnC { 
+ id Integer
   locHierUnitId Integer,
   locObjNum Integer,
   rvcId Integer,
@@ -358,7 +381,8 @@ entity PointDeVenteCnC {
   dataExtensions String
 }
 
-entity PointDeVenteTrans {
+entity PointDeVenteTrans { 
+ id Integer
   rvcRef Integer,
   name String,
   locRef String,
@@ -366,7 +390,8 @@ entity PointDeVenteTrans {
   address String
 }
 
-entity RemiseBI {
+entity RemiseBI { 
+ id Integer
   num Integer,
   name String,
   posPercent Double,
@@ -375,7 +400,8 @@ entity RemiseBI {
   locRef String
 }
 
-entity RemiseTrans {
+entity RemiseTrans { 
+ id Integer
   orgShortName String,
   locRef String,
   rvcRef Integer,
@@ -386,19 +412,22 @@ entity RemiseTrans {
   discountValue Double
 }
 
-entity SocieteTrans {
+entity SocieteTrans { 
+ id Integer
   nom String,
   nomCourt String
 }
 
-entity TaxeBI {
+entity TaxeBI { 
+ id Integer
   locRef String,
   num Integer,
   name String,
   type Integer
 }
 
-entity TaxeClassTrans {
+entity TaxeClassTrans { 
+ id Integer
   OrgShortName String,
   locRef String,
   rvcRef Integer,
@@ -406,7 +435,8 @@ entity TaxeClassTrans {
   activeTaxRateRefs String
 }
 
-entity TaxeRateTrans {
+entity TaxeRateTrans { 
+  id Integer
   OrgShortName String,
   locRef String,
   rvcRef Integer,
@@ -417,6 +447,7 @@ entity TaxeRateTrans {
   nameEN String
 }
 
-relationship OneToMany {
+relationship OneToMany { 
+
   GuestCheckBI{detailLineBIList} to DetailLineBI{guestCheckBI}
 }
