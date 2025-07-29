@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124436"
+  },
+  "applications": "*",
+  "entityTableName": "order_channel_bi",
+  "fields": [
+    {
+      "fieldName": "num",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mstrNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mstrName",
+      "fieldType": "String"
+    }
+  ],
+  "name": "OrderChannelBI",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,0 +1,27 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "modePaiementBI": {
+      "home": {
+        "title": "Mode Paiement BIS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Mode Paiement BI",
+        "createOrEditLabel": "Create or edit a Mode Paiement BI",
+        "notFound": "No Mode Paiement BIS found"
+      },
+      "created": "A new Mode Paiement BI is created with identifier {{ param }}",
+      "updated": "A Mode Paiement BI is updated with identifier {{ param }}",
+      "deleted": "A Mode Paiement BI is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Mode Paiement BI {{ id }}?"
+      },
+      "detail": {
+        "title": "Mode Paiement BI"
+      },
+      "id": "ID",
+      "locRef": "Loc Ref",
+      "num": "Num",
+      "name": "Name",
+      "type": "Type"
+    }
+  }
+}

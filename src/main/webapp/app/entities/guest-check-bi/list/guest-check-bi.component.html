@@ -1,0 +1,228 @@
+<div>
+  <h2 id="page-heading" data-cy="GuestCheckBIHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.home.title">Guest Check BIS</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-guest-check-bi"
+        [routerLink]="['/guest-check-bi/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.home.createLabel">Create a new Guest Check BI</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (guestCheckBIS().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.home.notFound">No Guest Check BIS found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="guestCheckId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.guestCheckId">Guest Check Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="chkNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.chkNum">Chk Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="opnLcl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.opnLcl">Opn Lcl</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="clsdLcl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.clsdLcl">Clsd Lcl</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="cancelFlag">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.cancelFlag">Cancel Flag</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="gstCnt">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.gstCnt">Gst Cnt</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="tblNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.tblNum">Tbl Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="taxCollTtl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.taxCollTtl">Tax Coll Ttl</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="subTtl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.subTtl">Sub Ttl</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="chkTtl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.chkTtl">Chk Ttl</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="svcChgTtl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.svcChgTtl">Svc Chg Ttl</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="tipTotal">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.tipTotal">Tip Total</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="dscTtl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.dscTtl">Dsc Ttl</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="errorCorrectTtl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.errorCorrectTtl">Error Correct Ttl</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="returnTtl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.returnTtl">Return Ttl</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="xferToChkNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.xferToChkNum">Xfer To Chk Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="xferStatus">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.xferStatus">Xfer Status</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="otNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.otNum">Ot Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="locRef">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.locRef">Loc Ref</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (guestCheckBI of guestCheckBIS(); track trackId(guestCheckBI)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/guest-check-bi', guestCheckBI.id, 'view']">{{ guestCheckBI.id }}</a>
+              </td>
+              <td>{{ guestCheckBI.guestCheckId }}</td>
+              <td>{{ guestCheckBI.chkNum }}</td>
+              <td>{{ guestCheckBI.opnLcl | formatMediumDatetime }}</td>
+              <td>{{ guestCheckBI.clsdLcl | formatMediumDatetime }}</td>
+              <td>{{ guestCheckBI.cancelFlag }}</td>
+              <td>{{ guestCheckBI.gstCnt }}</td>
+              <td>{{ guestCheckBI.tblNum }}</td>
+              <td>{{ guestCheckBI.taxCollTtl }}</td>
+              <td>{{ guestCheckBI.subTtl }}</td>
+              <td>{{ guestCheckBI.chkTtl }}</td>
+              <td>{{ guestCheckBI.svcChgTtl }}</td>
+              <td>{{ guestCheckBI.tipTotal }}</td>
+              <td>{{ guestCheckBI.dscTtl }}</td>
+              <td>{{ guestCheckBI.errorCorrectTtl }}</td>
+              <td>{{ guestCheckBI.returnTtl }}</td>
+              <td>{{ guestCheckBI.xferToChkNum }}</td>
+              <td>{{ guestCheckBI.xferStatus }}</td>
+              <td>{{ guestCheckBI.otNum }}</td>
+              <td>{{ guestCheckBI.locRef }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/guest-check-bi', guestCheckBI.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/guest-check-bi', guestCheckBI.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(guestCheckBI)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

@@ -1,0 +1,25 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124427"
+  },
+  "applications": "*",
+  "entityTableName": "hierarchie_cn_c",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "parentHierId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unitId",
+      "fieldType": "String"
+    }
+  ],
+  "name": "HierarchieCnC",
+  "relationships": [],
+  "searchEngine": "no"
+}

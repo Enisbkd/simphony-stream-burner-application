@@ -1,0 +1,95 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124438"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "orgShortName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "languages",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "timezoneIanaName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "timezoneWindowsName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "timezoneTzIndex",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "addressLine1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressLine2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressFloor",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressLocality",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressRegion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressPostalCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressCountry",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressNotes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "geoLatitude",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "geoLongitude",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "posPlatformName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "posPlatformVersion",
+      "fieldType": "String"
+    }
+  ],
+  "name": "OrganizationLocationTrans",
+  "relationships": [],
+  "searchEngine": "no"
+}

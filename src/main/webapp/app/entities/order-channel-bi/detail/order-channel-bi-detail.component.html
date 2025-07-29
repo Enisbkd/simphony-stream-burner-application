@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (orderChannelBI(); as orderChannelBIRef) {
+      <div>
+        <h2 data-cy="orderChannelBIDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannelBI.detail.title">Order Channel BI</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ orderChannelBIRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannelBI.num">Num</span></dt>
+          <dd>
+            <span>{{ orderChannelBIRef.num }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannelBI.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ orderChannelBIRef.locRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannelBI.name">Name</span></dt>
+          <dd>
+            <span>{{ orderChannelBIRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannelBI.mstrNum">Mstr Num</span></dt>
+          <dd>
+            <span>{{ orderChannelBIRef.mstrNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.orderChannelBI.mstrName">Mstr Name</span></dt>
+          <dd>
+            <span>{{ orderChannelBIRef.mstrName }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/order-channel-bi', orderChannelBIRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

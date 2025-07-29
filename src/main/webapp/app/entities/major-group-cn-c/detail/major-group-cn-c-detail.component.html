@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (majorGroupCnC(); as majorGroupCnCRef) {
+      <div>
+        <h2 data-cy="majorGroupCnCDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.majorGroupCnC.detail.title">Major Group Cn C</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ majorGroupCnCRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.majorGroupCnC.nom">Nom</span></dt>
+          <dd>
+            <span>{{ majorGroupCnCRef.nom }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.majorGroupCnC.nomCourt">Nom Court</span></dt>
+          <dd>
+            <span>{{ majorGroupCnCRef.nomCourt }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.majorGroupCnC.pointDeVenteRef">Point De Vente Ref</span></dt>
+          <dd>
+            <span>{{ majorGroupCnCRef.pointDeVenteRef }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/major-group-cn-c', majorGroupCnCRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "hierarchieCnC": {
+      "home": {
+        "title": "Hierarchie Cn CS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Hierarchie Cn C",
+        "createOrEditLabel": "Create or edit a Hierarchie Cn C",
+        "notFound": "No Hierarchie Cn CS found"
+      },
+      "created": "A new Hierarchie Cn C is created with identifier {{ param }}",
+      "updated": "A Hierarchie Cn C is updated with identifier {{ param }}",
+      "deleted": "A Hierarchie Cn C is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Hierarchie Cn C {{ id }}?"
+      },
+      "detail": {
+        "title": "Hierarchie Cn C"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "parentHierId": "Parent Hier Id",
+      "unitId": "Unit Id"
+    }
+  }
+}

@@ -1,0 +1,294 @@
+<div>
+  <h2 id="page-heading" data-cy="LocationCnCHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.home.title">Location Cn CS</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-location-cn-c"
+        [routerLink]="['/location-cn-c/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.home.createLabel">Create a new Location Cn C</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (locationCnCS().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.home.notFound">No Location Cn CS found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="hierUnitId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.hierUnitId">Hier Unit Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="tzIndex">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.tzIndex">Tz Index</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="tzName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.tzName">Tz Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="localeInfoId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.localeInfoId">Locale Info Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="name">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.name">Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="reportingLocName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.reportingLocName">Reporting Loc Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="locRef">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.locRef">Loc Ref</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="reportingParentEnterpriseLevelName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.reportingParentEnterpriseLevelName"
+                  >Reporting Parent Enterprise Level Name</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="objectNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.objectNum">Object Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmPmsIfcIp">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcIp">Sbm Pms Ifc Ip</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmPmsIfcPort">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcPort">Sbm Pms Ifc Port</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmPriveRoomStart">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPriveRoomStart">Sbm Prive Room Start</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmPriveRoomEnd">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPriveRoomEnd">Sbm Prive Room End</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmPmsSendAllDetails">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsSendAllDetails">Sbm Pms Send All Details</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmPmsSendFullDscv">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsSendFullDscv">Sbm Pms Send Full Dscv</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmPmsSend64Tax">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsSend64Tax">Sbm Pms Send 64 Tax</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmCardPaymentUrl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmCardPaymentUrl">Sbm Card Payment Url</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmCheckHotelDataUrl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmCheckHotelDataUrl">Sbm Check Hotel Data Url</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmVoucherSvcUrl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherSvcUrl">Sbm Voucher Svc Url</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmVoucherInvPm">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherInvPm">Sbm Voucher Inv Pm</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmVoucherCorpPm">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherCorpPm">Sbm Voucher Corp Pm</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmVoucherRewardPm">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherRewardPm">Sbm Voucher Reward Pm</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmVoucherMcPm">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherMcPm">Sbm Voucher Mc Pm</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmPmsIfcPort2">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcPort2">Sbm Pms Ifc Port 2</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmPmsIfcPort3">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcPort3">Sbm Pms Ifc Port 3</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmPmsIfcPort4">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcPort4">Sbm Pms Ifc Port 4</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sbmTimeout">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmTimeout">Sbm Timeout</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (locationCnC of locationCnCS(); track trackId(locationCnC)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/location-cn-c', locationCnC.id, 'view']">{{ locationCnC.id }}</a>
+              </td>
+              <td>{{ locationCnC.hierUnitId }}</td>
+              <td>{{ locationCnC.tzIndex }}</td>
+              <td>{{ locationCnC.tzName }}</td>
+              <td>{{ locationCnC.localeInfoId }}</td>
+              <td>{{ locationCnC.name }}</td>
+              <td>{{ locationCnC.reportingLocName }}</td>
+              <td>{{ locationCnC.locRef }}</td>
+              <td>{{ locationCnC.reportingParentEnterpriseLevelName }}</td>
+              <td>{{ locationCnC.objectNum }}</td>
+              <td>{{ locationCnC.sbmPmsIfcIp }}</td>
+              <td>{{ locationCnC.sbmPmsIfcPort }}</td>
+              <td>{{ locationCnC.sbmPriveRoomStart }}</td>
+              <td>{{ locationCnC.sbmPriveRoomEnd }}</td>
+              <td>{{ locationCnC.sbmPmsSendAllDetails }}</td>
+              <td>{{ locationCnC.sbmPmsSendFullDscv }}</td>
+              <td>{{ locationCnC.sbmPmsSend64Tax }}</td>
+              <td>{{ locationCnC.sbmCardPaymentUrl }}</td>
+              <td>{{ locationCnC.sbmCheckHotelDataUrl }}</td>
+              <td>{{ locationCnC.sbmVoucherSvcUrl }}</td>
+              <td>{{ locationCnC.sbmVoucherInvPm }}</td>
+              <td>{{ locationCnC.sbmVoucherCorpPm }}</td>
+              <td>{{ locationCnC.sbmVoucherRewardPm }}</td>
+              <td>{{ locationCnC.sbmVoucherMcPm }}</td>
+              <td>{{ locationCnC.sbmPmsIfcPort2 }}</td>
+              <td>{{ locationCnC.sbmPmsIfcPort3 }}</td>
+              <td>{{ locationCnC.sbmPmsIfcPort4 }}</td>
+              <td>{{ locationCnC.sbmTimeout }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/location-cn-c', locationCnC.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/location-cn-c', locationCnC.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(locationCnC)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

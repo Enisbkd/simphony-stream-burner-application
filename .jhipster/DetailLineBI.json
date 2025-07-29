@@ -1,0 +1,124 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124423"
+  },
+  "applications": "*",
+  "entityTableName": "detail_line_bi",
+  "fields": [
+    {
+      "fieldName": "guestCheckLineItemId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "detailUTC",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "detailLcl",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "seatNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "prcLvl",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "dspTtl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "dspQty",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "errCorFlag",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "vdFlag",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "returnFlag",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "doNotShowFlag",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "aggTtl",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "rsnCodeNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "refInfo1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "refInfo2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "svcRndNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "parDtlId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "chkEmpId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "transEmpNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mgrEmpNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mealEmpNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "dscNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "dscMiNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "svcChgNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tmedNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "miNum",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "DetailLineBI",
+  "relationships": [
+    {
+      "otherEntityName": "guestCheckBI",
+      "otherEntityRelationshipName": "detailLineBIList",
+      "relationshipName": "guestCheckBI",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

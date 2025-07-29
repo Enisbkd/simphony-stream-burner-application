@@ -1,0 +1,50 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "detailLineBI": {
+      "home": {
+        "title": "Detail Line BIS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Detail Line BI",
+        "createOrEditLabel": "Create or edit a Detail Line BI",
+        "notFound": "No Detail Line BIS found"
+      },
+      "created": "A new Detail Line BI is created with identifier {{ param }}",
+      "updated": "A Detail Line BI is updated with identifier {{ param }}",
+      "deleted": "A Detail Line BI is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Detail Line BI {{ id }}?"
+      },
+      "detail": {
+        "title": "Detail Line BI"
+      },
+      "id": "ID",
+      "guestCheckLineItemId": "Guest Check Line Item Id",
+      "detailUTC": "Detail UTC",
+      "detailLcl": "Detail Lcl",
+      "seatNum": "Seat Num",
+      "prcLvl": "Prc Lvl",
+      "dspTtl": "Dsp Ttl",
+      "dspQty": "Dsp Qty",
+      "errCorFlag": "Err Cor Flag",
+      "vdFlag": "Vd Flag",
+      "returnFlag": "Return Flag",
+      "doNotShowFlag": "Do Not Show Flag",
+      "aggTtl": "Agg Ttl",
+      "rsnCodeNum": "Rsn Code Num",
+      "refInfo1": "Ref Info 1",
+      "refInfo2": "Ref Info 2",
+      "svcRndNum": "Svc Rnd Num",
+      "parDtlId": "Par Dtl Id",
+      "chkEmpId": "Chk Emp Id",
+      "transEmpNum": "Trans Emp Num",
+      "mgrEmpNum": "Mgr Emp Num",
+      "mealEmpNum": "Meal Emp Num",
+      "dscNum": "Dsc Num",
+      "dscMiNum": "Dsc Mi Num",
+      "svcChgNum": "Svc Chg Num",
+      "tmedNum": "Tmed Num",
+      "miNum": "Mi Num",
+      "guestCheckBI": "Guest Check BI"
+    }
+  }
+}

@@ -1,0 +1,374 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-menu-item-definitions-cn-c-heading"
+        data-cy="MenuItemDefinitionsCnCCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.home.createOrEditLabel"
+      >
+        Create or edit a Menu Item Definitions Cn C
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_hierUnitId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.hierUnitId"
+            >Hier Unit Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="hierUnitId"
+            id="field_hierUnitId"
+            data-cy="hierUnitId"
+            formControlName="hierUnitId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_menuItemMasterObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.menuItemMasterObjNum"
+            >Menu Item Master Obj Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="menuItemMasterObjNum"
+            id="field_menuItemMasterObjNum"
+            data-cy="menuItemMasterObjNum"
+            formControlName="menuItemMasterObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_menuItemMasterId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.menuItemMasterId"
+            >Menu Item Master Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="menuItemMasterId"
+            id="field_menuItemMasterId"
+            data-cy="menuItemMasterId"
+            formControlName="menuItemMasterId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_menuItemDefinitionId"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.menuItemDefinitionId"
+            >Menu Item Definition Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="menuItemDefinitionId"
+            id="field_menuItemDefinitionId"
+            data-cy="menuItemDefinitionId"
+            formControlName="menuItemDefinitionId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_defSequenceNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.defSequenceNum"
+            >Def Sequence Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="defSequenceNum"
+            id="field_defSequenceNum"
+            data-cy="defSequenceNum"
+            formControlName="defSequenceNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_menuItemClassObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.menuItemClassObjNum"
+            >Menu Item Class Obj Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="menuItemClassObjNum"
+            id="field_menuItemClassObjNum"
+            data-cy="menuItemClassObjNum"
+            formControlName="menuItemClassObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_overridePrintClassObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.overridePrintClassObjNum"
+            >Override Print Class Obj Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="overridePrintClassObjNum"
+            id="field_overridePrintClassObjNum"
+            data-cy="overridePrintClassObjNum"
+            formControlName="overridePrintClassObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_mainLevel" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.mainLevel"
+            >Main Level</label
+          >
+          <input type="text" class="form-control" name="mainLevel" id="field_mainLevel" data-cy="mainLevel" formControlName="mainLevel" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_subLevel" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.subLevel"
+            >Sub Level</label
+          >
+          <input type="text" class="form-control" name="subLevel" id="field_subLevel" data-cy="subLevel" formControlName="subLevel" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_quantity" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.quantity"
+            >Quantity</label
+          >
+          <input type="number" class="form-control" name="quantity" id="field_quantity" data-cy="quantity" formControlName="quantity" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_kdsPrepTime"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.kdsPrepTime"
+            >Kds Prep Time</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="kdsPrepTime"
+            id="field_kdsPrepTime"
+            data-cy="kdsPrepTime"
+            formControlName="kdsPrepTime"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_prefixLevelOverride"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.prefixLevelOverride"
+            >Prefix Level Override</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="prefixLevelOverride"
+            id="field_prefixLevelOverride"
+            data-cy="prefixLevelOverride"
+            formControlName="prefixLevelOverride"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_guestCount"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.guestCount"
+            >Guest Count</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="guestCount"
+            id="field_guestCount"
+            data-cy="guestCount"
+            formControlName="guestCount"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_slu1ObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu1ObjNum"
+            >Slu 1 Obj Num</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="slu1ObjNum"
+            id="field_slu1ObjNum"
+            data-cy="slu1ObjNum"
+            formControlName="slu1ObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_slu2ObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu2ObjNum"
+            >Slu 2 Obj Num</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="slu2ObjNum"
+            id="field_slu2ObjNum"
+            data-cy="slu2ObjNum"
+            formControlName="slu2ObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_slu3ObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu3ObjNum"
+            >Slu 3 Obj Num</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="slu3ObjNum"
+            id="field_slu3ObjNum"
+            data-cy="slu3ObjNum"
+            formControlName="slu3ObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_slu4ObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu4ObjNum"
+            >Slu 4 Obj Num</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="slu4ObjNum"
+            id="field_slu4ObjNum"
+            data-cy="slu4ObjNum"
+            formControlName="slu4ObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_slu5ObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu5ObjNum"
+            >Slu 5 Obj Num</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="slu5ObjNum"
+            id="field_slu5ObjNum"
+            data-cy="slu5ObjNum"
+            formControlName="slu5ObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_slu6ObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu6ObjNum"
+            >Slu 6 Obj Num</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="slu6ObjNum"
+            id="field_slu6ObjNum"
+            data-cy="slu6ObjNum"
+            formControlName="slu6ObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_slu7ObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu7ObjNum"
+            >Slu 7 Obj Num</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="slu7ObjNum"
+            id="field_slu7ObjNum"
+            data-cy="slu7ObjNum"
+            formControlName="slu7ObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_slu8ObjNum"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.slu8ObjNum"
+            >Slu 8 Obj Num</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="slu8ObjNum"
+            id="field_slu8ObjNum"
+            data-cy="slu8ObjNum"
+            formControlName="slu8ObjNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_firstName" jhiTranslate="simphonyStreamBurnerApplicationApp.menuItemDefinitionsCnC.firstName"
+            >First Name</label
+          >
+          <input type="text" class="form-control" name="firstName" id="field_firstName" data-cy="firstName" formControlName="firstName" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

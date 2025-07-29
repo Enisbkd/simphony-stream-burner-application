@@ -1,0 +1,260 @@
+<div>
+  <h2 id="page-heading" data-cy="CheckTransHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.home.title">Check Trans</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-check-trans"
+        [routerLink]="['/check-trans/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.home.createLabel">Create a new Check Trans</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (checkTrans().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.home.notFound">No Check Trans found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="rvcRef">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.rvcRef">Rvc Ref</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="checkRef">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.checkRef">Check Ref</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="checkNumber">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.checkNumber">Check Number</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="checkName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.checkName">Check Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="checkEmployeeRef">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.checkEmployeeRef">Check Employee Ref</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="orderTypeRef">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.orderTypeRef">Order Type Ref</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="orderChannelRef">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.orderChannelRef">Order Channel Ref</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="tableName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.tableName">Table Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="tableGroupNumber">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.tableGroupNumber">Table Group Number</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="openTime">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.openTime">Open Time</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="guestCount">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.guestCount">Guest Count</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="language">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.language">Language</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="isTrainingCheck">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.isTrainingCheck">Is Training Check</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="status">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.status">Status</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="preparationStatus">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.preparationStatus">Preparation Status</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="subtotal">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.subtotal">Subtotal</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="subtotalDiscountTotal">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.subtotalDiscountTotal">Subtotal Discount Total</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="autoServiceChargeTotal">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.autoServiceChargeTotal">Auto Service Charge Total</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="serviceChargeTotal">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.serviceChargeTotal">Service Charge Total</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="taxTotal">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.taxTotal">Tax Total</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="paymentTotal">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.paymentTotal">Payment Total</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="totalDue">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.totalDue">Total Due</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="taxRateId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.checkTrans.taxRateId">Tax Rate Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (checkTrans of checkTrans(); track trackId(checkTrans)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/check-trans', checkTrans.id, 'view']">{{ checkTrans.id }}</a>
+              </td>
+              <td>{{ checkTrans.rvcRef }}</td>
+              <td>{{ checkTrans.checkRef }}</td>
+              <td>{{ checkTrans.checkNumber }}</td>
+              <td>{{ checkTrans.checkName }}</td>
+              <td>{{ checkTrans.checkEmployeeRef }}</td>
+              <td>{{ checkTrans.orderTypeRef }}</td>
+              <td>{{ checkTrans.orderChannelRef }}</td>
+              <td>{{ checkTrans.tableName }}</td>
+              <td>{{ checkTrans.tableGroupNumber }}</td>
+              <td>{{ checkTrans.openTime | formatMediumDatetime }}</td>
+              <td>{{ checkTrans.guestCount }}</td>
+              <td>{{ checkTrans.language }}</td>
+              <td>{{ checkTrans.isTrainingCheck }}</td>
+              <td>{{ checkTrans.status }}</td>
+              <td>{{ checkTrans.preparationStatus }}</td>
+              <td>{{ checkTrans.subtotal }}</td>
+              <td>{{ checkTrans.subtotalDiscountTotal }}</td>
+              <td>{{ checkTrans.autoServiceChargeTotal }}</td>
+              <td>{{ checkTrans.serviceChargeTotal }}</td>
+              <td>{{ checkTrans.taxTotal }}</td>
+              <td>{{ checkTrans.paymentTotal }}</td>
+              <td>{{ checkTrans.totalDue }}</td>
+              <td>{{ checkTrans.taxRateId }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/check-trans', checkTrans.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/check-trans', checkTrans.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(checkTrans)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

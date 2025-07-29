@@ -1,0 +1,36 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "orderTypeBI": {
+      "home": {
+        "title": "Order Type BIS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Order Type BI",
+        "createOrEditLabel": "Create or edit a Order Type BI",
+        "notFound": "No Order Type BIS found"
+      },
+      "created": "A new Order Type BI is created with identifier {{ param }}",
+      "updated": "A Order Type BI is updated with identifier {{ param }}",
+      "deleted": "A Order Type BI is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Order Type BI {{ id }}?"
+      },
+      "detail": {
+        "title": "Order Type BI"
+      },
+      "id": "ID",
+      "num": "Num",
+      "locRef": "Loc Ref",
+      "name": "Name",
+      "mstrNum": "Mstr Num",
+      "mstrName": "Mstr Name",
+      "catGrpHierName1": "Cat Grp Hier Name 1",
+      "catGrpName1": "Cat Grp Name 1",
+      "catGrpHierName2": "Cat Grp Hier Name 2",
+      "catGrpName2": "Cat Grp Name 2",
+      "catGrpHierName3": "Cat Grp Hier Name 3",
+      "catGrpName3": "Cat Grp Name 3",
+      "catGrpHierName4": "Cat Grp Hier Name 4",
+      "catGrpName4": "Cat Grp Name 4"
+    }
+  }
+}

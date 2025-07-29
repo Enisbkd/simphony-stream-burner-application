@@ -1,0 +1,28 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124434"
+  },
+  "applications": "*",
+  "entityTableName": "mode_paiement_bi",
+  "fields": [
+    {
+      "fieldName": "locRef",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "num",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "ModePaiementBI",
+  "relationships": [],
+  "searchEngine": "no"
+}

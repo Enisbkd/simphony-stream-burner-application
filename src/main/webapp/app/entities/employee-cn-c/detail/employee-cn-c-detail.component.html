@@ -1,0 +1,172 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (employeeCnC(); as employeeCnCRef) {
+      <div>
+        <h2 data-cy="employeeCnCDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.detail.title">Employee Cn C</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.objectNum">Object Num</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.objectNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstName">First Name</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.lastName">Last Name</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.lastName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.checkName">Check Name</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.checkName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.email">Email</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.email }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.languageObjNum">Language Obj Num</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.languageObjNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.langId">Lang Id</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.langId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.alternateId">Alternate Id</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.alternateId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.level">Level</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.level }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.group">Group</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.group }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.userName">User Name</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.userName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstRoleHierUnitId">First Role Hier Unit Id</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstRoleHierUnitId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstRoleObjNum">First Role Obj Num</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstRoleObjNum }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstVisibilityHierUnitId"
+              >First Visibility Hier Unit Id</span
+            >
+          </dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstVisibilityHierUnitId }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstVisibilityPropagateToChildren"
+              >First Visibility Propagate To Children</span
+            >
+          </dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstVisibilityPropagateToChildren }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstPropertyHierUnitId">First Property Hier Unit Id</span>
+          </dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstPropertyHierUnitId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstPropertyObjNum">First Property Obj Num</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstPropertyObjNum }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstPropertyEmpClassObjNum"
+              >First Property Emp Class Obj Num</span
+            >
+          </dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstPropertyEmpClassObjNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstPropertyOptions">First Property Options</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstPropertyOptions }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorRvcHierUnitId"
+              >First Operator Rvc Hier Unit Id</span
+            >
+          </dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstOperatorRvcHierUnitId }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorRvcObjNum">First Operator Rvc Obj Num</span>
+          </dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstOperatorRvcObjNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorOptions">First Operator Options</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstOperatorOptions }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorCashDrawerObjNum"
+              >First Operator Cash Drawer Obj Num</span
+            >
+          </dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstOperatorCashDrawerObjNum }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorTmsColorObjNum"
+              >First Operator Tms Color Obj Num</span
+            >
+          </dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstOperatorTmsColorObjNum }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.firstOperatorServerEfficiency"
+              >First Operator Server Efficiency</span
+            >
+          </dt>
+          <dd>
+            <span>{{ employeeCnCRef.firstOperatorServerEfficiency }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.pin">Pin</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.pin }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.employeeCnC.accessId">Access Id</span></dt>
+          <dd>
+            <span>{{ employeeCnCRef.accessId }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/employee-cn-c', employeeCnCRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

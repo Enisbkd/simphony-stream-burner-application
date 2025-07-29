@@ -1,0 +1,220 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-guest-check-bi-heading"
+        data-cy="GuestCheckBICreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.home.createOrEditLabel"
+      >
+        Create or edit a Guest Check BI
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_guestCheckId" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.guestCheckId"
+            >Guest Check Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="guestCheckId"
+            id="field_guestCheckId"
+            data-cy="guestCheckId"
+            formControlName="guestCheckId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_chkNum" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.chkNum">Chk Num</label>
+          <input type="number" class="form-control" name="chkNum" id="field_chkNum" data-cy="chkNum" formControlName="chkNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_opnLcl" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.opnLcl">Opn Lcl</label>
+          <div class="d-flex">
+            <input
+              id="field_opnLcl"
+              data-cy="opnLcl"
+              type="datetime-local"
+              class="form-control"
+              name="opnLcl"
+              formControlName="opnLcl"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_clsdLcl" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.clsdLcl"
+            >Clsd Lcl</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_clsdLcl"
+              data-cy="clsdLcl"
+              type="datetime-local"
+              class="form-control"
+              name="clsdLcl"
+              formControlName="clsdLcl"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_cancelFlag" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.cancelFlag"
+            >Cancel Flag</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="cancelFlag"
+            id="field_cancelFlag"
+            data-cy="cancelFlag"
+            formControlName="cancelFlag"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_gstCnt" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.gstCnt">Gst Cnt</label>
+          <input type="number" class="form-control" name="gstCnt" id="field_gstCnt" data-cy="gstCnt" formControlName="gstCnt" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_tblNum" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.tblNum">Tbl Num</label>
+          <input type="number" class="form-control" name="tblNum" id="field_tblNum" data-cy="tblNum" formControlName="tblNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_taxCollTtl" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.taxCollTtl"
+            >Tax Coll Ttl</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="taxCollTtl"
+            id="field_taxCollTtl"
+            data-cy="taxCollTtl"
+            formControlName="taxCollTtl"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_subTtl" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.subTtl">Sub Ttl</label>
+          <input type="number" class="form-control" name="subTtl" id="field_subTtl" data-cy="subTtl" formControlName="subTtl" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_chkTtl" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.chkTtl">Chk Ttl</label>
+          <input type="number" class="form-control" name="chkTtl" id="field_chkTtl" data-cy="chkTtl" formControlName="chkTtl" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_svcChgTtl" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.svcChgTtl"
+            >Svc Chg Ttl</label
+          >
+          <input type="number" class="form-control" name="svcChgTtl" id="field_svcChgTtl" data-cy="svcChgTtl" formControlName="svcChgTtl" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_tipTotal" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.tipTotal"
+            >Tip Total</label
+          >
+          <input type="number" class="form-control" name="tipTotal" id="field_tipTotal" data-cy="tipTotal" formControlName="tipTotal" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_dscTtl" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.dscTtl">Dsc Ttl</label>
+          <input type="number" class="form-control" name="dscTtl" id="field_dscTtl" data-cy="dscTtl" formControlName="dscTtl" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_errorCorrectTtl"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.errorCorrectTtl"
+            >Error Correct Ttl</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="errorCorrectTtl"
+            id="field_errorCorrectTtl"
+            data-cy="errorCorrectTtl"
+            formControlName="errorCorrectTtl"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_returnTtl" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.returnTtl"
+            >Return Ttl</label
+          >
+          <input type="number" class="form-control" name="returnTtl" id="field_returnTtl" data-cy="returnTtl" formControlName="returnTtl" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_xferToChkNum" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.xferToChkNum"
+            >Xfer To Chk Num</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="xferToChkNum"
+            id="field_xferToChkNum"
+            data-cy="xferToChkNum"
+            formControlName="xferToChkNum"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_xferStatus" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.xferStatus"
+            >Xfer Status</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="xferStatus"
+            id="field_xferStatus"
+            data-cy="xferStatus"
+            formControlName="xferStatus"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_otNum" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.otNum">Ot Num</label>
+          <input type="number" class="form-control" name="otNum" id="field_otNum" data-cy="otNum" formControlName="otNum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_locRef" jhiTranslate="simphonyStreamBurnerApplicationApp.guestCheckBI.locRef">Loc Ref</label>
+          <input type="text" class="form-control" name="locRef" id="field_locRef" data-cy="locRef" formControlName="locRef" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

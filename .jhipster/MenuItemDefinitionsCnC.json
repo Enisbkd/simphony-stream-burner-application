@@ -1,0 +1,100 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124431"
+  },
+  "applications": "*",
+  "entityTableName": "menu_item_definitions_cn_c",
+  "fields": [
+    {
+      "fieldName": "hierUnitId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "menuItemMasterObjNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "menuItemMasterId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "menuItemDefinitionId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "defSequenceNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "menuItemClassObjNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "overridePrintClassObjNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mainLevel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subLevel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "kdsPrepTime",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "prefixLevelOverride",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "guestCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "slu1ObjNum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "slu2ObjNum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "slu3ObjNum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "slu4ObjNum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "slu5ObjNum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "slu6ObjNum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "slu7ObjNum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "slu8ObjNum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    }
+  ],
+  "name": "MenuItemDefinitionsCnC",
+  "relationships": [],
+  "searchEngine": "no"
+}

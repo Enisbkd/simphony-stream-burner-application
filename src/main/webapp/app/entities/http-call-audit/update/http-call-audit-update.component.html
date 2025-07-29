@@ -1,0 +1,407 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-http-call-audit-heading"
+        data-cy="HttpCallAuditCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.home.createOrEditLabel"
+      >
+        Create or edit a Http Call Audit
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        @let correlationIdRef = editForm.get('correlationId')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_correlationId" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.correlationId"
+            >Correlation Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="correlationId"
+            id="field_correlationId"
+            data-cy="correlationId"
+            formControlName="correlationId"
+          />
+          @if (correlationIdRef.invalid && (correlationIdRef.dirty || correlationIdRef.touched)) {
+            <div>
+              @if (editForm.get('correlationId')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let methodRef = editForm.get('method')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_method" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.method">Method</label>
+          <input type="text" class="form-control" name="method" id="field_method" data-cy="method" formControlName="method" />
+          @if (methodRef.invalid && (methodRef.dirty || methodRef.touched)) {
+            <div>
+              @if (editForm.get('method')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_basePath" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.basePath"
+            >Base Path</label
+          >
+          <input type="text" class="form-control" name="basePath" id="field_basePath" data-cy="basePath" formControlName="basePath" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_endpoint" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.endpoint"
+            >Endpoint</label
+          >
+          <input type="text" class="form-control" name="endpoint" id="field_endpoint" data-cy="endpoint" formControlName="endpoint" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_fullUrl" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.fullUrl"
+            >Full Url</label
+          >
+          <input type="text" class="form-control" name="fullUrl" id="field_fullUrl" data-cy="fullUrl" formControlName="fullUrl" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_pathParams" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.pathParams"
+            >Path Params</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="pathParams"
+            id="field_pathParams"
+            data-cy="pathParams"
+            formControlName="pathParams"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_queryParams" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.queryParams"
+            >Query Params</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="queryParams"
+            id="field_queryParams"
+            data-cy="queryParams"
+            formControlName="queryParams"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_requestHeaders"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.requestHeaders"
+            >Request Headers</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="requestHeaders"
+            id="field_requestHeaders"
+            data-cy="requestHeaders"
+            formControlName="requestHeaders"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_requestBody" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.requestBody"
+            >Request Body</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="requestBody"
+            id="field_requestBody"
+            data-cy="requestBody"
+            formControlName="requestBody"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_responseStatusCode"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.responseStatusCode"
+            >Response Status Code</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="responseStatusCode"
+            id="field_responseStatusCode"
+            data-cy="responseStatusCode"
+            formControlName="responseStatusCode"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_responseStatusText"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.responseStatusText"
+            >Response Status Text</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="responseStatusText"
+            id="field_responseStatusText"
+            data-cy="responseStatusText"
+            formControlName="responseStatusText"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_responseHeaders"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.responseHeaders"
+            >Response Headers</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="responseHeaders"
+            id="field_responseHeaders"
+            data-cy="responseHeaders"
+            formControlName="responseHeaders"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_responseBody" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.responseBody"
+            >Response Body</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="responseBody"
+            id="field_responseBody"
+            data-cy="responseBody"
+            formControlName="responseBody"
+          />
+        </div>
+
+        @let timestampRef = editForm.get('timestamp')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_timestamp" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.timestamp"
+            >Timestamp</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_timestamp"
+              data-cy="timestamp"
+              type="datetime-local"
+              class="form-control"
+              name="timestamp"
+              formControlName="timestamp"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          @if (timestampRef.invalid && (timestampRef.dirty || timestampRef.touched)) {
+            <div>
+              @if (editForm.get('timestamp')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('timestamp')?.errors?.datetimelocal"
+                jhiTranslate="entity.validation.datetimelocal"
+                >This field should be a date and time.</small
+              >
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_durationMs" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.durationMs"
+            >Duration Ms</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="durationMs"
+            id="field_durationMs"
+            data-cy="durationMs"
+            formControlName="durationMs"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_errorMessage" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.errorMessage"
+            >Error Message</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="errorMessage"
+            id="field_errorMessage"
+            data-cy="errorMessage"
+            formControlName="errorMessage"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_errorType" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.errorType"
+            >Error Type</label
+          >
+          <input type="text" class="form-control" name="errorType" id="field_errorType" data-cy="errorType" formControlName="errorType" />
+        </div>
+
+        @let serviceNameRef = editForm.get('serviceName')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_serviceName" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.serviceName"
+            >Service Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="serviceName"
+            id="field_serviceName"
+            data-cy="serviceName"
+            formControlName="serviceName"
+          />
+          @if (serviceNameRef.invalid && (serviceNameRef.dirty || serviceNameRef.touched)) {
+            <div>
+              @if (editForm.get('serviceName')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_environment" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.environment"
+            >Environment</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="environment"
+            id="field_environment"
+            data-cy="environment"
+            formControlName="environment"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_userAgent" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.userAgent"
+            >User Agent</label
+          >
+          <input type="text" class="form-control" name="userAgent" id="field_userAgent" data-cy="userAgent" formControlName="userAgent" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_clientIp" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.clientIp"
+            >Client Ip</label
+          >
+          <input type="text" class="form-control" name="clientIp" id="field_clientIp" data-cy="clientIp" formControlName="clientIp" />
+        </div>
+
+        @let successRef = editForm.get('success')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_success" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.success"
+            >Success</label
+          >
+          <input type="checkbox" class="form-check" name="success" id="field_success" data-cy="success" formControlName="success" />
+          @if (successRef.invalid && (successRef.dirty || successRef.touched)) {
+            <div>
+              @if (editForm.get('success')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let retryCountRef = editForm.get('retryCount')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_retryCount" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.retryCount"
+            >Retry Count</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="retryCount"
+            id="field_retryCount"
+            data-cy="retryCount"
+            formControlName="retryCount"
+          />
+          @if (retryCountRef.invalid && (retryCountRef.dirty || retryCountRef.touched)) {
+            <div>
+              @if (editForm.get('retryCount')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('retryCount')?.errors?.number"
+                jhiTranslate="entity.validation.number"
+                >This field should be a number.</small
+              >
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_kafkaTopic" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.kafkaTopic"
+            >Kafka Topic</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="kafkaTopic"
+            id="field_kafkaTopic"
+            data-cy="kafkaTopic"
+            formControlName="kafkaTopic"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_sessionId" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.sessionId"
+            >Session Id</label
+          >
+          <input type="text" class="form-control" name="sessionId" id="field_sessionId" data-cy="sessionId" formControlName="sessionId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_userId" jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.userId"
+            >User Id</label
+          >
+          <input type="text" class="form-control" name="userId" id="field_userId" data-cy="userId" formControlName="userId" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

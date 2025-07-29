@@ -1,0 +1,144 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (detailLineBI(); as detailLineBIRef) {
+      <div>
+        <h2 data-cy="detailLineBIDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.detail.title">Detail Line BI</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.guestCheckLineItemId">Guest Check Line Item Id</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.guestCheckLineItemId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.detailUTC">Detail UTC</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.detailUTC | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.detailLcl">Detail Lcl</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.detailLcl | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.seatNum">Seat Num</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.seatNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.prcLvl">Prc Lvl</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.prcLvl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.dspTtl">Dsp Ttl</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.dspTtl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.dspQty">Dsp Qty</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.dspQty }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.errCorFlag">Err Cor Flag</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.errCorFlag }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.vdFlag">Vd Flag</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.vdFlag }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.returnFlag">Return Flag</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.returnFlag }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.doNotShowFlag">Do Not Show Flag</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.doNotShowFlag }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.aggTtl">Agg Ttl</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.aggTtl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.rsnCodeNum">Rsn Code Num</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.rsnCodeNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.refInfo1">Ref Info 1</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.refInfo1 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.refInfo2">Ref Info 2</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.refInfo2 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.svcRndNum">Svc Rnd Num</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.svcRndNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.parDtlId">Par Dtl Id</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.parDtlId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.chkEmpId">Chk Emp Id</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.chkEmpId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.transEmpNum">Trans Emp Num</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.transEmpNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.mgrEmpNum">Mgr Emp Num</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.mgrEmpNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.mealEmpNum">Meal Emp Num</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.mealEmpNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.dscNum">Dsc Num</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.dscNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.dscMiNum">Dsc Mi Num</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.dscMiNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.svcChgNum">Svc Chg Num</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.svcChgNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.tmedNum">Tmed Num</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.tmedNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.miNum">Mi Num</span></dt>
+          <dd>
+            <span>{{ detailLineBIRef.miNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.guestCheckBI">Guest Check BI</span></dt>
+          <dd>
+            @if (detailLineBI()!.guestCheckBI) {
+              <div>
+                <a [routerLink]="['/guest-check-bi', detailLineBI()!.guestCheckBI?.id, 'view']">{{ detailLineBIRef.guestCheckBI?.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/detail-line-bi', detailLineBIRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

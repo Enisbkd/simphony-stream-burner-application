@@ -1,0 +1,134 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (organizationLocationTrans(); as organizationLocationTransRef) {
+      <div>
+        <h2 data-cy="organizationLocationTransDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.detail.title">Organization Location Trans</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.orgShortName">Org Short Name</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.orgShortName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.locRef }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.name">Name</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.currency">Currency</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.currency }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.phoneNumber">Phone Number</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.phoneNumber }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.languages">Languages</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.languages }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.timezoneIanaName">Timezone Iana Name</span>
+          </dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.timezoneIanaName }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.timezoneWindowsName"
+              >Timezone Windows Name</span
+            >
+          </dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.timezoneWindowsName }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.timezoneTzIndex">Timezone Tz Index</span>
+          </dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.timezoneTzIndex }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.addressLine1">Address Line 1</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.addressLine1 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.addressLine2">Address Line 2</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.addressLine2 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.addressFloor">Address Floor</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.addressFloor }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.addressLocality">Address Locality</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.addressLocality }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.addressRegion">Address Region</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.addressRegion }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.addressPostalCode">Address Postal Code</span>
+          </dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.addressPostalCode }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.addressCountry">Address Country</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.addressCountry }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.addressNotes">Address Notes</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.addressNotes }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.geoLatitude">Geo Latitude</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.geoLatitude }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.geoLongitude">Geo Longitude</span></dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.geoLongitude }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.posPlatformName">Pos Platform Name</span>
+          </dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.posPlatformName }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.organizationLocationTrans.posPlatformVersion">Pos Platform Version</span>
+          </dt>
+          <dd>
+            <span>{{ organizationLocationTransRef.posPlatformVersion }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button
+          type="button"
+          [routerLink]="['/organization-location-trans', organizationLocationTransRef.id, 'edit']"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

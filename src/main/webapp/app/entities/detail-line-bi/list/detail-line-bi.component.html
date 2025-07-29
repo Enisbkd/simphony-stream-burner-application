@@ -1,0 +1,297 @@
+<div>
+  <h2 id="page-heading" data-cy="DetailLineBIHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.home.title">Detail Line BIS</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-detail-line-bi"
+        [routerLink]="['/detail-line-bi/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.home.createLabel">Create a new Detail Line BI</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (detailLineBIS().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.home.notFound">No Detail Line BIS found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="guestCheckLineItemId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.guestCheckLineItemId">Guest Check Line Item Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="detailUTC">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.detailUTC">Detail UTC</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="detailLcl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.detailLcl">Detail Lcl</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="seatNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.seatNum">Seat Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="prcLvl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.prcLvl">Prc Lvl</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="dspTtl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.dspTtl">Dsp Ttl</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="dspQty">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.dspQty">Dsp Qty</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="errCorFlag">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.errCorFlag">Err Cor Flag</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="vdFlag">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.vdFlag">Vd Flag</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="returnFlag">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.returnFlag">Return Flag</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="doNotShowFlag">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.doNotShowFlag">Do Not Show Flag</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="aggTtl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.aggTtl">Agg Ttl</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="rsnCodeNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.rsnCodeNum">Rsn Code Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="refInfo1">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.refInfo1">Ref Info 1</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="refInfo2">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.refInfo2">Ref Info 2</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="svcRndNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.svcRndNum">Svc Rnd Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="parDtlId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.parDtlId">Par Dtl Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="chkEmpId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.chkEmpId">Chk Emp Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="transEmpNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.transEmpNum">Trans Emp Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="mgrEmpNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.mgrEmpNum">Mgr Emp Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="mealEmpNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.mealEmpNum">Meal Emp Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="dscNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.dscNum">Dsc Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="dscMiNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.dscMiNum">Dsc Mi Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="svcChgNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.svcChgNum">Svc Chg Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="tmedNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.tmedNum">Tmed Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="miNum">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.miNum">Mi Num</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="guestCheckBI.id">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.detailLineBI.guestCheckBI">Guest Check BI</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (detailLineBI of detailLineBIS(); track trackId(detailLineBI)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/detail-line-bi', detailLineBI.id, 'view']">{{ detailLineBI.id }}</a>
+              </td>
+              <td>{{ detailLineBI.guestCheckLineItemId }}</td>
+              <td>{{ detailLineBI.detailUTC | formatMediumDatetime }}</td>
+              <td>{{ detailLineBI.detailLcl | formatMediumDatetime }}</td>
+              <td>{{ detailLineBI.seatNum }}</td>
+              <td>{{ detailLineBI.prcLvl }}</td>
+              <td>{{ detailLineBI.dspTtl }}</td>
+              <td>{{ detailLineBI.dspQty }}</td>
+              <td>{{ detailLineBI.errCorFlag }}</td>
+              <td>{{ detailLineBI.vdFlag }}</td>
+              <td>{{ detailLineBI.returnFlag }}</td>
+              <td>{{ detailLineBI.doNotShowFlag }}</td>
+              <td>{{ detailLineBI.aggTtl }}</td>
+              <td>{{ detailLineBI.rsnCodeNum }}</td>
+              <td>{{ detailLineBI.refInfo1 }}</td>
+              <td>{{ detailLineBI.refInfo2 }}</td>
+              <td>{{ detailLineBI.svcRndNum }}</td>
+              <td>{{ detailLineBI.parDtlId }}</td>
+              <td>{{ detailLineBI.chkEmpId }}</td>
+              <td>{{ detailLineBI.transEmpNum }}</td>
+              <td>{{ detailLineBI.mgrEmpNum }}</td>
+              <td>{{ detailLineBI.mealEmpNum }}</td>
+              <td>{{ detailLineBI.dscNum }}</td>
+              <td>{{ detailLineBI.dscMiNum }}</td>
+              <td>{{ detailLineBI.svcChgNum }}</td>
+              <td>{{ detailLineBI.tmedNum }}</td>
+              <td>{{ detailLineBI.miNum }}</td>
+              <td>
+                @if (detailLineBI.guestCheckBI) {
+                  <div>
+                    <a [routerLink]="['/guest-check-bi', detailLineBI.guestCheckBI.id, 'view']">{{ detailLineBI.guestCheckBI.id }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/detail-line-bi', detailLineBI.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/detail-line-bi', detailLineBI.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(detailLineBI)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

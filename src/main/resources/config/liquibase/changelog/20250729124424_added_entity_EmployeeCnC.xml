@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity EmployeeCnC.
+    -->
+    <changeSet id="20250729124424-1" author="jhipster">
+        <createTable tableName="employee_cn_c">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="object_num" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="check_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="language_obj_num" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="lang_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="alternate_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="level" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="jhi_group" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_role_hier_unit_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_role_obj_num" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_visibility_hier_unit_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_visibility_propagate_to_children" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_property_hier_unit_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_property_obj_num" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_property_emp_class_obj_num" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_property_options" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_operator_rvc_hier_unit_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_operator_rvc_obj_num" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_operator_options" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_operator_cash_drawer_obj_num" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_operator_tms_color_obj_num" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="first_operator_server_efficiency" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="pin" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="access_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20250729124424-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/employee_cn_c.csv"
+                  separator=";"
+                  tableName="employee_cn_c"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="object_num" type="numeric"/>
+            <column name="first_name" type="string"/>
+            <column name="last_name" type="string"/>
+            <column name="check_name" type="string"/>
+            <column name="email" type="string"/>
+            <column name="language_obj_num" type="numeric"/>
+            <column name="lang_id" type="numeric"/>
+            <column name="alternate_id" type="numeric"/>
+            <column name="level" type="numeric"/>
+            <column name="jhi_group" type="numeric"/>
+            <column name="user_name" type="string"/>
+            <column name="first_role_hier_unit_id" type="numeric"/>
+            <column name="first_role_obj_num" type="numeric"/>
+            <column name="first_visibility_hier_unit_id" type="numeric"/>
+            <column name="first_visibility_propagate_to_children" type="boolean"/>
+            <column name="first_property_hier_unit_id" type="numeric"/>
+            <column name="first_property_obj_num" type="numeric"/>
+            <column name="first_property_emp_class_obj_num" type="numeric"/>
+            <column name="first_property_options" type="string"/>
+            <column name="first_operator_rvc_hier_unit_id" type="numeric"/>
+            <column name="first_operator_rvc_obj_num" type="numeric"/>
+            <column name="first_operator_options" type="string"/>
+            <column name="first_operator_cash_drawer_obj_num" type="numeric"/>
+            <column name="first_operator_tms_color_obj_num" type="numeric"/>
+            <column name="first_operator_server_efficiency" type="numeric"/>
+            <column name="pin" type="string"/>
+            <column name="access_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

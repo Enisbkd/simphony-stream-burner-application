@@ -1,0 +1,102 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-mode-paiement-trans-heading"
+        data-cy="ModePaiementTransCreateUpdateHeading"
+        jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.home.createOrEditLabel"
+      >
+        Create or edit a Mode Paiement Trans
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_tenderId" jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.tenderId"
+            >Tender Id</label
+          >
+          <input type="number" class="form-control" name="tenderId" id="field_tenderId" data-cy="tenderId" formControlName="tenderId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_name" jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_type" jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.type">Type</label>
+          <input type="text" class="form-control" name="type" id="field_type" data-cy="type" formControlName="type" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_extensions" jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.extensions"
+            >Extensions</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="extensions"
+            id="field_extensions"
+            data-cy="extensions"
+            formControlName="extensions"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_orgShortName"
+            jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.orgShortName"
+            >Org Short Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="orgShortName"
+            id="field_orgShortName"
+            data-cy="orgShortName"
+            formControlName="orgShortName"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_locRef" jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.locRef"
+            >Loc Ref</label
+          >
+          <input type="text" class="form-control" name="locRef" id="field_locRef" data-cy="locRef" formControlName="locRef" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_rvcRef" jhiTranslate="simphonyStreamBurnerApplicationApp.modePaiementTrans.rvcRef"
+            >Rvc Ref</label
+          >
+          <input type="number" class="form-control" name="rvcRef" id="field_rvcRef" data-cy="rvcRef" formControlName="rvcRef" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

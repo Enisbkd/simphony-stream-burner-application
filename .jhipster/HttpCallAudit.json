@@ -1,0 +1,121 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124428"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "correlationId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "method",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "basePath",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "endpoint",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fullUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pathParams",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "queryParams",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "requestHeaders",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "requestBody",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "responseStatusCode",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "responseStatusText",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "responseHeaders",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "responseBody",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "timestamp",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "durationMs",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "errorMessage",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "errorType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "serviceName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "environment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userAgent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clientIp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "success",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "retryCount",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "kafkaTopic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sessionId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "String"
+    }
+  ],
+  "name": "HttpCallAudit",
+  "relationships": [],
+  "searchEngine": "no"
+}

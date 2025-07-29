@@ -1,0 +1,31 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "remiseTrans": {
+      "home": {
+        "title": "Remise Trans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Remise Trans",
+        "createOrEditLabel": "Create or edit a Remise Trans",
+        "notFound": "No Remise Trans found"
+      },
+      "created": "A new Remise Trans is created with identifier {{ param }}",
+      "updated": "A Remise Trans is updated with identifier {{ param }}",
+      "deleted": "A Remise Trans is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Remise Trans {{ id }}?"
+      },
+      "detail": {
+        "title": "Remise Trans"
+      },
+      "id": "ID",
+      "orgShortName": "Org Short Name",
+      "locRef": "Loc Ref",
+      "rvcRef": "Rvc Ref",
+      "discountId": "Discount Id",
+      "frName": "Fr Name",
+      "engName": "Eng Name",
+      "discountType": "Discount Type",
+      "discountValue": "Discount Value"
+    }
+  }
+}

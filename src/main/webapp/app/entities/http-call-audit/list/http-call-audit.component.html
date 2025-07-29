@@ -1,0 +1,292 @@
+<div>
+  <h2 id="page-heading" data-cy="HttpCallAuditHeading">
+    <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.home.title">Http Call Audits</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-http-call-audit"
+        [routerLink]="['/http-call-audit/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.home.createLabel">Create a new Http Call Audit</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (httpCallAudits().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.home.notFound">No Http Call Audits found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="correlationId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.correlationId">Correlation Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="method">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.method">Method</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="basePath">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.basePath">Base Path</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="endpoint">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.endpoint">Endpoint</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="fullUrl">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.fullUrl">Full Url</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="pathParams">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.pathParams">Path Params</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="queryParams">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.queryParams">Query Params</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="requestHeaders">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.requestHeaders">Request Headers</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="requestBody">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.requestBody">Request Body</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="responseStatusCode">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.responseStatusCode">Response Status Code</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="responseStatusText">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.responseStatusText">Response Status Text</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="responseHeaders">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.responseHeaders">Response Headers</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="responseBody">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.responseBody">Response Body</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="timestamp">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.timestamp">Timestamp</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="durationMs">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.durationMs">Duration Ms</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="errorMessage">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.errorMessage">Error Message</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="errorType">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.errorType">Error Type</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="serviceName">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.serviceName">Service Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="environment">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.environment">Environment</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="userAgent">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.userAgent">User Agent</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="clientIp">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.clientIp">Client Ip</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="success">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.success">Success</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="retryCount">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.retryCount">Retry Count</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="kafkaTopic">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.kafkaTopic">Kafka Topic</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sessionId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.sessionId">Session Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="userId">
+              <div class="d-flex">
+                <span jhiTranslate="simphonyStreamBurnerApplicationApp.httpCallAudit.userId">User Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (httpCallAudit of httpCallAudits(); track trackId(httpCallAudit)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/http-call-audit', httpCallAudit.id, 'view']">{{ httpCallAudit.id }}</a>
+              </td>
+              <td>{{ httpCallAudit.correlationId }}</td>
+              <td>{{ httpCallAudit.method }}</td>
+              <td>{{ httpCallAudit.basePath }}</td>
+              <td>{{ httpCallAudit.endpoint }}</td>
+              <td>{{ httpCallAudit.fullUrl }}</td>
+              <td>{{ httpCallAudit.pathParams }}</td>
+              <td>{{ httpCallAudit.queryParams }}</td>
+              <td>{{ httpCallAudit.requestHeaders }}</td>
+              <td>{{ httpCallAudit.requestBody }}</td>
+              <td>{{ httpCallAudit.responseStatusCode }}</td>
+              <td>{{ httpCallAudit.responseStatusText }}</td>
+              <td>{{ httpCallAudit.responseHeaders }}</td>
+              <td>{{ httpCallAudit.responseBody }}</td>
+              <td>{{ httpCallAudit.timestamp | formatMediumDatetime }}</td>
+              <td>{{ httpCallAudit.durationMs }}</td>
+              <td>{{ httpCallAudit.errorMessage }}</td>
+              <td>{{ httpCallAudit.errorType }}</td>
+              <td>{{ httpCallAudit.serviceName }}</td>
+              <td>{{ httpCallAudit.environment }}</td>
+              <td>{{ httpCallAudit.userAgent }}</td>
+              <td>{{ httpCallAudit.clientIp }}</td>
+              <td>{{ httpCallAudit.success }}</td>
+              <td>{{ httpCallAudit.retryCount }}</td>
+              <td>{{ httpCallAudit.kafkaTopic }}</td>
+              <td>{{ httpCallAudit.sessionId }}</td>
+              <td>{{ httpCallAudit.userId }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a
+                    [routerLink]="['/http-call-audit', httpCallAudit.id, 'view']"
+                    class="btn btn-info btn-sm"
+                    data-cy="entityDetailsButton"
+                  >
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a
+                    [routerLink]="['/http-call-audit', httpCallAudit.id, 'edit']"
+                    class="btn btn-primary btn-sm"
+                    data-cy="entityEditButton"
+                  >
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(httpCallAudit)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

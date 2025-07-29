@@ -1,0 +1,103 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124419"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "rvcRef",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "checkRef",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "checkNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "checkName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "checkEmployeeRef",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "orderTypeRef",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "orderChannelRef",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tableName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tableGroupNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "openTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "guestCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "language",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isTrainingCheck",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "preparationStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subtotal",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "subtotalDiscountTotal",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "autoServiceChargeTotal",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "serviceChargeTotal",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "taxTotal",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "paymentTotal",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "totalDue",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "taxRateId",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "CheckTrans",
+  "relationships": [],
+  "searchEngine": "no"
+}

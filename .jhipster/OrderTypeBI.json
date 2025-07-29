@@ -1,0 +1,65 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124437"
+  },
+  "applications": "*",
+  "entityTableName": "order_type_bi",
+  "fields": [
+    {
+      "fieldName": "num",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "locRef",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mstrNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mstrName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpHierName1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpName1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpHierName2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpName2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpHierName3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpName3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpHierName4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catGrpName4",
+      "fieldType": "String"
+    }
+  ],
+  "name": "OrderTypeBI",
+  "relationships": [],
+  "searchEngine": "no"
+}

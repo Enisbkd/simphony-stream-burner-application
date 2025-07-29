@@ -1,0 +1,37 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "menuItemPricesCnC": {
+      "home": {
+        "title": "Menu Item Prices Cn CS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Menu Item Prices Cn C",
+        "createOrEditLabel": "Create or edit a Menu Item Prices Cn C",
+        "notFound": "No Menu Item Prices Cn CS found"
+      },
+      "created": "A new Menu Item Prices Cn C is created with identifier {{ param }}",
+      "updated": "A Menu Item Prices Cn C is updated with identifier {{ param }}",
+      "deleted": "A Menu Item Prices Cn C is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Menu Item Prices Cn C {{ id }}?"
+      },
+      "detail": {
+        "title": "Menu Item Prices Cn C"
+      },
+      "id": "ID",
+      "hierUnitId": "Hier Unit Id",
+      "menuItemPriceId": "Menu Item Price Id",
+      "menuItemMasterId": "Menu Item Master Id",
+      "menuItemMasterObjNum": "Menu Item Master Obj Num",
+      "menuItemDefinitionId": "Menu Item Definition Id",
+      "defSequenceNum": "Def Sequence Num",
+      "externalReference1": "External Reference 1",
+      "externalReference2": "External Reference 2",
+      "priceSequenceNum": "Price Sequence Num",
+      "activeOnMenuLevel": "Active On Menu Level",
+      "effectivityGroupObjNum": "Effectivity Group Obj Num",
+      "prepCost": "Prep Cost",
+      "price": "Price",
+      "options": "Options"
+    }
+  }
+}

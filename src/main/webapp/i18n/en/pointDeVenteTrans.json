@@ -1,0 +1,28 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "pointDeVenteTrans": {
+      "home": {
+        "title": "Point De Vente Trans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Point De Vente Trans",
+        "createOrEditLabel": "Create or edit a Point De Vente Trans",
+        "notFound": "No Point De Vente Trans found"
+      },
+      "created": "A new Point De Vente Trans is created with identifier {{ param }}",
+      "updated": "A Point De Vente Trans is updated with identifier {{ param }}",
+      "deleted": "A Point De Vente Trans is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Point De Vente Trans {{ id }}?"
+      },
+      "detail": {
+        "title": "Point De Vente Trans"
+      },
+      "id": "ID",
+      "rvcRef": "Rvc Ref",
+      "name": "Name",
+      "locRef": "Loc Ref",
+      "orgShortName": "Org Short Name",
+      "address": "Address"
+    }
+  }
+}

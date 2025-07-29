@@ -1,0 +1,28 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124445"
+  },
+  "applications": "*",
+  "entityTableName": "taxe_bi",
+  "fields": [
+    {
+      "fieldName": "locRef",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "num",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "TaxeBI",
+  "relationships": [],
+  "searchEngine": "no"
+}

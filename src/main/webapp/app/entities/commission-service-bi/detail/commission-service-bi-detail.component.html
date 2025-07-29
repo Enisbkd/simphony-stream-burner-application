@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (commissionServiceBI(); as commissionServiceBIRef) {
+      <div>
+        <h2 data-cy="commissionServiceBIDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.commissionServiceBI.detail.title">Commission Service BI</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ commissionServiceBIRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.commissionServiceBI.nom">Nom</span></dt>
+          <dd>
+            <span>{{ commissionServiceBIRef.nom }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.commissionServiceBI.nomCourt">Nom Court</span></dt>
+          <dd>
+            <span>{{ commissionServiceBIRef.nomCourt }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.commissionServiceBI.typeValue">Type Value</span></dt>
+          <dd>
+            <span>{{ commissionServiceBIRef.typeValue }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.commissionServiceBI.value">Value</span></dt>
+          <dd>
+            <span>{{ commissionServiceBIRef.value }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.commissionServiceBI.etablissementRef">Etablissement Ref</span></dt>
+          <dd>
+            <span>{{ commissionServiceBIRef.etablissementRef }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/commission-service-bi', commissionServiceBIRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

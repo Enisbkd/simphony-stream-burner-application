@@ -1,0 +1,144 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (locationCnC(); as locationCnCRef) {
+      <div>
+        <h2 data-cy="locationCnCDetailsHeading">
+          <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.detail.title">Location Cn C</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.hierUnitId">Hier Unit Id</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.hierUnitId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.tzIndex">Tz Index</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.tzIndex }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.tzName">Tz Name</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.tzName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.localeInfoId">Locale Info Id</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.localeInfoId }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.name">Name</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.reportingLocName">Reporting Loc Name</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.reportingLocName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.locRef">Loc Ref</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.locRef }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.reportingParentEnterpriseLevelName"
+              >Reporting Parent Enterprise Level Name</span
+            >
+          </dt>
+          <dd>
+            <span>{{ locationCnCRef.reportingParentEnterpriseLevelName }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.objectNum">Object Num</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.objectNum }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcIp">Sbm Pms Ifc Ip</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmPmsIfcIp }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcPort">Sbm Pms Ifc Port</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmPmsIfcPort }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPriveRoomStart">Sbm Prive Room Start</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmPriveRoomStart }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPriveRoomEnd">Sbm Prive Room End</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmPriveRoomEnd }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsSendAllDetails">Sbm Pms Send All Details</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmPmsSendAllDetails }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsSendFullDscv">Sbm Pms Send Full Dscv</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmPmsSendFullDscv }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsSend64Tax">Sbm Pms Send 64 Tax</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmPmsSend64Tax }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmCardPaymentUrl">Sbm Card Payment Url</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmCardPaymentUrl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmCheckHotelDataUrl">Sbm Check Hotel Data Url</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmCheckHotelDataUrl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherSvcUrl">Sbm Voucher Svc Url</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmVoucherSvcUrl }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherInvPm">Sbm Voucher Inv Pm</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmVoucherInvPm }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherCorpPm">Sbm Voucher Corp Pm</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmVoucherCorpPm }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherRewardPm">Sbm Voucher Reward Pm</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmVoucherRewardPm }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmVoucherMcPm">Sbm Voucher Mc Pm</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmVoucherMcPm }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcPort2">Sbm Pms Ifc Port 2</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmPmsIfcPort2 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcPort3">Sbm Pms Ifc Port 3</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmPmsIfcPort3 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmPmsIfcPort4">Sbm Pms Ifc Port 4</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmPmsIfcPort4 }}</span>
+          </dd>
+          <dt><span jhiTranslate="simphonyStreamBurnerApplicationApp.locationCnC.sbmTimeout">Sbm Timeout</span></dt>
+          <dd>
+            <span>{{ locationCnCRef.sbmTimeout }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/location-cn-c', locationCnCRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

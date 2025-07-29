@@ -1,0 +1,19 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124444"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomCourt",
+      "fieldType": "String"
+    }
+  ],
+  "name": "SocieteTrans",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,0 +1,31 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "pointDeVenteCnC": {
+      "home": {
+        "title": "Point De Vente Cn CS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Point De Vente Cn C",
+        "createOrEditLabel": "Create or edit a Point De Vente Cn C",
+        "notFound": "No Point De Vente Cn CS found"
+      },
+      "created": "A new Point De Vente Cn C is created with identifier {{ param }}",
+      "updated": "A Point De Vente Cn C is updated with identifier {{ param }}",
+      "deleted": "A Point De Vente Cn C is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Point De Vente Cn C {{ id }}?"
+      },
+      "detail": {
+        "title": "Point De Vente Cn C"
+      },
+      "id": "ID",
+      "locHierUnitId": "Loc Hier Unit Id",
+      "locObjNum": "Loc Obj Num",
+      "rvcId": "Rvc Id",
+      "kdsControllerId": "Kds Controller Id",
+      "hierUnitId": "Hier Unit Id",
+      "objectNum": "Object Num",
+      "name": "Name",
+      "dataExtensions": "Data Extensions"
+    }
+  }
+}

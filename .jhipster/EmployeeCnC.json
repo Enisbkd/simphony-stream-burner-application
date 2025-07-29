@@ -1,0 +1,120 @@
+{
+  "annotations": {
+    "changelogDate": "20250729124424"
+  },
+  "applications": "*",
+  "entityTableName": "employee_cn_c",
+  "fields": [
+    {
+      "fieldName": "objectNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "checkName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "languageObjNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "langId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "alternateId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "level",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "group",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "userName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "firstRoleHierUnitId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "firstRoleObjNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "firstVisibilityHierUnitId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "firstVisibilityPropagateToChildren",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "firstPropertyHierUnitId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "firstPropertyObjNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "firstPropertyEmpClassObjNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "firstPropertyOptions",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "firstOperatorRvcHierUnitId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "firstOperatorRvcObjNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "firstOperatorOptions",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "firstOperatorCashDrawerObjNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "firstOperatorTmsColorObjNum",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "firstOperatorServerEfficiency",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "pin",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accessId",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "EmployeeCnC",
+  "relationships": [],
+  "searchEngine": "no"
+}

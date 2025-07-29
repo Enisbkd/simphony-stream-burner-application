@@ -1,0 +1,31 @@
+{
+  "simphonyStreamBurnerApplicationApp": {
+    "taxeRateTrans": {
+      "home": {
+        "title": "Taxe Rate Trans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Taxe Rate Trans",
+        "createOrEditLabel": "Create or edit a Taxe Rate Trans",
+        "notFound": "No Taxe Rate Trans found"
+      },
+      "created": "A new Taxe Rate Trans is created with identifier {{ param }}",
+      "updated": "A Taxe Rate Trans is updated with identifier {{ param }}",
+      "deleted": "A Taxe Rate Trans is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Taxe Rate Trans {{ id }}?"
+      },
+      "detail": {
+        "title": "Taxe Rate Trans"
+      },
+      "id": "ID",
+      "orgShortName": "Org Short Name",
+      "locRef": "Loc Ref",
+      "rvcRef": "Rvc Ref",
+      "taxRateId": "Tax Rate Id",
+      "percentage": "Percentage",
+      "taxType": "Tax Type",
+      "nameFR": "Name FR",
+      "nameEN": "Name EN"
+    }
+  }
+}
