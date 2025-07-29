@@ -10,7 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import mc.sbm.simphonycloud.IntegrationTest;
 import mc.sbm.simphonycloud.domain.TaxeBI;
 import mc.sbm.simphonycloud.repository.TaxeBIRepository;
@@ -48,7 +48,7 @@ class TaxeBIResourceIT {
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
     private static Random random = new Random();
-    private static AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+    private static AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     @Autowired
     private ObjectMapper om;
@@ -125,7 +125,7 @@ class TaxeBIResourceIT {
     @Transactional
     void createTaxeBIWithExistingId() throws Exception {
         // Create the TaxeBI with an existing ID
-        taxeBI.setId(1L);
+        taxeBI.setId(1);
 
         long databaseSizeBeforeCreate = getRepositoryCount();
 
@@ -178,7 +178,7 @@ class TaxeBIResourceIT {
     @Transactional
     void getNonExistingTaxeBI() throws Exception {
         // Get the taxeBI
-        restTaxeBIMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
+        restTaxeBIMockMvc.perform(get(ENTITY_API_URL_ID, Integer.MAX_VALUE)).andExpect(status().isNotFound());
     }
 
     @Test
@@ -212,7 +212,7 @@ class TaxeBIResourceIT {
     @Transactional
     void putNonExistingTaxeBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        taxeBI.setId(longCount.incrementAndGet());
+        taxeBI.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restTaxeBIMockMvc
@@ -227,12 +227,12 @@ class TaxeBIResourceIT {
     @Transactional
     void putWithIdMismatchTaxeBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        taxeBI.setId(longCount.incrementAndGet());
+        taxeBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restTaxeBIMockMvc
             .perform(
-                put(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                put(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(om.writeValueAsBytes(taxeBI))
             )
@@ -246,7 +246,7 @@ class TaxeBIResourceIT {
     @Transactional
     void putWithMissingIdPathParamTaxeBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        taxeBI.setId(longCount.incrementAndGet());
+        taxeBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restTaxeBIMockMvc
@@ -317,7 +317,7 @@ class TaxeBIResourceIT {
     @Transactional
     void patchNonExistingTaxeBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        taxeBI.setId(longCount.incrementAndGet());
+        taxeBI.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restTaxeBIMockMvc
@@ -334,12 +334,12 @@ class TaxeBIResourceIT {
     @Transactional
     void patchWithIdMismatchTaxeBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        taxeBI.setId(longCount.incrementAndGet());
+        taxeBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restTaxeBIMockMvc
             .perform(
-                patch(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                patch(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType("application/merge-patch+json")
                     .content(om.writeValueAsBytes(taxeBI))
             )
@@ -353,7 +353,7 @@ class TaxeBIResourceIT {
     @Transactional
     void patchWithMissingIdPathParamTaxeBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        taxeBI.setId(longCount.incrementAndGet());
+        taxeBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restTaxeBIMockMvc

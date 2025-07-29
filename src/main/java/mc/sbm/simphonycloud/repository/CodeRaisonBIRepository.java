@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface CodeRaisonBIRepository extends JpaRepository<CodeRaisonBI, Long> {}
+public interface CodeRaisonBIRepository extends JpaRepository<CodeRaisonBI, Integer> {}

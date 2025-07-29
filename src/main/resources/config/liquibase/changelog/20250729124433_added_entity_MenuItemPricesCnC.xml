@@ -11,7 +11,7 @@
     -->
     <changeSet id="20250729124433-1" author="jhipster">
         <createTable tableName="menu_item_prices_cn_c">
-            <column name="id" type="bigint">
+            <column name="id" type="integer">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="hier_unit_id" type="bigint">

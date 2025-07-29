@@ -11,7 +11,7 @@
     -->
     <changeSet id="20250729124421-1" author="jhipster">
         <createTable tableName="commission_service_bi">
-            <column name="id" type="bigint">
+            <column name="id" type="integer">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="nom" type="varchar(255)">

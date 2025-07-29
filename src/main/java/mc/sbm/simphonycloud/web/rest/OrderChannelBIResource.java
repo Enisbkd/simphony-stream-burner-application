@@ -72,7 +72,7 @@ public class OrderChannelBIResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<OrderChannelBI> updateOrderChannelBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @Valid @RequestBody OrderChannelBI orderChannelBI
     ) throws URISyntaxException {
         LOG.debug("REST request to update OrderChannelBI : {}, {}", id, orderChannelBI);
@@ -106,7 +106,7 @@ public class OrderChannelBIResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<OrderChannelBI> partialUpdateOrderChannelBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @NotNull @RequestBody OrderChannelBI orderChannelBI
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update OrderChannelBI partially : {}, {}", id, orderChannelBI);
@@ -168,7 +168,7 @@ public class OrderChannelBIResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the orderChannelBI, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<OrderChannelBI> getOrderChannelBI(@PathVariable("id") Long id) {
+    public ResponseEntity<OrderChannelBI> getOrderChannelBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get OrderChannelBI : {}", id);
         Optional<OrderChannelBI> orderChannelBI = orderChannelBIRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(orderChannelBI);
@@ -181,7 +181,7 @@ public class OrderChannelBIResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteOrderChannelBI(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteOrderChannelBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete OrderChannelBI : {}", id);
         orderChannelBIRepository.deleteById(id);
         return ResponseEntity.noContent()

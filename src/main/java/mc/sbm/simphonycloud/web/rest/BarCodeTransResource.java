@@ -69,7 +69,7 @@ public class BarCodeTransResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<BarCodeTrans> updateBarCodeTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody BarCodeTrans barCodeTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to update BarCodeTrans : {}, {}", id, barCodeTrans);
@@ -103,7 +103,7 @@ public class BarCodeTransResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<BarCodeTrans> partialUpdateBarCodeTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody BarCodeTrans barCodeTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update BarCodeTrans partially : {}, {}", id, barCodeTrans);
@@ -177,7 +177,7 @@ public class BarCodeTransResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the barCodeTrans, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<BarCodeTrans> getBarCodeTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<BarCodeTrans> getBarCodeTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get BarCodeTrans : {}", id);
         Optional<BarCodeTrans> barCodeTrans = barCodeTransRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(barCodeTrans);
@@ -190,7 +190,7 @@ public class BarCodeTransResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBarCodeTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteBarCodeTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete BarCodeTrans : {}", id);
         barCodeTransRepository.deleteById(id);
         return ResponseEntity.noContent()

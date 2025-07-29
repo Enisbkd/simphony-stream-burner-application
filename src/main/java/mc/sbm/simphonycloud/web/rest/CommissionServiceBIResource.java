@@ -72,7 +72,7 @@ public class CommissionServiceBIResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<CommissionServiceBI> updateCommissionServiceBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @Valid @RequestBody CommissionServiceBI commissionServiceBI
     ) throws URISyntaxException {
         LOG.debug("REST request to update CommissionServiceBI : {}, {}", id, commissionServiceBI);
@@ -106,7 +106,7 @@ public class CommissionServiceBIResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<CommissionServiceBI> partialUpdateCommissionServiceBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @NotNull @RequestBody CommissionServiceBI commissionServiceBI
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update CommissionServiceBI partially : {}, {}", id, commissionServiceBI);
@@ -168,7 +168,7 @@ public class CommissionServiceBIResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the commissionServiceBI, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<CommissionServiceBI> getCommissionServiceBI(@PathVariable("id") Long id) {
+    public ResponseEntity<CommissionServiceBI> getCommissionServiceBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get CommissionServiceBI : {}", id);
         Optional<CommissionServiceBI> commissionServiceBI = commissionServiceBIRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(commissionServiceBI);
@@ -181,7 +181,7 @@ public class CommissionServiceBIResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCommissionServiceBI(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteCommissionServiceBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete CommissionServiceBI : {}", id);
         commissionServiceBIRepository.deleteById(id);
         return ResponseEntity.noContent()

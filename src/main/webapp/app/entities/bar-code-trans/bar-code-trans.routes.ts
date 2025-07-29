@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import BarCodeTransResolve from './route/bar-code-trans-routing-resolve.service';
 
 const barCodeTransRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/bar-code-trans.component').then(m => m.BarCodeTransComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import MenuItemDefinitionsCnCResolve from './route/menu-item-definitions-cn-c-routing-resolve.service';
 
 const menuItemDefinitionsCnCRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/menu-item-definitions-cn-c.component').then(m => m.MenuItemDefinitionsCnCComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

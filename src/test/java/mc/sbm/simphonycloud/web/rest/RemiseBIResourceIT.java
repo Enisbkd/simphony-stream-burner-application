@@ -10,7 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import mc.sbm.simphonycloud.IntegrationTest;
 import mc.sbm.simphonycloud.domain.RemiseBI;
 import mc.sbm.simphonycloud.repository.RemiseBIRepository;
@@ -54,7 +54,7 @@ class RemiseBIResourceIT {
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
     private static Random random = new Random();
-    private static AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+    private static AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     @Autowired
     private ObjectMapper om;
@@ -143,7 +143,7 @@ class RemiseBIResourceIT {
     @Transactional
     void createRemiseBIWithExistingId() throws Exception {
         // Create the RemiseBI with an existing ID
-        remiseBI.setId(1L);
+        remiseBI.setId(1);
 
         long databaseSizeBeforeCreate = getRepositoryCount();
 
@@ -200,7 +200,7 @@ class RemiseBIResourceIT {
     @Transactional
     void getNonExistingRemiseBI() throws Exception {
         // Get the remiseBI
-        restRemiseBIMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
+        restRemiseBIMockMvc.perform(get(ENTITY_API_URL_ID, Integer.MAX_VALUE)).andExpect(status().isNotFound());
     }
 
     @Test
@@ -240,7 +240,7 @@ class RemiseBIResourceIT {
     @Transactional
     void putNonExistingRemiseBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        remiseBI.setId(longCount.incrementAndGet());
+        remiseBI.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restRemiseBIMockMvc
@@ -257,12 +257,12 @@ class RemiseBIResourceIT {
     @Transactional
     void putWithIdMismatchRemiseBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        remiseBI.setId(longCount.incrementAndGet());
+        remiseBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restRemiseBIMockMvc
             .perform(
-                put(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                put(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(om.writeValueAsBytes(remiseBI))
             )
@@ -276,7 +276,7 @@ class RemiseBIResourceIT {
     @Transactional
     void putWithMissingIdPathParamRemiseBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        remiseBI.setId(longCount.incrementAndGet());
+        remiseBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restRemiseBIMockMvc
@@ -353,7 +353,7 @@ class RemiseBIResourceIT {
     @Transactional
     void patchNonExistingRemiseBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        remiseBI.setId(longCount.incrementAndGet());
+        remiseBI.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restRemiseBIMockMvc
@@ -372,12 +372,12 @@ class RemiseBIResourceIT {
     @Transactional
     void patchWithIdMismatchRemiseBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        remiseBI.setId(longCount.incrementAndGet());
+        remiseBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restRemiseBIMockMvc
             .perform(
-                patch(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                patch(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType("application/merge-patch+json")
                     .content(om.writeValueAsBytes(remiseBI))
             )
@@ -391,7 +391,7 @@ class RemiseBIResourceIT {
     @Transactional
     void patchWithMissingIdPathParamRemiseBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        remiseBI.setId(longCount.incrementAndGet());
+        remiseBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restRemiseBIMockMvc

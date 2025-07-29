@@ -69,7 +69,7 @@ public class SocieteTransResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<SocieteTrans> updateSocieteTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody SocieteTrans societeTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to update SocieteTrans : {}, {}", id, societeTrans);
@@ -103,7 +103,7 @@ public class SocieteTransResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<SocieteTrans> partialUpdateSocieteTrans(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody SocieteTrans societeTrans
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update SocieteTrans partially : {}, {}", id, societeTrans);
@@ -156,7 +156,7 @@ public class SocieteTransResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the societeTrans, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<SocieteTrans> getSocieteTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<SocieteTrans> getSocieteTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get SocieteTrans : {}", id);
         Optional<SocieteTrans> societeTrans = societeTransRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(societeTrans);
@@ -169,7 +169,7 @@ public class SocieteTransResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteSocieteTrans(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteSocieteTrans(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete SocieteTrans : {}", id);
         societeTransRepository.deleteById(id);
         return ResponseEntity.noContent()

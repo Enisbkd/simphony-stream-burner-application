@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import CheckTransResolve from './route/check-trans-routing-resolve.service';
 
 const checkTransRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/check-trans.component').then(m => m.CheckTransComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

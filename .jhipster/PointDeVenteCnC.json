@@ -6,6 +6,10 @@
   "entityTableName": "point_de_vente_cn_c",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "locHierUnitId",
       "fieldType": "Integer"
     },

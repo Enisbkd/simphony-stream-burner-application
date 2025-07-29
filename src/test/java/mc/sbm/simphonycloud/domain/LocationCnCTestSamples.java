@@ -3,17 +3,15 @@ package mc.sbm.simphonycloud.domain;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class LocationCnCTestSamples {
 
     private static final Random random = new Random();
-    private static final AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
     private static final AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     public static LocationCnC getLocationCnCSample1() {
         return new LocationCnC()
-            .id(1L)
+            .id(1)
             .hierUnitId(1)
             .tzIndex(1)
             .tzName("tzName1")
@@ -45,7 +43,7 @@ public class LocationCnCTestSamples {
 
     public static LocationCnC getLocationCnCSample2() {
         return new LocationCnC()
-            .id(2L)
+            .id(2)
             .hierUnitId(2)
             .tzIndex(2)
             .tzName("tzName2")
@@ -77,7 +75,7 @@ public class LocationCnCTestSamples {
 
     public static LocationCnC getLocationCnCRandomSampleGenerator() {
         return new LocationCnC()
-            .id(longCount.incrementAndGet())
+            .id(intCount.incrementAndGet())
             .hierUnitId(intCount.incrementAndGet())
             .tzIndex(intCount.incrementAndGet())
             .tzName(UUID.randomUUID().toString())

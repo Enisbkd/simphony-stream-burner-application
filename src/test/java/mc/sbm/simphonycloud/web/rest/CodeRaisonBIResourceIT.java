@@ -10,7 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import mc.sbm.simphonycloud.IntegrationTest;
 import mc.sbm.simphonycloud.domain.CodeRaisonBI;
 import mc.sbm.simphonycloud.repository.CodeRaisonBIRepository;
@@ -51,7 +51,7 @@ class CodeRaisonBIResourceIT {
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
     private static Random random = new Random();
-    private static AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+    private static AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     @Autowired
     private ObjectMapper om;
@@ -138,7 +138,7 @@ class CodeRaisonBIResourceIT {
     @Transactional
     void createCodeRaisonBIWithExistingId() throws Exception {
         // Create the CodeRaisonBI with an existing ID
-        codeRaisonBI.setId(1L);
+        codeRaisonBI.setId(1);
 
         long databaseSizeBeforeCreate = getRepositoryCount();
 
@@ -225,7 +225,7 @@ class CodeRaisonBIResourceIT {
     @Transactional
     void getNonExistingCodeRaisonBI() throws Exception {
         // Get the codeRaisonBI
-        restCodeRaisonBIMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
+        restCodeRaisonBIMockMvc.perform(get(ENTITY_API_URL_ID, Integer.MAX_VALUE)).andExpect(status().isNotFound());
     }
 
     @Test
@@ -264,7 +264,7 @@ class CodeRaisonBIResourceIT {
     @Transactional
     void putNonExistingCodeRaisonBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        codeRaisonBI.setId(longCount.incrementAndGet());
+        codeRaisonBI.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restCodeRaisonBIMockMvc
@@ -283,12 +283,12 @@ class CodeRaisonBIResourceIT {
     @Transactional
     void putWithIdMismatchCodeRaisonBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        codeRaisonBI.setId(longCount.incrementAndGet());
+        codeRaisonBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restCodeRaisonBIMockMvc
             .perform(
-                put(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                put(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(om.writeValueAsBytes(codeRaisonBI))
             )
@@ -302,7 +302,7 @@ class CodeRaisonBIResourceIT {
     @Transactional
     void putWithMissingIdPathParamCodeRaisonBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        codeRaisonBI.setId(longCount.incrementAndGet());
+        codeRaisonBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restCodeRaisonBIMockMvc
@@ -381,7 +381,7 @@ class CodeRaisonBIResourceIT {
     @Transactional
     void patchNonExistingCodeRaisonBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        codeRaisonBI.setId(longCount.incrementAndGet());
+        codeRaisonBI.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restCodeRaisonBIMockMvc
@@ -400,12 +400,12 @@ class CodeRaisonBIResourceIT {
     @Transactional
     void patchWithIdMismatchCodeRaisonBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        codeRaisonBI.setId(longCount.incrementAndGet());
+        codeRaisonBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restCodeRaisonBIMockMvc
             .perform(
-                patch(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                patch(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType("application/merge-patch+json")
                     .content(om.writeValueAsBytes(codeRaisonBI))
             )
@@ -419,7 +419,7 @@ class CodeRaisonBIResourceIT {
     @Transactional
     void patchWithMissingIdPathParamCodeRaisonBI() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        codeRaisonBI.setId(longCount.incrementAndGet());
+        codeRaisonBI.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restCodeRaisonBIMockMvc

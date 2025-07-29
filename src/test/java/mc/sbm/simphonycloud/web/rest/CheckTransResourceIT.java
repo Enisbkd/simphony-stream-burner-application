@@ -12,7 +12,7 @@ import jakarta.persistence.EntityManager;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import mc.sbm.simphonycloud.IntegrationTest;
 import mc.sbm.simphonycloud.domain.CheckTrans;
 import mc.sbm.simphonycloud.repository.CheckTransRepository;
@@ -107,7 +107,7 @@ class CheckTransResourceIT {
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
     private static Random random = new Random();
-    private static AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+    private static AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     @Autowired
     private ObjectMapper om;
@@ -230,7 +230,7 @@ class CheckTransResourceIT {
     @Transactional
     void createCheckTransWithExistingId() throws Exception {
         // Create the CheckTrans with an existing ID
-        checkTrans.setId(1L);
+        checkTrans.setId(1);
 
         long databaseSizeBeforeCreate = getRepositoryCount();
 
@@ -321,7 +321,7 @@ class CheckTransResourceIT {
     @Transactional
     void getNonExistingCheckTrans() throws Exception {
         // Get the checkTrans
-        restCheckTransMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
+        restCheckTransMockMvc.perform(get(ENTITY_API_URL_ID, Integer.MAX_VALUE)).andExpect(status().isNotFound());
     }
 
     @Test
@@ -378,7 +378,7 @@ class CheckTransResourceIT {
     @Transactional
     void putNonExistingCheckTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        checkTrans.setId(longCount.incrementAndGet());
+        checkTrans.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restCheckTransMockMvc
@@ -395,12 +395,12 @@ class CheckTransResourceIT {
     @Transactional
     void putWithIdMismatchCheckTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        checkTrans.setId(longCount.incrementAndGet());
+        checkTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restCheckTransMockMvc
             .perform(
-                put(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                put(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(om.writeValueAsBytes(checkTrans))
             )
@@ -414,7 +414,7 @@ class CheckTransResourceIT {
     @Transactional
     void putWithMissingIdPathParamCheckTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        checkTrans.setId(longCount.incrementAndGet());
+        checkTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restCheckTransMockMvc
@@ -522,7 +522,7 @@ class CheckTransResourceIT {
     @Transactional
     void patchNonExistingCheckTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        checkTrans.setId(longCount.incrementAndGet());
+        checkTrans.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restCheckTransMockMvc
@@ -541,12 +541,12 @@ class CheckTransResourceIT {
     @Transactional
     void patchWithIdMismatchCheckTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        checkTrans.setId(longCount.incrementAndGet());
+        checkTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restCheckTransMockMvc
             .perform(
-                patch(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                patch(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType("application/merge-patch+json")
                     .content(om.writeValueAsBytes(checkTrans))
             )
@@ -560,7 +560,7 @@ class CheckTransResourceIT {
     @Transactional
     void patchWithMissingIdPathParamCheckTrans() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        checkTrans.setId(longCount.incrementAndGet());
+        checkTrans.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restCheckTransMockMvc

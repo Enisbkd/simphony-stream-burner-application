@@ -6,6 +6,10 @@
   "entityTableName": "hierarchie_cn_c",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "nom",
       "fieldType": "String",
       "fieldValidateRules": ["required"]

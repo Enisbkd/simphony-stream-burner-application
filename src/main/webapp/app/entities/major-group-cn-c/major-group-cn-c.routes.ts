@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import MajorGroupCnCResolve from './route/major-group-cn-c-routing-resolve.service';
 
 const majorGroupCnCRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/major-group-cn-c.component').then(m => m.MajorGroupCnCComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

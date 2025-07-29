@@ -20,7 +20,7 @@ public class MenuItemPricesCnC implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "id")
-    private Long id;
+    private Integer id;
 
     @Column(name = "hier_unit_id")
     private Long hierUnitId;
@@ -66,16 +66,16 @@ public class MenuItemPricesCnC implements Serializable {
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
-    public Long getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public MenuItemPricesCnC id(Long id) {
+    public MenuItemPricesCnC id(Integer id) {
         this.setId(id);
         return this;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -6,6 +6,10 @@
   "entityTableName": "menu_item_masters_cn_c",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "hierUnitId",
       "fieldType": "Integer"
     },

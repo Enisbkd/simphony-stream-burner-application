@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface CommissionServiceBIRepository extends JpaRepository<CommissionServiceBI, Long> {}
+public interface CommissionServiceBIRepository extends JpaRepository<CommissionServiceBI, Integer> {}

@@ -71,7 +71,7 @@ public class OrderTypeBIResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<OrderTypeBI> updateOrderTypeBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @Valid @RequestBody OrderTypeBI orderTypeBI
     ) throws URISyntaxException {
         LOG.debug("REST request to update OrderTypeBI : {}, {}", id, orderTypeBI);
@@ -105,7 +105,7 @@ public class OrderTypeBIResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<OrderTypeBI> partialUpdateOrderTypeBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @NotNull @RequestBody OrderTypeBI orderTypeBI
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update OrderTypeBI partially : {}, {}", id, orderTypeBI);
@@ -191,7 +191,7 @@ public class OrderTypeBIResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the orderTypeBI, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<OrderTypeBI> getOrderTypeBI(@PathVariable("id") Long id) {
+    public ResponseEntity<OrderTypeBI> getOrderTypeBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get OrderTypeBI : {}", id);
         Optional<OrderTypeBI> orderTypeBI = orderTypeBIRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(orderTypeBI);
@@ -204,7 +204,7 @@ public class OrderTypeBIResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteOrderTypeBI(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteOrderTypeBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete OrderTypeBI : {}", id);
         orderTypeBIRepository.deleteById(id);
         return ResponseEntity.noContent()

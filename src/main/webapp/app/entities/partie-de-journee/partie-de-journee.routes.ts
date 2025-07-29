@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import PartieDeJourneeResolve from './route/partie-de-journee-routing-resolve.service';
 
 const partieDeJourneeRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/partie-de-journee.component').then(m => m.PartieDeJourneeComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

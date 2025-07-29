@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface FamilyGroupCnCRepository extends JpaRepository<FamilyGroupCnC, Long> {}
+public interface FamilyGroupCnCRepository extends JpaRepository<FamilyGroupCnC, Integer> {}

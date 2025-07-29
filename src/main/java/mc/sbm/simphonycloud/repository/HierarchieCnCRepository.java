@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface HierarchieCnCRepository extends JpaRepository<HierarchieCnC, Long> {}
+public interface HierarchieCnCRepository extends JpaRepository<HierarchieCnC, Integer> {}

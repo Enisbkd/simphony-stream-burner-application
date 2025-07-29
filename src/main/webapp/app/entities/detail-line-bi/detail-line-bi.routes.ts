@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import DetailLineBIResolve from './route/detail-line-bi-routing-resolve.service';
 
 const detailLineBIRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/detail-line-bi.component').then(m => m.DetailLineBIComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface GuestCheckBIRepository extends JpaRepository<GuestCheckBI, Long> {}
+public interface GuestCheckBIRepository extends JpaRepository<GuestCheckBI, Integer> {}

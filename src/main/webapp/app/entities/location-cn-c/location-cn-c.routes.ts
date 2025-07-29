@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import LocationCnCResolve from './route/location-cn-c-routing-resolve.service';
 
 const locationCnCRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/location-cn-c.component').then(m => m.LocationCnCComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

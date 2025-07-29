@@ -20,7 +20,7 @@ public class EmployeeCnC implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "id")
-    private Long id;
+    private Integer id;
 
     @Column(name = "object_num")
     private Integer objectNum;
@@ -105,16 +105,16 @@ public class EmployeeCnC implements Serializable {
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
-    public Long getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public EmployeeCnC id(Long id) {
+    public EmployeeCnC id(Integer id) {
         this.setId(id);
         return this;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

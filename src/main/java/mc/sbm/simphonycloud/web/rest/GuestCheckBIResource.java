@@ -69,7 +69,7 @@ public class GuestCheckBIResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<GuestCheckBI> updateGuestCheckBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody GuestCheckBI guestCheckBI
     ) throws URISyntaxException {
         LOG.debug("REST request to update GuestCheckBI : {}, {}", id, guestCheckBI);
@@ -103,7 +103,7 @@ public class GuestCheckBIResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<GuestCheckBI> partialUpdateGuestCheckBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody GuestCheckBI guestCheckBI
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update GuestCheckBI partially : {}, {}", id, guestCheckBI);
@@ -207,7 +207,7 @@ public class GuestCheckBIResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the guestCheckBI, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<GuestCheckBI> getGuestCheckBI(@PathVariable("id") Long id) {
+    public ResponseEntity<GuestCheckBI> getGuestCheckBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get GuestCheckBI : {}", id);
         Optional<GuestCheckBI> guestCheckBI = guestCheckBIRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(guestCheckBI);
@@ -220,7 +220,7 @@ public class GuestCheckBIResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteGuestCheckBI(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteGuestCheckBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete GuestCheckBI : {}", id);
         guestCheckBIRepository.deleteById(id);
         return ResponseEntity.noContent()

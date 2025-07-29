@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import OrganizationLocationTransResolve from './route/organization-location-trans-routing-resolve.service';
 
 const organizationLocationTransRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/organization-location-trans.component').then(m => m.OrganizationLocationTransComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

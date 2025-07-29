@@ -6,6 +6,10 @@
   "entityTableName": "taxe_bi",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "locRef",
       "fieldType": "String"
     },

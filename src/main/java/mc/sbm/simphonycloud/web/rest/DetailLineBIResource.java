@@ -69,7 +69,7 @@ public class DetailLineBIResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<DetailLineBI> updateDetailLineBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody DetailLineBI detailLineBI
     ) throws URISyntaxException {
         LOG.debug("REST request to update DetailLineBI : {}, {}", id, detailLineBI);
@@ -103,7 +103,7 @@ public class DetailLineBIResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<DetailLineBI> partialUpdateDetailLineBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody DetailLineBI detailLineBI
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update DetailLineBI partially : {}, {}", id, detailLineBI);
@@ -228,7 +228,7 @@ public class DetailLineBIResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the detailLineBI, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<DetailLineBI> getDetailLineBI(@PathVariable("id") Long id) {
+    public ResponseEntity<DetailLineBI> getDetailLineBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get DetailLineBI : {}", id);
         Optional<DetailLineBI> detailLineBI = detailLineBIRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(detailLineBI);
@@ -241,7 +241,7 @@ public class DetailLineBIResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteDetailLineBI(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteDetailLineBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete DetailLineBI : {}", id);
         detailLineBIRepository.deleteById(id);
         return ResponseEntity.noContent()

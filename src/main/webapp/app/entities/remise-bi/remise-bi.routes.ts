@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import RemiseBIResolve from './route/remise-bi-routing-resolve.service';
 
 const remiseBIRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/remise-bi.component').then(m => m.RemiseBIComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

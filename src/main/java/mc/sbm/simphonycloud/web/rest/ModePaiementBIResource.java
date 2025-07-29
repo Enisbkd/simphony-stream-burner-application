@@ -69,7 +69,7 @@ public class ModePaiementBIResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<ModePaiementBI> updateModePaiementBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody ModePaiementBI modePaiementBI
     ) throws URISyntaxException {
         LOG.debug("REST request to update ModePaiementBI : {}, {}", id, modePaiementBI);
@@ -103,7 +103,7 @@ public class ModePaiementBIResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<ModePaiementBI> partialUpdateModePaiementBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody ModePaiementBI modePaiementBI
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update ModePaiementBI partially : {}, {}", id, modePaiementBI);
@@ -162,7 +162,7 @@ public class ModePaiementBIResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the modePaiementBI, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<ModePaiementBI> getModePaiementBI(@PathVariable("id") Long id) {
+    public ResponseEntity<ModePaiementBI> getModePaiementBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get ModePaiementBI : {}", id);
         Optional<ModePaiementBI> modePaiementBI = modePaiementBIRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(modePaiementBI);
@@ -175,7 +175,7 @@ public class ModePaiementBIResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteModePaiementBI(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteModePaiementBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete ModePaiementBI : {}", id);
         modePaiementBIRepository.deleteById(id);
         return ResponseEntity.noContent()

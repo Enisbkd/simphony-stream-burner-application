@@ -6,6 +6,10 @@
   "entityTableName": "family_group_cn_c",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "nom",
       "fieldType": "String"
     },

@@ -10,7 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import mc.sbm.simphonycloud.IntegrationTest;
 import mc.sbm.simphonycloud.domain.MenuItemMastersCnC;
 import mc.sbm.simphonycloud.repository.MenuItemMastersCnCRepository;
@@ -63,7 +63,7 @@ class MenuItemMastersCnCResourceIT {
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
     private static Random random = new Random();
-    private static AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
+    private static AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     @Autowired
     private ObjectMapper om;
@@ -161,7 +161,7 @@ class MenuItemMastersCnCResourceIT {
     @Transactional
     void createMenuItemMastersCnCWithExistingId() throws Exception {
         // Create the MenuItemMastersCnC with an existing ID
-        menuItemMastersCnC.setId(1L);
+        menuItemMastersCnC.setId(1);
 
         long databaseSizeBeforeCreate = getRepositoryCount();
 
@@ -224,7 +224,7 @@ class MenuItemMastersCnCResourceIT {
     @Transactional
     void getNonExistingMenuItemMastersCnC() throws Exception {
         // Get the menuItemMastersCnC
-        restMenuItemMastersCnCMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
+        restMenuItemMastersCnCMockMvc.perform(get(ENTITY_API_URL_ID, Integer.MAX_VALUE)).andExpect(status().isNotFound());
     }
 
     @Test
@@ -267,7 +267,7 @@ class MenuItemMastersCnCResourceIT {
     @Transactional
     void putNonExistingMenuItemMastersCnC() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        menuItemMastersCnC.setId(longCount.incrementAndGet());
+        menuItemMastersCnC.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restMenuItemMastersCnCMockMvc
@@ -286,12 +286,12 @@ class MenuItemMastersCnCResourceIT {
     @Transactional
     void putWithIdMismatchMenuItemMastersCnC() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        menuItemMastersCnC.setId(longCount.incrementAndGet());
+        menuItemMastersCnC.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restMenuItemMastersCnCMockMvc
             .perform(
-                put(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                put(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(om.writeValueAsBytes(menuItemMastersCnC))
             )
@@ -305,7 +305,7 @@ class MenuItemMastersCnCResourceIT {
     @Transactional
     void putWithMissingIdPathParamMenuItemMastersCnC() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        menuItemMastersCnC.setId(longCount.incrementAndGet());
+        menuItemMastersCnC.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restMenuItemMastersCnCMockMvc
@@ -395,7 +395,7 @@ class MenuItemMastersCnCResourceIT {
     @Transactional
     void patchNonExistingMenuItemMastersCnC() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        menuItemMastersCnC.setId(longCount.incrementAndGet());
+        menuItemMastersCnC.setId(intCount.incrementAndGet());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restMenuItemMastersCnCMockMvc
@@ -414,12 +414,12 @@ class MenuItemMastersCnCResourceIT {
     @Transactional
     void patchWithIdMismatchMenuItemMastersCnC() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        menuItemMastersCnC.setId(longCount.incrementAndGet());
+        menuItemMastersCnC.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restMenuItemMastersCnCMockMvc
             .perform(
-                patch(ENTITY_API_URL_ID, longCount.incrementAndGet())
+                patch(ENTITY_API_URL_ID, intCount.incrementAndGet())
                     .contentType("application/merge-patch+json")
                     .content(om.writeValueAsBytes(menuItemMastersCnC))
             )
@@ -433,7 +433,7 @@ class MenuItemMastersCnCResourceIT {
     @Transactional
     void patchWithMissingIdPathParamMenuItemMastersCnC() throws Exception {
         long databaseSizeBeforeUpdate = getRepositoryCount();
-        menuItemMastersCnC.setId(longCount.incrementAndGet());
+        menuItemMastersCnC.setId(intCount.incrementAndGet());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restMenuItemMastersCnCMockMvc

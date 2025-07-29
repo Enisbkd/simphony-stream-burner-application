@@ -6,6 +6,10 @@
   "entityTableName": "remise_bi",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "num",
       "fieldType": "Integer"
     },

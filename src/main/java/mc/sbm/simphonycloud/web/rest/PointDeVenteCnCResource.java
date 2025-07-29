@@ -69,7 +69,7 @@ public class PointDeVenteCnCResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<PointDeVenteCnC> updatePointDeVenteCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody PointDeVenteCnC pointDeVenteCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to update PointDeVenteCnC : {}, {}", id, pointDeVenteCnC);
@@ -103,7 +103,7 @@ public class PointDeVenteCnCResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<PointDeVenteCnC> partialUpdatePointDeVenteCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody PointDeVenteCnC pointDeVenteCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update PointDeVenteCnC partially : {}, {}", id, pointDeVenteCnC);
@@ -174,7 +174,7 @@ public class PointDeVenteCnCResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the pointDeVenteCnC, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<PointDeVenteCnC> getPointDeVenteCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<PointDeVenteCnC> getPointDeVenteCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get PointDeVenteCnC : {}", id);
         Optional<PointDeVenteCnC> pointDeVenteCnC = pointDeVenteCnCRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(pointDeVenteCnC);
@@ -187,7 +187,7 @@ public class PointDeVenteCnCResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePointDeVenteCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deletePointDeVenteCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete PointDeVenteCnC : {}", id);
         pointDeVenteCnCRepository.deleteById(id);
         return ResponseEntity.noContent()

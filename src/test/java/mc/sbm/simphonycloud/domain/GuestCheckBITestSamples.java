@@ -3,17 +3,15 @@ package mc.sbm.simphonycloud.domain;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class GuestCheckBITestSamples {
 
     private static final Random random = new Random();
-    private static final AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
     private static final AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     public static GuestCheckBI getGuestCheckBISample1() {
         return new GuestCheckBI()
-            .id(1L)
+            .id(1)
             .guestCheckId(1)
             .chkNum(1)
             .gstCnt(1)
@@ -26,7 +24,7 @@ public class GuestCheckBITestSamples {
 
     public static GuestCheckBI getGuestCheckBISample2() {
         return new GuestCheckBI()
-            .id(2L)
+            .id(2)
             .guestCheckId(2)
             .chkNum(2)
             .gstCnt(2)
@@ -39,7 +37,7 @@ public class GuestCheckBITestSamples {
 
     public static GuestCheckBI getGuestCheckBIRandomSampleGenerator() {
         return new GuestCheckBI()
-            .id(longCount.incrementAndGet())
+            .id(intCount.incrementAndGet())
             .guestCheckId(intCount.incrementAndGet())
             .chkNum(intCount.incrementAndGet())
             .gstCnt(intCount.incrementAndGet())

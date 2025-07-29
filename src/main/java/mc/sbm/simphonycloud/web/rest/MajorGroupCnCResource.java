@@ -69,7 +69,7 @@ public class MajorGroupCnCResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<MajorGroupCnC> updateMajorGroupCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody MajorGroupCnC majorGroupCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to update MajorGroupCnC : {}, {}", id, majorGroupCnC);
@@ -103,7 +103,7 @@ public class MajorGroupCnCResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<MajorGroupCnC> partialUpdateMajorGroupCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody MajorGroupCnC majorGroupCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update MajorGroupCnC partially : {}, {}", id, majorGroupCnC);
@@ -159,7 +159,7 @@ public class MajorGroupCnCResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the majorGroupCnC, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<MajorGroupCnC> getMajorGroupCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<MajorGroupCnC> getMajorGroupCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get MajorGroupCnC : {}", id);
         Optional<MajorGroupCnC> majorGroupCnC = majorGroupCnCRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(majorGroupCnC);
@@ -172,7 +172,7 @@ public class MajorGroupCnCResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMajorGroupCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteMajorGroupCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete MajorGroupCnC : {}", id);
         majorGroupCnCRepository.deleteById(id);
         return ResponseEntity.noContent()

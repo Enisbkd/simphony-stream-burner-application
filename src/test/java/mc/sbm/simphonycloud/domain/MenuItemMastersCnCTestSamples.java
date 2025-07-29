@@ -3,17 +3,15 @@ package mc.sbm.simphonycloud.domain;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class MenuItemMastersCnCTestSamples {
 
     private static final Random random = new Random();
-    private static final AtomicLong longCount = new AtomicLong(random.nextInt() + (2 * Integer.MAX_VALUE));
     private static final AtomicInteger intCount = new AtomicInteger(random.nextInt() + (2 * Short.MAX_VALUE));
 
     public static MenuItemMastersCnC getMenuItemMastersCnCSample1() {
         return new MenuItemMastersCnC()
-            .id(1L)
+            .id(1)
             .hierUnitId(1)
             .menuItemMasterId(1)
             .familyGroupObjectNum(1)
@@ -27,7 +25,7 @@ public class MenuItemMastersCnCTestSamples {
 
     public static MenuItemMastersCnC getMenuItemMastersCnCSample2() {
         return new MenuItemMastersCnC()
-            .id(2L)
+            .id(2)
             .hierUnitId(2)
             .menuItemMasterId(2)
             .familyGroupObjectNum(2)
@@ -41,7 +39,7 @@ public class MenuItemMastersCnCTestSamples {
 
     public static MenuItemMastersCnC getMenuItemMastersCnCRandomSampleGenerator() {
         return new MenuItemMastersCnC()
-            .id(longCount.incrementAndGet())
+            .id(intCount.incrementAndGet())
             .hierUnitId(intCount.incrementAndGet())
             .menuItemMasterId(intCount.incrementAndGet())
             .familyGroupObjectNum(intCount.incrementAndGet())

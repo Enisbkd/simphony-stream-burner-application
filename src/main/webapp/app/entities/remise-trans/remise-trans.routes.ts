@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import RemiseTransResolve from './route/remise-trans-routing-resolve.service';
 
 const remiseTransRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/remise-trans.component').then(m => m.RemiseTransComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

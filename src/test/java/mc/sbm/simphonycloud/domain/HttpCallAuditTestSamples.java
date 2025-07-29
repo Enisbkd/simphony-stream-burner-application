@@ -13,7 +13,7 @@ public class HttpCallAuditTestSamples {
 
     public static HttpCallAudit getHttpCallAuditSample1() {
         return new HttpCallAudit()
-            .id(1L)
+            .id(1)
             .correlationId("correlationId1")
             .method("method1")
             .basePath("basePath1")
@@ -42,7 +42,7 @@ public class HttpCallAuditTestSamples {
 
     public static HttpCallAudit getHttpCallAuditSample2() {
         return new HttpCallAudit()
-            .id(2L)
+            .id(2)
             .correlationId("correlationId2")
             .method("method2")
             .basePath("basePath2")
@@ -71,7 +71,7 @@ public class HttpCallAuditTestSamples {
 
     public static HttpCallAudit getHttpCallAuditRandomSampleGenerator() {
         return new HttpCallAudit()
-            .id(longCount.incrementAndGet())
+            .id(intCount.incrementAndGet())
             .correlationId(UUID.randomUUID().toString())
             .method(UUID.randomUUID().toString())
             .basePath(UUID.randomUUID().toString())

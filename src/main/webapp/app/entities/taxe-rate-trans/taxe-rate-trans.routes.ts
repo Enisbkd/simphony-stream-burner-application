@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import TaxeRateTransResolve from './route/taxe-rate-trans-routing-resolve.service';
 
 const taxeRateTransRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/taxe-rate-trans.component').then(m => m.TaxeRateTransComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import ModePaiementBIResolve from './route/mode-paiement-bi-routing-resolve.service';
 
 const modePaiementBIRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/mode-paiement-bi.component').then(m => m.ModePaiementBIComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

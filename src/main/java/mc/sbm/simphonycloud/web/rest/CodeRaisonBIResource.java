@@ -71,7 +71,7 @@ public class CodeRaisonBIResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<CodeRaisonBI> updateCodeRaisonBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @Valid @RequestBody CodeRaisonBI codeRaisonBI
     ) throws URISyntaxException {
         LOG.debug("REST request to update CodeRaisonBI : {}, {}", id, codeRaisonBI);
@@ -105,7 +105,7 @@ public class CodeRaisonBIResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<CodeRaisonBI> partialUpdateCodeRaisonBI(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @NotNull @RequestBody CodeRaisonBI codeRaisonBI
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update CodeRaisonBI partially : {}, {}", id, codeRaisonBI);
@@ -167,7 +167,7 @@ public class CodeRaisonBIResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the codeRaisonBI, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<CodeRaisonBI> getCodeRaisonBI(@PathVariable("id") Long id) {
+    public ResponseEntity<CodeRaisonBI> getCodeRaisonBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get CodeRaisonBI : {}", id);
         Optional<CodeRaisonBI> codeRaisonBI = codeRaisonBIRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(codeRaisonBI);
@@ -180,7 +180,7 @@ public class CodeRaisonBIResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCodeRaisonBI(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteCodeRaisonBI(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete CodeRaisonBI : {}", id);
         codeRaisonBIRepository.deleteById(id);
         return ResponseEntity.noContent()

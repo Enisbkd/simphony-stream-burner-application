@@ -22,7 +22,7 @@ public class HttpCallAudit implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "id")
-    private Long id;
+    private Integer id;
 
     @NotNull
     @Column(name = "correlation_id", nullable = false)
@@ -110,16 +110,16 @@ public class HttpCallAudit implements Serializable {
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
-    public Long getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public HttpCallAudit id(Long id) {
+    public HttpCallAudit id(Integer id) {
         this.setId(id);
         return this;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import FamilyGroupCnCResolve from './route/family-group-cn-c-routing-resolve.service';
 
 const familyGroupCnCRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/family-group-cn-c.component').then(m => m.FamilyGroupCnCComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

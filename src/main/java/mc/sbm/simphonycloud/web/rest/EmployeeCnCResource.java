@@ -69,7 +69,7 @@ public class EmployeeCnCResource {
      */
     @PutMapping("/{id}")
     public ResponseEntity<EmployeeCnC> updateEmployeeCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody EmployeeCnC employeeCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to update EmployeeCnC : {}, {}", id, employeeCnC);
@@ -103,7 +103,7 @@ public class EmployeeCnCResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<EmployeeCnC> partialUpdateEmployeeCnC(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final Integer id,
         @RequestBody EmployeeCnC employeeCnC
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update EmployeeCnC partially : {}, {}", id, employeeCnC);
@@ -231,7 +231,7 @@ public class EmployeeCnCResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the employeeCnC, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public ResponseEntity<EmployeeCnC> getEmployeeCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<EmployeeCnC> getEmployeeCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to get EmployeeCnC : {}", id);
         Optional<EmployeeCnC> employeeCnC = employeeCnCRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(employeeCnC);
@@ -244,7 +244,7 @@ public class EmployeeCnCResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteEmployeeCnC(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteEmployeeCnC(@PathVariable("id") Integer id) {
         LOG.debug("REST request to delete EmployeeCnC : {}", id);
         employeeCnCRepository.deleteById(id);
         return ResponseEntity.noContent()

@@ -6,6 +6,10 @@
   "entityTableName": "location_cn_c",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "hierUnitId",
       "fieldType": "Integer"
     },

@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface PartieDeJourneeRepository extends JpaRepository<PartieDeJournee, Long> {}
+public interface PartieDeJourneeRepository extends JpaRepository<PartieDeJournee, Integer> {}

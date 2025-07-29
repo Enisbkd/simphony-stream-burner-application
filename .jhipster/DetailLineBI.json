@@ -6,6 +6,10 @@
   "entityTableName": "detail_line_bi",
   "fields": [
     {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
       "fieldName": "guestCheckLineItemId",
       "fieldType": "Long"
     },

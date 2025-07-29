@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface TaxeBIRepository extends JpaRepository<TaxeBI, Long> {}
+public interface TaxeBIRepository extends JpaRepository<TaxeBI, Integer> {}

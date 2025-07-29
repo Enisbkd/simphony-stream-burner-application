@@ -1,16 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
-import { ASC } from 'app/config/navigation.constants';
 import HttpCallAuditResolve from './route/http-call-audit-routing-resolve.service';
 
 const httpCallAuditRoute: Routes = [
   {
     path: '',
     loadComponent: () => import('./list/http-call-audit.component').then(m => m.HttpCallAuditComponent),
-    data: {
-      defaultSort: `id,${ASC}`,
-    },
+    data: {},
     canActivate: [UserRouteAccessService],
   },
   {

@@ -21,7 +21,7 @@ public class PartieDeJournee implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "id")
-    private Long id;
+    private Integer id;
 
     @Column(name = "time_range_start")
     private String timeRangeStart;
@@ -35,16 +35,16 @@ public class PartieDeJournee implements Serializable {
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
-    public Long getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public PartieDeJournee id(Long id) {
+    public PartieDeJournee id(Integer id) {
         this.setId(id);
         return this;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

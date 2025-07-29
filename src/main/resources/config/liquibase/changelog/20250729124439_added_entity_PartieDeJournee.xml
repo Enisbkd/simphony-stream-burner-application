@@ -11,7 +11,7 @@
     -->
     <changeSet id="20250729124439-1" author="jhipster">
         <createTable tableName="partie_de_journee">
-            <column name="id" type="bigint">
+            <column name="id" type="integer">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="time_range_start" type="varchar(255)">

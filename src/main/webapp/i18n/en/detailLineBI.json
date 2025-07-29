@@ -17,7 +17,7 @@
       "detail": {
         "title": "Detail Line BI"
       },
-      "id": "ID",
+      "id": "Id",
       "guestCheckLineItemId": "Guest Check Line Item Id",
       "detailUTC": "Detail UTC",
       "detailLcl": "Detail Lcl",

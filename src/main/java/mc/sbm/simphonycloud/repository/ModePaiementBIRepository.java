@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ModePaiementBIRepository extends JpaRepository<ModePaiementBI, Long> {}
+public interface ModePaiementBIRepository extends JpaRepository<ModePaiementBI, Integer> {}
