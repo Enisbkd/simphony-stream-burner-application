@@ -1,0 +1,432 @@
+
+// JDL file generated from Java entities
+
+entity BarCodeTrans {
+  locRef String,
+  rvcRef Integer,
+  barcodeId Integer,
+  barcode String,
+  menuItemId Integer,
+  defenitionSequence Integer,
+  price Double,
+  priceSequence Integer,
+  preparationCost Double
+}
+
+entity CheckTrans {
+  rvcRef Integer,
+  checkRef String,
+  checkNumber Integer,
+  checkName String,
+  checkEmployeeRef Integer,
+  orderTypeRef Integer,
+  orderChannelRef Integer,
+  tableName String,
+  tableGroupNumber Integer,
+  openTime Instant,
+  guestCount Integer,
+  language String,
+  isTrainingCheck Boolean,
+  status String,
+  preparationStatus String,
+  subtotal Double,
+  subtotalDiscountTotal Double,
+  autoServiceChargeTotal Double,
+  serviceChargeTotal Double,
+  taxTotal Double,
+  paymentTotal Double,
+  totalDue Double,
+  taxRateId Integer
+}
+
+entity CodeRaison {
+  nomCourt Integer required,
+  nomMstr String,
+  numMstr Integer,
+  name String,
+  etablissementRef String required
+}
+
+entity CommissionServiceBI {
+  nom String,
+  nomCourt String,
+  typeValue String,
+  value Float,
+  etablissementRef String required
+}
+
+entity CommissionServiceTrans {
+  orgShortName String,
+  locRef String,
+  rvcRef Integer,
+  serviceChargeId Integer,
+  name String,
+  type String,
+  value Double
+}
+
+entity DetailLineBI {
+  guestCheckLineItemId Long,
+  detailUTC Instant,
+  detailLcl Instant,
+  seatNum Integer,
+  prcLvl Integer,
+  dspTtl BigDecimal,
+  dspQty Integer,
+  errCorFlag Boolean,
+  vdFlag Boolean,
+  returnFlag Boolean,
+  doNotShowFlag Boolean,
+  aggTtl BigDecimal,
+  rsnCodeNum Integer,
+  refInfo1 String,
+  refInfo2 String,
+  svcRndNum Integer,
+  parDtlId Integer,
+  chkEmpId Integer,
+  transEmpNum Integer,
+  mgrEmpNum Integer,
+  mealEmpNum Integer,
+  dscNum Integer,
+  dscMiNum Integer,
+  svcChgNum Integer,
+  tmedNum Integer,
+  miNum Integer
+}
+
+entity ElementMenu {
+  masterId Integer required,
+  nom String required,
+  nomCourt String,
+  familyGroupRef Integer required,
+  prix Integer,
+  menuRef Integer required
+}
+
+entity EmployeeCnC {
+  objectNum Integer,
+  firstName String,
+  lastName String,
+  checkName String,
+  email String,
+  languageObjNum Integer,
+  langId Integer,
+  alternateId Integer,
+  level Integer,
+  group Integer,
+  userName String,
+  firstRoleHierUnitId Integer,
+  firstRoleObjNum Integer,
+  firstVisibilityHierUnitId Integer,
+  firstVisibilityPropagateToChildren Boolean,
+  firstPropertyHierUnitId Integer,
+  firstPropertyObjNum Integer,
+  firstPropertyEmpClassObjNum Integer,
+  firstPropertyOptions String,
+  firstOperatorRvcHierUnitId Integer,
+  firstOperatorRvcObjNum Integer,
+  firstOperatorOptions String,
+  firstOperatorCashDrawerObjNum Integer,
+  firstOperatorTmsColorObjNum Integer,
+  firstOperatorServerEfficiency Integer,
+  pin String,
+  accessId Integer
+}
+
+entity FamilyGroup {
+  nom String,
+  nomCourt String,
+  majorGroupRef Integer
+}
+
+entity GuestCheckBI {
+  guestCheckId Integer,
+  chkNum Integer,
+  opnLcl Instant,
+  clsdLcl Instant,
+  cancelFlag Boolean,
+  gstCnt Integer,
+  tblNum Integer,
+  taxCollTtl BigDecimal,
+  subTtl BigDecimal,
+  chkTtl BigDecimal,
+  svcChgTtl BigDecimal,
+  tipTotal BigDecimal,
+  dscTtl BigDecimal,
+  errorCorrectTtl BigDecimal,
+  returnTtl BigDecimal,
+  xferToChkNum Integer,
+  xferStatus String,
+  otNum Integer,
+  locRef String
+}
+
+entity Hierarchie {
+  nom String required,
+  parentHierId String,
+  unitId String
+}
+
+entity HttpCallAudit {
+  correlationId String required,
+  method String required,
+  basePath String,
+  endpoint String,
+  fullUrl String,
+  pathParams String,
+  queryParams String,
+  requestHeaders String,
+  requestBody String,
+  responseStatusCode Integer,
+  responseStatusText String,
+  responseHeaders String,
+  responseBody String,
+  timestamp Instant required,
+  durationMs Long,
+  errorMessage String,
+  errorType String,
+  serviceName String required,
+  environment String,
+  userAgent String,
+  clientIp String,
+  success Boolean required,
+  retryCount Integer required,
+  kafkaTopic String,
+  sessionId String,
+  userId String
+}
+
+entity Location {
+  hierUnitId Integer,
+  tzIndex Integer,
+  tzName String,
+  localeInfoId Integer,
+  name String,
+  reportingLocName String,
+  locRef String,
+  reportingParentEnterpriseLevelName String,
+  objectNum Integer,
+  sbmPmsIfcIp String,
+  sbmPmsIfcPort String,
+  sbmPriveRoomStart String,
+  sbmPriveRoomEnd String,
+  sbmPmsSendAllDetails String,
+  sbmPmsSendFullDscv String,
+  sbmPmsSend64Tax String,
+  sbmCardPaymentUrl String,
+  sbmCheckHotelDataUrl String,
+  sbmVoucherSvcUrl String,
+  sbmVoucherInvPm String,
+  sbmVoucherCorpPm String,
+  sbmVoucherRewardPm String,
+  sbmVoucherMcPm String,
+  sbmPmsIfcPort2 String,
+  sbmPmsIfcPort3 String,
+  sbmPmsIfcPort4 String,
+  sbmTimeout String
+}
+
+entity MajorGroup {
+  nom String,
+  nomCourt String,
+  pointDeVenteRef Integer
+}
+
+entity MenuItemDefinitionsCnC {
+  hierUnitId Integer,
+  menuItemMasterObjNum Integer,
+  menuItemMasterId Integer,
+  menuItemDefinitionId Integer,
+  defSequenceNum Integer,
+  menuItemClassObjNum Integer,
+  overridePrintClassObjNum Integer,
+  mainLevel String,
+  subLevel String,
+  quantity Integer,
+  kdsPrepTime Double,
+  prefixLevelOverride Integer,
+  guestCount Integer,
+  slu1ObjNum String,
+  slu2ObjNum String,
+  slu3ObjNum String,
+  slu4ObjNum String,
+  slu5ObjNum String,
+  slu6ObjNum String,
+  slu7ObjNum String,
+  slu8ObjNum String,
+  firstName String
+}
+
+entity MenuItemMastersCnC {
+  hierUnitId Integer,
+  menuItemMasterId Integer,
+  familyGroupObjectNum Integer,
+  majorGroupObjectNum Integer,
+  reportGroupObjectNum Integer,
+  externalReference1 String,
+  externalReference2 String,
+  objectNum Integer,
+  name String
+}
+
+entity MenuItemPricesCnC {
+  hierUnitId Long,
+  menuItemPriceId Long,
+  menuItemMasterId Long,
+  menuItemMasterObjNum Long,
+  menuItemDefinitionId Long,
+  defSequenceNum Integer,
+  externalReference1 String,
+  externalReference2 String,
+  priceSequenceNum Integer,
+  activeOnMenuLevel Integer,
+  effectivityGroupObjNum String,
+  prepCost Double,
+  price Double,
+  options String
+}
+
+entity ModePaiementBI {
+  locRef String,
+  num Integer,
+  name String,
+  type Integer
+}
+
+entity ModePaiementTrans {
+  tenderId Integer,
+  name String,
+  type String,
+  extensions String,
+  orgShortName String,
+  locRef String,
+  rvcRef Integer
+}
+
+entity OrderChannel {
+  num Integer,
+  locRef String required,
+  name String,
+  mstrNum Integer,
+  mstrName String
+}
+
+entity OrderType {
+  num Integer,
+  locRef String required,
+  name String,
+  mstrNum Integer,
+  mstrName String,
+  catGrpHierName1 String,
+  catGrpName1 String,
+  catGrpHierName2 String,
+  catGrpName2 String,
+  catGrpHierName3 String,
+  catGrpName3 String,
+  catGrpHierName4 String,
+  catGrpName4 String
+}
+
+entity OrganizationLocation {
+  orgShortName String,
+  locRef String,
+  name String,
+  currency String,
+  phoneNumber String,
+  languages String,
+  timezoneIanaName String,
+  timezoneWindowsName String,
+  timezoneTzIndex Integer,
+  addressLine1 String,
+  addressLine2 String,
+  addressFloor String,
+  addressLocality String,
+  addressRegion String,
+  addressPostalCode String,
+  addressCountry String,
+  addressNotes String,
+  geoLatitude BigDecimal,
+  geoLongitude BigDecimal,
+  posPlatformName String,
+  posPlatformVersion String
+}
+
+entity PartieDeJournee {
+  timeRangeStart String,
+  timeRangeEnd String,
+  nom String required
+}
+
+entity PointDeVenteCnC {
+  locHierUnitId Integer,
+  locObjNum Integer,
+  rvcId Integer,
+  kdsControllerId Integer,
+  hierUnitId Integer,
+  objectNum Integer,
+  name String,
+  dataExtensions String
+}
+
+entity PointDeVenteTrans {
+  rvcRef Integer,
+  name String,
+  locRef String,
+  orgShortName String,
+  address String
+}
+
+entity RemiseBI {
+  num Integer,
+  name String,
+  posPercent Double,
+  rptGrpNum Integer,
+  rptGrpName String,
+  locRef String
+}
+
+entity RemiseTrans {
+  orgShortName String,
+  locRef String,
+  rvcRef Integer,
+  discountId Integer,
+  frName String,
+  engName String,
+  discountType String,
+  discountValue Double
+}
+
+entity Societe {
+  nom String,
+  nomCourt String
+}
+
+entity TaxeBI {
+  locRef String,
+  num Integer,
+  name String,
+  type Integer
+}
+
+entity TaxeClassTrans {
+  OrgShortName String,
+  locRef String,
+  rvcRef Integer,
+  taxClassId Integer,
+  activeTaxRateRefs String
+}
+
+entity TaxeRateTrans {
+  OrgShortName String,
+  locRef String,
+  rvcRef Integer,
+  taxRateId Integer,
+  percentage Double,
+  taxType String,
+  nameFr String,
+  nameEn String
+}
+
+relationship OneToMany {
+  GuestCheckBI{detailLineBIList} to DetailLineBI{guestCheckBI}
+}
